@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		<link rel="stylesheet" href="http://apps.bdimg.com/libs/bootstrap/3.3.0/css/bootstrap.min.css">  
+        <script src="http://apps.bdimg.com/libs/jquery/2.1.1/jquery.min.js"></script>
+        <script src="http://apps.bdimg.com/libs/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+       <style type="text/css">
+       	 *{
+	        	margin:0px;
+	        	padding: 0px;
+	        	list-style: none;
+        		font-family: "微软雅黑";
+        		color: #000000;
+
+        	    }
+		.one{
+				margin-left: 40%;
+				width:50%;
+				height: 100px;
+				padding-top: 40px;
+				
+				}
+		.one a{
+				text-decoration: none;
+				font-size: 16px;
+		}
+				
+		.one a:hover{
+            	color: gray;
+            }
+        .aa{
+        	width: 800px;
+        	height: 300px;
+        	margin: auto;
+        }
+        .aa td a{
+        	text-decoration: none;
+        }
+        a{
+        	color:black;
+        }
+
+       </style>
+	</head>
+	<body>
+		<div style="background-color:#EEEEEE; width: 100%;">
+            <div class="pull-left">
+                <img src="/static/logo/logo3.png" width="100px" height="100px" onclick="window.location.href='/'">
+            </div>
+			<div class="one" >
+	            <div class="nav-item " style="float: left;margin-left: 50px;">
+	                 <a href="/index"​>首页</a>
+	            </div>
+	            <div class="nav-item " style="float: left;margin-left: 50px;">
+	                <a href="/index/#00"​>课程分类</a>
+	            </div>
+	            <div class="nav-item " style="float: left;margin-left: 50px;">
+	                <a href="/index/#01"​>精品课程</a>
+	            </div>
+	            <div class="nav-item " style="float: left;margin-left: 50px;">
+	                <a href="/index/#02"​>推荐课程</a>
+	            </div>
+	            <div class="nav-item " style="float: left;margin-left: 50px;">
+	                <a href="/index/#03"​>优课展示</a>
+	            </div>
+        		<div class="nav-item " style="float: left;margin-left: 50px;">
+            		<a href="/teacher"​>返回教师中心</a>
+        		</div>
+	            <div class="nav-item " style="float: left;margin-left: 50px;">
+	                <a href="#"​ onclick="logout()">退出登陆</a>
+	            </div>
+        	</div>
+		</div>
+		<form>
+			<div class="aa">
+				<table class="table table-bordered" id="userlist">
+		    	<h3 align="center">学生信息查看</h3>
+             	<tr>
+             		<th>#</th>
+             		<th>用户名</th>
+             		<th>性别</th>
+             		<th>课程名称</th>
+             		<th>最后登录时间</th>
+             		<th>头像</th>
+             		
+             	</tr>
+
+           </table>
+			</div>
+			
+		</form>
+		<script type="text/javascript">
+                $.ajax({
+            type:"post",
+            url:"/teacher/getuser/userinfo",
+            async:"true",
+            dataType:"json",
+            success:function(data){
+                for (var i = 0; i <data.length; i++) {
+                        if (data[i].sex==1) {
+                            $("#userlist").append('<tr><td>'+(i+1)+'</td><td>'+data[i].user_id+'</td><td><img src="img/he.png" width="25px" height="25px"></td><td>'+data[i].course_name+'<td>'+data[i].login_time+'</td><td><img src="/'+data[i].headimg+'" alt="" class="img-circle" width="35px"></td></tr>');
+                        }
+                        else
+                        {
+                            $("#userlist").append('<tr><td>'+(i+1)+'</td><td>'+data[i].user_id+'</td><td><img src="img/she.png" width="25px" height="25px"></td><td>'+data[i].course_name+'<td>'+data[i].login_time+'</td><td><img src="/'+data[i].headimg+'" alt="" class="img-circle" width="35px"></td></tr>');
+                        }
+                        
+                }
+
+            }
+        });      
+        </script>
+	</body>
+</html>
+

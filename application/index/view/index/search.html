@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>资源中心</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>资源中心</title>
+	
+  <link rel="stylesheet" href="http://apps.bdimg.com/libs/bootstrap/3.3.0/css/bootstrap.min.css">  
+  <script src="http://apps.bdimg.com/libs/jquery/2.1.1/jquery.min.js"></script>
+  <script src="http://apps.bdimg.com/libs/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+	 
+</head>
+<body>
+  <div  class="container">   
+<!--<h2><a href="{$Think.server.script_name}/index/bbs/show/">资源中心</a></h2>-->
+      <header class="bs-docs-header"    style=" padding-top: 20px;
+              padding-bottom: 20px;
+              margin-top: 0px;
+              margin-bottom: 0px;
+              color: #99979c;
+              text-align: center;
+              background-color: #d3d3d3">
+      <div class="container" style="font-size: 24px;color: #FFFFFF;">
+          资源中心
+      </div> </header>
+      <form class="navbar-form navbar-right" action="/index/index/search">
+          <div class="form-group">
+              <input type="text" class="form-control" placeholder="Search" name="search">
+          </div>
+          <button type="submit" class="btn btn-default">搜索</button>
+      </form>
+	 
+<table class="table table-bordered table-hover ">
+<thead>
+<tr  ><th > ID</th><th > 标题</th><th > 分类</th><th> 下载次数</th><th >关联课程</th><th > 入库时间</th><td>下载</td>
+</tr>
+</thead>
+
+<tbody>
+{volist name='show' id='user'}
+<tr><th> {$user.id} </th><td> <a href="{$Think.server.script_name}/index/index/view/id/{$user.id} ">{$user.title|mb_substr=0,20,'utf-8' }</a></td><td> {$user.type|mb_substr=0,50,'utf-8'| }</td><td>  {$user.downloadCount}</td><td>  {$user.courseName}</td><td>  {$user.create_time}</td><td><a href="{$user.downloadAddress}">下载</a></td></tr>
+{/volist}
+</tbody>
+</table>
+{$show->render()}
+      <p align="right">      <a href="/index" class="btn btn-default btn-lg active" role="button">返回首页</a>
+      </p>
+
+
+<!--<form action="{$Think.server.script_name}/index/bbs/add" method="post">-->
+  <!--<div class="form-group" >-->
+    <!--&lt;!&ndash; <label for="exampleInputName2">留言标题title:</label> &ndash;&gt;-->
+    <!--<input type="text" class="form-control" id="title" name="title" value="" placeholder="请输入资源标题" maxlength="100">-->
+      <!--<input type="text" class="form-control" id="type" name="type" value="" placeholder="请输入资源分类" maxlength="100">-->
+      <!--<input type="text" class="form-control" id="courseName" name="courseName" value="" placeholder="请输入关联课程" maxlength="100">-->
+  <!--</div>-->
+  <!--<button type="submit" class="btn btn-primary" >发布课程</button>-->
+
+<!--</form>-->
+ 
+</div>
+
+ </body>
+ </html>

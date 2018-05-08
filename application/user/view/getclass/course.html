@@ -1,0 +1,1981 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>课程中心</title>
+		<style>
+			.menu{
+				background-color:#333333;						
+				font-size:1rem;
+				min-height:3rem;
+				display: flex;
+				align-items:center;
+				padding:0 1rem;
+				flex-direction: row-reverse;
+				margin-top:-1%;
+			}
+			.wrap1{
+				background-color:#F5F5F5;		
+				
+				font-size:1rem;
+				min-height:4rem;
+				display: flex;
+				align-items:center;
+				padding:0 1rem;
+	}
+			.listitem,
+			.lastitem{
+				color:#EBEBEB;
+				text-decoration: none;
+				padding-top: -.5%;		
+			}
+			.listitem{
+		       margin-right: 2rem;
+				
+			}
+			.listitem22{
+				color:#EBEBEB;
+				text-decoration: none;
+				padding-top: -.5%;		
+				margin-right: 2rem;		
+				display: none;		
+			}
+				.listitem23{
+				color:#EBEBEB;
+				text-decoration: none;
+				padding-top: -.5%;		
+				margin-right: 2rem;	
+				display: none;				
+			}
+				.listitem24{
+				color:#EBEBEB;
+				text-decoration: none;
+				padding-top: -.5%;		
+				margin-right: 2rem;		
+				border-radius:50%;
+				overflow: hidden;
+				border:.3px solid red;
+				display: none;	
+				
+					
+			}
+			.lastitem{
+				margin-right:auto;		
+			}
+			
+			.img1{
+				display: flex;
+				margin-left:4%;				
+			}
+			.hr1{
+				
+				display:flex;
+				margin-left:19.3%;
+			}
+			.course{
+	
+      	       margin-left:3%;						
+			}
+			.assess{
+				display:flex;
+				margin-left:60%;
+				
+			}
+			.asses{
+				display:flex;
+				text-decoration: none;
+				color:#1B961B;
+			}
+			 .bottom11{
+				display:flex;
+				flex-direction:row;
+
+				border: 1px solid darkgrey;
+			}
+			.left1{
+				display:flex;
+				background-color:#f8f8ff;
+				width:20%;
+				min-height:50rem;			
+				
+				flex-direction: column; 
+				            
+			}
+			.img2{
+				display: flex;				
+				margin-top:10%;
+				width:100%;
+				height:25%;
+				padding:0 auto;
+											    
+				
+			}
+			.img3{	
+				display: flex;		
+				border-radius:9%;
+				margin:0 auto;
+				}
+			.left3{
+				background-color:#333333;		
+				
+				font-size:1rem;
+				min-height:2.75rem;
+				display: flex;
+				padding:0 1rem;
+				flex-direction:column;
+				margin-left:3%;
+				margin-right:3%;  
+				
+
+				}
+		     .flexitems{
+				display: flex;			
+				min-height:1rem;
+				padding:1rem;
+		
+			}
+			.listitem1{
+				background-color:#4CAE4C;
+				color:#EBEBEB;
+				text-decoration: none;
+				margin-left:-7.3%;
+				margin-right:-7.3%;			
+								
+			}
+			.listitem2{
+				background-color:white;
+				color:#1A1A1A;
+				text-decoration: none;
+				margin-left:-7.3%;
+				margin-right:-7.3%;			
+				border:0px  solid  silver;	
+				
+			}
+			.listitem2:hover{
+				background-color:#F5F5F5;
+				
+			}	
+				.listitem3{
+				background-color:white;
+				color:#1A1A1A;
+				text-decoration: none;
+				margin-top:5%;			
+				margin-left:3%;
+				margin-right:3%;			
+				border:0px  solid  silver;	
+				
+			}
+
+			.middle1{
+				display:flex;
+				flex-direction:column;
+				min-height:50rem;			
+				width:70%;		
+				height:210%;	
+			}
+             .middle11{
+				display:flex;
+				flex-direction:column;	
+				min-height:50rem;
+				width:70%;	
+				height:210%;	
+				
+			}
+
+			.incourse{
+			   background-color:#F5F5F5;					 
+			   font-size:1rem;
+			   min-height:4rem;
+			   display: flex;
+			   padding:0 1rem;
+			   width:90%;
+			   margin-top:3%;
+			   margin-left:4%;
+			   margin-right:3%;
+			   flex-direction:column;
+			   line-height:1;
+			   padding-top:1%;
+			   
+				
+			}
+			.button1{
+				background-color:#E56C0C;
+				border-radius:9%;
+				font-size:25px;
+				width: 20%;
+				color:white;
+				height: 50px;
+				margin-left:32%;
+				margin-bottom:3%;
+				cursor:pointer;
+				border: none;
+			}
+			.summary{								 
+			   font-size:1rem;
+			   min-height:6rem;
+			   display: flex;
+			   padding:0 1rem;  
+			   flex-direction:column;			  
+			   padding-top:1%;	
+			   margin-left:2.5%;
+			   margin-top:2%;		
+			}
+			.content1{
+			   font-size:.9rem;
+			   color:#8D8D8D;
+			   min-height:6rem;
+			   display: flex;
+			   padding:0 1rem;  
+			   flex-direction:column;			  
+			   margin-top:-5%;
+			   margin-left:2.5%;
+			   line-height:1.6;
+			   width:90%;	
+			}
+			
+			.login1{
+				width:105%;
+				height:100%;			
+				position:absolute;
+				top:7px;
+				left:-20px;
+		        display:none;
+				transition: opacity 1s; 
+				background-color: azure;
+			    background-color:rgba(0,0,0,0.25);	      
+				color: white;
+              }
+			.login1 input:focus{
+			   
+			    border-color: #03a9f4;  
+			    box-shadow: 0 0 15px #24B727;  
+			}
+			.login3 input:focus{
+			   
+			    border-color: #03a9f4;  
+			    box-shadow: 0 0 15px #24B727;  
+			}
+			.login3{
+				width:105%;
+				height:100%;
+				display: none;
+				position:absolute;
+				top:7px;
+				left:-20px;				
+				transition: opacity 1s; 
+				background-color: azure;
+			    background-color:rgba(0,0,0,0.25); 
+				color: white;
+}
+  	
+		  	 .login4{
+            	background-color: whitesmoke;
+            	width:350px;
+            	height: 300px;
+            	margin-left: 34%;
+            	margin-top:20px;      
+            	border-radius:10%;   
+            	margin:0 auto;
+		            }
+            .login5{
+            	background-color: whitesmoke;
+            	width:400px;
+            	height: 445px;
+            	margin-left:35%;
+            	margin-top:20px; 
+            	border-radius:10%;
+            	padding: 0 auto;
+            	margin:0 auto;
+            }
+            .close1{
+			    -webkit-transition:border linear .2s,-webkit-box-shadow linear .5s; 
+				border-color:rgba(141,39,142,.75); 
+				-webkit-box-shadow:0 0 18px rgba(111,1,32,3); 
+		    	border-radius:20%;
+		    	font-size:24px;   	
+            }
+             .close11{
+			    width:10%;
+		    	font-size:24px; 
+		    	
+		    	  	
+            }
+            .label1{
+            	font-size:21px;
+            	width:350px;
+            	height:40px;
+            	padding-top:2%;
+            	text-align: center;
+            	background-color:#007F06;
+            	color: white;           	           	
+            	border-radius:10%;
+            }
+               .label2{
+            	font-size:21px;
+            	width:400px;
+            	height:40px;
+            	padding-top:2%;
+            	text-align: center;
+            	background-color:#007F06;
+            	color: white;           	           	
+            	border-radius:10%;
+            }
+            a{
+            	text-decoration: none;
+            	
+            }
+            
+            .bottom1{
+		     
+		    padding-left:-11px;  		   
+		  /* 	background-color: white;*/
+		    border:3px solid red;
+		    position: relative;
+		   }
+		    .courselist{
+		    width:70%;
+		    height: 600px;		   		   
+		    display: block; 		    		 
+		   }
+           .bottom2{         
+		  	position: absolute;
+		    margin-left:3.5%;
+		  	font-size: 16.4px;
+	        margin-top:2%;   
+		  }
+          .course4{
+          	display: inline-flex;
+		    flex-direction: column;
+		  	position: absolute;
+		    margin-left:3.6%;
+		  	font-size: 17px;
+		    margin-top:2%;  
+          }
+          .list1{         	
+          	margin-left:5.6%;
+          	margin-top:-3%;
+          }
+           .list2{          	
+          	margin-left:5.6%;
+          	margin-top:.5%;
+          }
+          .list11{
+          	display: flex;
+          	width:103%;
+          	height: 30px;
+          	border: .3 solid;
+          	background-color:#f5f5f5;
+          	margin-top:.7%;
+          	margin-left:-4.5%;
+          	padding-top:1%;
+             
+          }
+          .list11:hover{
+          	background-color:#D0D0D0;
+          	
+          }
+          .a1{
+          	color:dimgray;
+          }
+          .start{
+          	margin-left:80%;
+          	font-size:13px;
+          	color:#D1D1D1;
+          	margin-top:.4%;
+          }
+          
+          .icoo{
+          	margin-left:72.4%;
+          }
+          .icoo1{
+          	margin-left:82%;
+          }
+          
+		  	.hr{
+		   display: inline-flex;
+		   flex-direction: column;
+		  	float: left;
+		    margin-left:6%;
+		    width:80%;		    
+		    font-size:14px;
+		    height:420px;
+		    background-color: white;
+		    /*-webkit-transition:border linear .2s,-webkit-box-shadow linear .5s; 
+			border-color:rgba(10,10,112,.25); 
+			-webkit-box-shadow:0 0 18px rgba(11,1,12,3); */
+		    }
+		
+		/*.clearfix:after { content:"."; display:block; height:0; clear:both; visibility:hidden}
+        .clearfix { *height:4%;}*/
+        #list { margin: 0 auto; text-align: left; width: 540px;margin-left:10%}
+         
+        .comment-box { border-top: 1px solid #eee;margin-left:-50%}
+        .comment-box:hover { background: rgb(247, 247, 247);}
+        .comment-box .myhead { float: left; width: 30px; height: 30px; margin-right: 10px;}
+        .comment-box .comment-content { float: left; width: 400px; }
+        .comment-box .comment-content .comment-time { color: #ccc; margin-top: 3px; line-height: 16px; position: relative;}
+        .comment-box .comment-content .comment-praise { display: none; color: #369; padding-left: 17px; height: 20px; background: url("images/praise.png") no-repeat;  position: absolute; bottom: 0px; right: 44px;}
+        .comment-box .comment-content .comment-operate { display: none; color: #369; height: 20px;  position: absolute; bottom: 0px; right: 10px;}
+        .comment-box .comment-content:hover .comment-praise { display: inline-block;}
+        .comment-box .comment-content:hover .comment-operate { display: inline-block;}
+        .text-box .comment { border: 1px solid #dedede; display: block; height: 45px; width: 428px; padding: 5px; resize: none; color: #ccc;margin-left:-12%}
+        .text-box .comment1 { border: 1px solid #eee; display: block; height: 50px; width: 428px; padding: 5px; resize: none; color: #ccc}
+        .text-box .btn { outline:none;font-size: 12px; font-weight: bold; display: none; float: right; width: 72px; height: 30px;  color:#324B4E; margin-top:4px;padding-top:3px;margin-right:-70px;}
+        .text-box .btn-off { border: 1px solid #ccc; color: #ccc; background: #F7F7F7;}
+        .text-box .word{ display: none; float: right; margin: 6px 10px 0 0; color: #666;}
+        .text-box-on .comment{ height: 49px; color: black;}
+        .text-box-on .btn{ display: inline;}
+        .text-box-on .word{ display: inline;}
+    	.dede_pages{ text-align:center;}
+		.dede_pages ul{float:left;padding:12px 0px 12px 16px;}
+		.dede_pages ul li{float:left;font-family:Tahoma;line-height:17px;margin-right:6px;border:1px solid #E9E9E9;}
+		.dede_pages ul li button{float:left;padding:2px 4px 2px;color:#555;display:block;}
+		.dede_pages ul li button:hover{color:#690;text-decoration:none;padding:2px 4px 2px;}
+		.dede_pages ul li.thisclass,.dede_pages ul li.thisclass button,.pagebox ul li.thisclass a:hover{background-color:#F8F8F8;padding:2px 4px 2px;font-weight:bold;}
+		.dede_pages .pageinfo{line-height:21px;padding:12px 10px 12px 16px;color:#999;}
+		.dede_pages .pageinfo strong{color:#555;font-weight:normal;margin:0px 2px;} 
+    
+    
+        .course11{
+        	width:105%;
+			height:107%;			
+			position:absolute;
+			top:7px;
+			left:-20px;
+	        display:none;
+			transition: opacity 1s; 
+			background-color: azure;
+		    background-color:rgba(0,0,0,0.25);	      
+			color: white;       	
+        	
+        }
+        .course21{
+        	background-color:white;
+        	width:45%;
+        	height:80%;
+        	margin-left:27%;
+        	margin-top:4%;
+        	color:#090909;   
+        	display: flex;
+        	flex-direction: column;    	
+        	
+       }
+       
+            .start5{
+        	width:105%;
+			height:107%;			
+			position:absolute;
+			top:7px;
+			left:-20px;
+	        display:none;
+			transition: opacity 1s; 
+			background-color: azure;
+		    background-color:rgba(0,0,0,0.25);	      
+			color: white;       	
+        	
+        }
+        .start51{
+        	background-color:ghostwhite;
+        	width:45%;
+        	height:30%;
+        	margin-left:27%;
+        	margin-top:10%;
+        	color:#090909;   
+        	display: flex;
+        	flex-direction: column;   
+	
+       }
+        .write{
+            margin-top:3%;
+        	font-size:19px;
+        	margin-left:5%;
+        }
+       .write1{
+            margin-top:4%;
+        	font-size:14px;
+        	margin-left:5%;
+        }
+        .write2{
+            margin-top:-1%;
+        	font-size:14px;
+        	margin-left:5%;
+        	width:35%;
+        	height:20px;
+        	margin-bottom:1.5%;
+        }
+          .write3{
+            margin-top:5%;
+        	font-size:14px;
+        	margin-left:5%;
+        }
+        
+          .write4{
+            margin-top:2%;
+        	font-size:14px;
+        	margin-left:5%;       	
+        }
+           .write5{
+            width:90%;
+            height:160px;  
+            color: darkgray;           
+        }
+          .write5:focus{      
+          	border-color: green;
+          	resize: none;         	
+          }
+            .write15{
+            width:120%;
+            height:130px;  
+            color: darkgray;    
+            margin-left:-13%;     
+        }      
+          .write6{
+          	width:14%;
+          	height:6%;
+          	margin-top:4%;
+        	font-size:15px;
+        	margin-left:65%; 
+        	cursor: pointer; 
+        	background-color:#94DF94;
+        	text-align: center;
+        	padding-top:1%;
+        	padding: 0 auto;
+          }
+          .write7{
+          	margin-top:1%;
+        	font-size:14px;
+        	margin-left:5%;         	
+          	
+          }
+	  		.write81{
+			width:105%;
+			height:100%;			
+			position:absolute;
+			top:7px;
+			left:-20px;
+	        display:none;
+			transition: opacity 1s; 
+			background-color: azure;
+		    background-color:rgba(0,0,0,0.25);	      
+			color: white;
+	      }
+          
+          
+          
+          .write8{
+          	    background-color:#F5F5F5;
+            	width:80%;
+            	height: 70%;
+            	margin-left:5%;
+            	margin-top:2%;
+            	border-radius:2%;          	
+            	display:none;
+            	-webkit-transition:border linear .2s,-webkit-box-shadow linear .5s; 
+				border-color:rgba(10,10,112,.25); 
+				-webkit-box-shadow:0 0 18px rgba(11,1,12,3);
+            	  	
+          }  
+		  .right{
+		  	 width:80%;
+		    height: 800px;		   		   
+		    display: block; 	
+
+		  	}
+		  	.right11{
+		  		
+		  	 display:inline-flex;
+		  	 margin-left:4%;
+		  	 margin-top:2.5%;
+		  	 width:90%;
+		  	 height:760px;
+		  	 border:1px solid #E9E7E7;
+
+		  	}
+          .capter{
+          	margin-top:3%;
+          	margin-left:3.6%;         	
+          }
+          
+          select{
+          	width:20%;
+          	height:30px;
+            font-size:15px;         	
+          }
+          
+          .question{
+          	margin-left:36%;
+          	font-size:14px;         	         	      	
+          	opacity: .6;
+          }
+          .question:hover{
+          	color:#1B961B;
+          }
+          .arg{
+          	font-size:22px;
+            color:#D6D6D6;
+          }
+          
+          .list33{
+          border: 1px solid #E9E7E7;
+           display:flex;
+           flex-direction: row;
+           width:90%;
+           height:6%;
+           margin-left:4%;
+           margin-top:2.5%;
+
+          }
+         .list34{
+         	width:100%;
+         	background-color:#67B168;	
+         	text-align: center;
+         	padding-top:1.5%;
+         	opacity:.2;
+         	cursor:pointer;
+         }
+            .list35{
+         	width:40%;
+         	background-color:#FFFFFF;
+         	text-align: center;	
+         	padding-top:1%;
+         	opacity:.1;
+         	cursor:pointer;
+         }
+         .right12{
+         	 display:inline-flex;
+		  	 margin-left:4%;
+		  	 margin-top:1%;
+		  	 width:90%;
+		  	 height:600px;
+		  	 border:1px solid #D0D0D0;
+         	
+         	
+         }
+         /*五角星点击后样式*/ 
+         .cleanfloat::after{display: block; clear: both; content:""; visibility: hidden; height: 0;}/*清浮动*/ 
+         .cleanfloat,.lib1{
+         
+         display:inline-flex;
+
+         list-style:none; 
+         float:left; 
+         font-size:35px; 
+         margin:2px; 
+         color:#ccc; 
+         cursor:pointer;
+         padding-left: 1%;
+         width:35%;}
+         /*五角星样式*/ 
+         .hs,.cs{color:#E56C0C;}
+         
+         .exam{
+		    width:70%;
+		    height: 600px;		   		   
+		    display: block; 		    		 
+		   }
+         
+          .exam4{
+          	display: inline-flex;
+		    flex-direction: column;
+		  	position: absolute;
+		    margin-left:3.6%;
+		  	font-size: 17px;
+		    margin-top:2%;  
+          }
+          
+         
+         .dt1{
+         	margin-left:5%;
+
+         } 
+        .lib2{
+        	margin-left:7%;
+        	
+        }
+          .sub1{
+        	display: inline-flex;
+        	flex-direction:column; 
+        	margin-left:50%;
+        	margin-top: 10%;       	
+        	border: .3 solid;
+        	background-color:#D0E9C6;
+        	width:18%;
+        	font-size:20px;
+        	height:41px;
+        	padding-left: 4.5%;
+        	padding-top:.6%;
+        	cursor: pointer;
+            border-radius:6%;
+            color: #D2620B;
+        }
+        .sub1:hover{
+        	background-color:white;
+        	opacity: .5;
+        	border-radius:6%;
+        }
+        .sub a{
+        	color:#000000;
+        }
+        .clime{
+        	background-color:#F0F0F0;
+        	margin-left:75%;
+        	
+        }
+           .oper{
+		    width:70%;
+		    height: 600px;		   		   
+		    display: flex;
+		    flex-direction: column;		    		 
+		   }
+		   .se1{
+		   	margin-left:5%;
+		   	border-radius:7%;	
+		   	font-size:15px;	   	
+		   }
+		   .form-control{
+		   	width:90%;
+		   	height:300px;
+		   	margin-left:5%;
+		   }
+		   .btn11{
+		   	margin-left:75%;
+		   	margin-top:2%;
+		   	width:9%;
+		   	height: 30px;
+		   	border-radius:10%;
+		   	font-size:14px;
+		   	opacity: .6;
+		   }
+		 .btn22{
+		   	margin-left:75%;
+		   	margin-top:2%;
+		   	width:9%;
+		   height: 30px;
+		   border-radius:10%;
+		   font-size:14px;
+		   opacity: .6;
+		   }
+		   .out{
+		   	margin-left:5%;
+		   	font-size:16px;
+		   	
+		   }
+		   .text11{
+		   	width:90%;
+		   	border:.2px solid #F5F5F5;
+		   	margin-left:5%;
+		   	margin-top:2%;
+		   	height:12%;
+		   }
+		   .teacher1{		   	 
+		    width:70%;
+		    height: 600px;		   		   
+		    display: block; 		    		 
+		   }
+		   .teacher4{
+		   	display: inline-flex;
+		    flex-direction: column;
+		  	position: absolute;
+		    margin-left:3.6%;
+		  	font-size: 17px;
+		    margin-top:2%;  
+		   }
+		   .teach{
+		   	font-size:15px;
+		   	color:darkgray;
+		   	line-height:2rem;
+		   	
+		   }
+		   .examm{
+		   	margin-left:20%;
+		   	margin-top:2%;
+		   	font-size:20px;
+		   	color:#1B961B;
+		   	
+		   }
+		    .examm1{
+		   	margin-left:39%;
+		   	margin-top:3%;
+		   	font-size:15px;
+		   	color:#1B961B;
+		   }
+		   .exam5{
+		   	margin-left:34%;
+		   	margin-top:4%;
+		   	width: 22%;
+		   	height:40px;
+		   	font-size:22px;
+		   	background-color:darkorange;		   	
+		   	opacity: .3;
+		   	padding-top: 2%;
+		   	padding-left: 9%;
+		   	border-radius:10%;	
+		   	color:white;	   	
+		   }
+		   .exam5:hover{
+		   background-color:antiquewhite;
+		   	opacity: .3;
+		   	
+		   }
+		   .btn{
+		   	margin-left:100%;
+		   	width:15%;
+		   	height:40px;
+		   	cursor: pointer;
+		   	background-color:#008000;		  
+		   	color:#ffffff;
+		   	font-size:14px;
+		   	margin-top:4%";
+		   	outline:hidden;
+		   }
+		     .take1{		  
+		   	margin-left:97%;
+		   	margin-top:-50%;
+		   	width:2%;		   	
+		   	border: 1px solid red;		   	
+		   }
+		   .list333{
+		   	display:inline-flex;
+		    flex-direction: row;
+		   /* border: 1px solid red;*/
+		    width:125%;
+		    height:660px;
+		    
+		    }
+		    .list334{
+		    display: inline-flex;
+		    flex-direction: column;  
+		  
+		    width:80%;		    
+            height:660px;
+           /* border: 1px solid green;	*/    	
+		    }
+		    .list335{
+		    display: inline-flex;
+		    flex-direction: column; 
+		    margin-left:-3%;
+		    margin-top:2%;
+		    width:30%;
+		    height: 640px;
+		  	 border:1px solid #E9E7E7;
+		    }
+		    .onlinee{
+		    display: inline-flex;
+		    flex-direction: row;
+		    border:1px solid #E0E0E0;
+		    }
+		    .online1{
+		    	background-color:#F2F4F7;
+		    	width: 50%;
+		    	height: 30px;
+		    	text-align: center;
+		    	padding-top:1%;
+		    }
+		    .online1:hover{
+		    	cursor: pointer;
+		    	
+		    }
+		    .onlineuser{
+		    	background-color:white;
+		    	width:50%;
+		    	height: 30px;	
+		    	text-align:center;	
+		    	padding-top:1%;    	
+		    }
+		    .onlineuser:hover{
+		    	cursor: pointer;
+		    	
+		    }
+		    .userimg{
+		    	border-radius:50%;
+		    	overflow: hidden;
+		    	border:1px;
+		    	
+		    }
+		    .list336{
+		    	display: flex;
+		    	flex-direction: row;
+		    }
+		    .inputt{
+		    	width:260px;
+		    	height:25px;
+		    	margin-left:5%;
+		    
+		    }
+		    .buttonn{
+		    	margin-left:55%;
+		    	width:58px;
+		    	height:30px;
+		    }
+		    .take11{
+		    	margin-top:2%;
+		    }
+		   
+		</style>
+	<!--	<script src="js/jquery-1.9.1.min.js"></script>-->
+        <script type="text/javascript" src="http://www.bcty365.com/statics/js/bcty365_js/jquery.min.js"></script>
+		<script src="https://cdn.bootcss.com/web-socket-js/1.0.0/web_socket.js"></script>
+        <script src="__STATIC__/class/js/mycode.js"></script>
+	<script>
+	  function login2(){
+	   var oscore = document.getElementsByClassName("login1")[0];
+       oscore.style.display = 'block';
+       setTimeout(function () {
+       oscore.style.opacity = 1;
+  }, 500); }
+  
+      function register(){
+	   var oscore = document.getElementsByClassName("login3")[0];
+       oscore.style.display = 'block';
+       setTimeout(function () {
+       oscore.style.opacity = 1;
+  }, 500);} 	
+  
+
+  function icourse(){
+	   var oscore = document.getElementsByClassName("course11")[0];
+       oscore.style.display = 'block';
+       setTimeout(function () {
+       oscore.style.opacity = 1;
+  }, 500);} 	
+  
+  
+    function exam1 (){
+        $.ajax({
+            type: "post",
+            url: "/api/test/gotest",
+            async: "true",
+            dataType: "json",
+            data: {
+                course_id:{$course[0]['course_id']}
+               },
+            success: function (data) {
+
+                if(typeof(data.msg) != "undefined")
+                {
+                    $("#starttest").css('display','none');
+                    $("#testok").css('display','block');
+                    $("#score").text(data.msg);
+                }
+                else
+                {
+                    $("#starttest").css('display','block');
+                    $("#testok").css('display','none');
+                    $("#testlist").text("");
+                    for(var i=0;i<data.length;i++)
+					{
+                        $("#testlist").append('<dd> <dt class="dt1">'+(i+1)+'、'+data[i].title+'</dt> <p class="lib2"><input type="radio" name="result'+i+'" value="1">&nbsp;A.'+data[i].a+'</p> <p class="lib2"><input type="radio" name="result'+i+'" value="2">&nbsp;B.'+data[i].b+'</p> <p class="lib2"><input type="radio" name="result'+i+'" value="3">&nbsp;C.'+data[i].c+'</p> <p class="lib2"><input type="radio" name="result'+i+'" value="4">&nbsp;D.'+data[i].d+'</p><input type="text" hidden="hidden" value="'+data[i].id+'" id="result'+i+'"/> </dd>');
+                    }
+				}
+            }
+        });
+	   var oscore = document.getElementsByClassName("start5")[0];
+       oscore.style.display = 'block';
+       setTimeout(function () {
+       oscore.style.opacity = 1;
+  }, 500);
+  }
+
+  //提交选择题评分
+	  function subtest() {
+        var arr=new Array();
+        var count=0;
+		for (var i=0;i<50;i++)
+		{
+            var rr1=0;
+            if($("input[name='result"+i+"']:checked").val())
+			{
+				rr1=$("input[name='result"+i+"']:checked").val();
+			}
+			else
+			{
+			    rr1=0;
+			    count++;
+			}
+			arr.push({
+				id:$("#result"+i).val(),
+				result:rr1
+			});
+		}
+		if (count > 0)
+		{
+
+			if (confirm("你还有"+count+"道题没做完，是否交卷"))
+			{
+                $.ajax({
+                    type: "post",
+                    url: "/api/test/valtest",
+                    async: "true",
+                    dataType: "json",
+                    data: {
+                        course_id:{$course[0]['course_id']},
+						test:JSON.stringify(arr)
+                    },
+                    success: function (data) {
+						alert(data.msg);
+                    }
+                });
+                window.location.reload();
+			}
+        }
+		else
+		{
+            $.ajax({
+                type: "post",
+                url: "/api/test/valtest",
+                async: "true",
+                dataType: "json",
+                data: {
+                    course_id:{$course[0]['course_id']},
+                    test:JSON.stringify(arr)
+                },
+                success: function (data) {
+                    alert(data.msg);
+                }
+            });
+            window.location.reload();
+		}
+
+      }
+  
+			
+			function closelogin(){
+            	$('#lg5').css('display','none');           	
+            }
+		     function closeregin(){
+            	$('#lg6').css('display','none');           	
+            }
+		     function closewrite(){
+		     	$('#course1').css('display','none');
+
+		     }
+           function closewrite1(){
+           	$('#start5').css('display','none'); 	
+           }
+
+        $(function() {  
+            $('span').css('cursor','pointer')  
+                .click(function(){  
+                    $(this).next().next().slideToggle(1000);  
+                });  
+        });  
+            $(function() {  
+            $('#span1').css('cursor','pointer')  
+                .click(function(){  
+                    $(this).next().next().slideToggle(1000);  
+                });  
+        });  
+             
+           //评价课程
+        function click_a(divone1){
+      	       if(document.getElementById('divone1').style.display !="block")
+      	       {
+      	       	document.getElementById('divone1').style.display = "block";
+      	       	document.getElementById('w1').style.display = "none";
+      	       	document.getElementById('w2').style.display = "none";
+      	       	document.getElementById('w3').style.display = "none";
+      	       	document.getElementById('w4').style.display = "none";
+      	       	document.getElementById('w5').style.display = "none";
+      	       }
+      	      else{
+      	      	
+      	      	document.getElementById('divone1').style.display = "none";
+      	      	document.getElementById('w1').style.display = "block";
+      	      	document.getElementById('w2').style.display = "block";
+      	      	document.getElementById('w3').style.display = "block";
+      	      	document.getElementById('w4').style.display = "block";
+      	      	document.getElementById('w5').style.display = "block";
+      	      }
+      }
+		</script>
+		
+		 <script>
+        	function  talk()
+			{
+//				$("#disscuss").css({"display":"flex",
+//				"flex-direction":"column",
+////				"margin-top":"-57%",
+////				"margin-left":"20%",
+//				"border":"0",
+//				"min-height":"1rem"});
+                $("#left2").css("display","block");
+				$("#disscuss").css("display","block");
+				$("#middle2").css("display","none");
+				$("#courselist2").css("display","none");
+				$('#audio').css('display','none');
+				$('#exam1').css('display','none');
+				$('#opertor').css('display','none'); 
+				$('#teacher1').css('display','none');
+				$('#start5').css('display','none');
+			}
+			  function courseware(){				
+				$('#courselist2').css('display','block');
+				$('#middle2').css('display','none');
+				$('#disscuss').css('display','none');
+				$('#audio').css('display','none');
+				$('#exam1').css('display','none');
+				$('#opertor').css('display','none');
+				$('#teacher1').css('display','none');
+				$('#start5').css('display','none');
+			}
+			 function audio1(url){
+			 	$('#audio').css('display','block');
+			 	$('#left3').css('display','none');
+			 	$('#middle2').css('display','none');
+			 	$('#disscuss').css('display','none');
+			 	$('#courselist2').css('display','none'); 	
+			 	$('#exam1').css('display','none');
+			 	$('#opertor').css('display','none');
+			 	$('#teacher1').css('display','none');
+			 	$('#start5').css('display','none');
+                 $('#v1').attr('src',url);
+                 document.getElementById("classvideo").load();
+                 document.getElementById("classvideo").play();
+			 }
+			 
+			  function exam(){
+			 	$('#exam1').css('display','block');
+			 	$('#audio').css('display','none');
+			 	$('#middle2').css('display','none');
+			 	$('#disscuss').css('display','none');
+			 	$('#courselist2').css('display','none'); 
+			 	$('#opertor').css('display','none');
+			 	$('#teacher1').css('display','none');
+			 	$('#start5').css('display','none');
+			 }
+			    function audio2(){
+			    $('#left3').css('display','block');
+			 	$('#exam1').css('display','none');
+			 	$('#audio').css('display','none');
+			 	$('#middle2').css('display','block');
+			 	$('#disscuss').css('display','none');
+			 	$('#courselist2').css('display','none'); 
+			 	$('#opertor').css('display','none');
+			 	$('#teacher1').css('display','none');
+			 	$('#start5').css('display','none');
+			 }
+			  function resume(){
+			 
+			 	$('#audio').css('display','none');
+			 	$('#middle2').css('display','block');
+			 	$('#disscuss').css('display','none');
+			 	$('#courselist2').css('display','none'); 
+			 	$('#exam1').css('display','none');
+			 	$('#opertor').css('display','none');
+			 	$('#teacher1').css('display','none');
+			 	$('#start5').css('display','none');
+			 }
+			    function opertor(){
+			 
+			 	$('#audio').css('display','none');
+			 	$('#opertor').css('display','block');
+			 	$('#disscuss').css('display','none');
+			 	$('#courselist2').css('display','none'); 
+			 	$('#exam1').css('display','none');
+			 	$('#middle2').css('display','none');
+			 	$('#teacher1').css('display','none');
+			 	$('#start5').css('display','none');
+			 	
+			 }
+			    function teacher(){
+			 
+			 	$('#audio').css('display','none');
+			 	$('#opertor').css('display','none');
+			 	$('#teacher1').css('display','block');
+			 	$('#disscuss').css('display','none');
+			 	$('#courselist2').css('display','none'); 
+			 	$('#exam1').css('display','none');
+			 	$('#middle2').css('display','none');
+			 	$('#start5').css('display','none');
+			 }
+			      function exam2(){
+			 
+			 	$('#audio').css('display','none');
+			 	$('#opertor').css('display','none');
+			 	$('#teacher1').css('display','none');
+			 	$('#disscuss').css('display','none');
+			 	$('#courselist2').css('display','none'); 
+			 	$('#exam1').css('display','none');
+			 	$('#middle2').css('display','none');
+			 	$('#start5').css('display','block');
+			 }
+			  
+			 function audi(){
+			 	$('#list36').css('display','block');
+			 	$('#list37').css('display','none');
+			 	$('#list34').css('background-color','#67B168');
+			 	$('#list35').css('background-color','#FFFFFF');
+			 	
+			 }
+			 function ppt(){
+			 	$('#list36').css('display','none');
+			 	$('#list37').css('display','block');
+			 	$('#list35').css({'background-color':'#67B168',
+			 	'width':'50%',
+			 	});
+			 	
+			 	$('#list34').css('background-color','#FFFFFF');
+			}
+			 function online1(){
+			 	$('#online1').css('background-color','#F2F4F7');
+			 	$('#onlineuser').css('background-color','white');
+			 	$('#take1').css('display','block');
+			    $('#take2').css('display','none');
+			 	 	
+			 }
+			 function onlineuser(){
+			 	$('#onlineuser').css('background-color','#F2F4F7');
+			 	$('#online1').css('background-color','white');
+			 	$('#take1').css('display','none');
+			    $('#take2').css('display','block');	 	
+			 }
+			 
+            //统计访客数
+            $.ajax({
+                type: "post",
+                url: "/user/courses/browser",
+                async: true,
+                dataType: "json",
+                data: {
+                    course_id:{$course[0]['course_id']}
+                },
+                success: function (data) {
+
+                }
+            });
+            //注销操作。。
+			function logout() {
+                $.ajax({
+                    type: "post",
+                    url: "/user/login/logout",
+                    async: "true",
+                    dataType: "json",
+                    success: function (data) {
+                        alert(data.msg);
+                        window.location.reload();
+                    }
+
+                });
+            }
+			//注册ajax
+			function regist() {
+                $.ajax({
+                    type: "post",
+                    url: "/user/register/regist",
+                    async: "true",
+                    dataType: "json",
+                    data: {
+                        user_id:$("#reguserid").val(),
+                        user_name: $("#regusername").val(),
+                        pwd1: $("#pwd1").val(),
+                        pwd2: $("#pwd2").val(),
+                        email: $("#mail").val(),
+                        valicode: $("#code").val()
+
+                    },
+                    success: function (data) {
+
+                        if(data.linecode==203)
+                        {
+                            alert("注册成功！");
+                            window.location.reload();
+                        }
+                        else
+                        {
+                            alert(data.msg);
+                        }
+                    }
+                });
+            }
+
+            //登陆ajax请求实例
+			function login() {
+                $.ajax({
+                    type: "post",
+                    url: "/user/login/login",
+                    async: "true",
+                    dataType: "json",
+                    data: {
+                        username: $("#username").val(),
+                        userpwd: $("#pwd").val(),
+                        valicode: $("#sure").val()
+
+                    },
+                    success: function (data) {
+                        if(data.linecode==201){
+                            window.location.reload();
+
+                        }
+                        else{
+                            if(data.linecode==407)
+                            {
+                                alert("验证码错误");
+                                loginimagecode();
+                            }
+                            else if(data.linecode==401)
+                            {
+                                alert("账号或者密码错误");
+                            }
+                            else
+                            {
+                                alert(data.msg);
+                            }
+
+                        }
+                    }
+
+                });
+            }
+			//收藏ajax
+			function addfav() {
+                $.ajax({
+                    type: "post",
+                    url: "/api/study/addstudy",
+                    async: "true",
+                    dataType: "json",
+                    data: {
+                        course_id:{$course[0]['course_id']}
+                    },
+                    success: function (data) {
+						alert(data.msg);
+						window.location.reload();
+                    }
+
+                });
+            }
+            //请求验证码
+            function registimagecode(){
+                var oimg = document.getElementById('img2');
+                oimg.setAttribute('src','__ROOT__/user/valicode/imgcode?'+Math.random());}
+            //请求验证码
+            function loginimagecode(){
+                var oimg = document.getElementById('img1');
+                oimg.setAttribute('src','__ROOT__/user/valicode/imgcode?'+Math.random());}
+		    </script>
+<!--<script type="text/javascript" src="__STATIC__/class/js/demo.js"></script>-->
+	</head>
+	<body >
+		<div class="menu">	
+			{$user}
+			<a href="__ROOT__/index/index/show" class="listitem">资源中心</a>
+			<a href="__ROOT__/index" class="listitem">首页</a>
+			<a href="__ROOT__/index" class="lastitem"><img src="__STATIC__/logo/logo3.png" width="100px" height="100px"></a>
+	   </div>
+       <div class="wrap1">
+       	<!-- <div class="img1"><img src="__STATIC__/class/images/111.png" width="70%" height="40px"></div>-->
+       	 <div class="hr1"><hr size="45" width=".2"></div>
+       	 <div class="course">
+       	 	<span>{$course[0]['course_name']}</span><br>
+       	 	<span style="color:#3C763D;font-size:13px">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{$course[0]['belong_author']}&nbsp;&nbsp;硕导</span>
+       	 </div>
+       	<div class="assess">
+       	 	<a href="#" class="asses" onclick="icourse()"><span>评价课程</span></a>
+       	</div>      	
+       	</div>
+        <div class="bottom11">
+       	<div class="left1" id="left3">      		
+   		<div class="img2">
+    	<img src="__STATIC__/../{$course[0]['img_url']}" width="93%" height="90%" class="img3">
+        </div>
+          
+        <div class="left3" id="left2">
+           <a href="#" class="flexitems listitem1" onclick="resume()" id="listitem1">课程简介</a> 
+           <a href="#" class="flexitems listitem2"onclick="teacher()" id="listitem2">教师信息</a> 
+           <a href="#" class="flexitems listitem2" onclick="courseware()" id="listitem3">视频</a>
+           <a href="#" class="flexitems listitem2" onclick="talk()" id="listitem4">课程评论</a>
+           {$test}
+           <a href="#" class="flexitems listitem2" onclick="opertor()" id="listitem6">实践操作</a>
+           <a href="__ROOT__/index/index/search/search/{$course[0]['course_name']}" class="flexitems listitem2">课件</a>
+        </div>  
+        <div>
+        {$fav}
+        </div>
+      </div>
+     <!--开始测试-->
+     <div class="start5" id="start5">
+ 	<div class="start51">
+ 		<div style="margin-left:95%;width:20px;float:left;height:38px;padding-left:3px;color:#D2D2D2;" class="close11">
+    	    <a id='close3' href="#" onclick="closewrite1()">X</a>
+    	</div>
+    	
+    	<div class="examm">亲爱的 {$user_name} 同学,恭喜你完成本门课程的学习</div>
+    	<div class="examm1" id="score">请尽快完成测试</div>
+    	 <div class="exam5" id="starttest"><a href="#" onclick="exam()">开始测试</a></div>
+    	 <div class="exam5" id="testok"><a href="#" onclick="closewrite1()">确定</a></div>
+   </div>	
+    </div>
+<!--考试倒计时-->
+<script>
+var endtime = new Date();
+endtime.setHours(new Date().getHours()+1);  //考试时间为一个小时
+function timer()  
+{  
+    var nowtime = new Date();        
+    var totalsecond = Math.floor((endtime.getTime()-nowtime.getTime())/1000); //计算剩余秒数
+    if(totalsecond==0){  //当剩余秒数为0时提交表单
+        $("#exam").submit();
+    }
+    var remainhour=Math.floor(totalsecond/3600); //剩余小时
+    var remainminite=Math.floor((totalsecond-3600*remainhour)/60);//剩余分钟    
+    var remainsecond=Math.floor(totalsecond-3600*remainhour-60*remainminite);//剩余秒数
+    $("#remainhour").text(remainhour+"小时");
+    $("#remainminite").text(remainminite+"分钟");
+    $("#remainsecond").text(remainsecond+"秒");
+}  
+setInterval(timer,1000);    
+</script>
+
+
+
+
+
+
+
+
+
+
+      <!--考试-->
+     <div class="exam" id="exam1" style="display:none;"> 
+     	<form id="exam">
+     <div class="exam4"><span>期末考试测试</div>
+     <span style="margin-left: 20%;display:inline-flex;margin-top:31px;color:#000000;font-size:14px;">（单选题&nbsp;&nbsp;2分/题）</span>
+     <span style="margin-left:40%">
+     	<label>剩余时间：
+        <span id="remainhour"></span>
+        <span id="remainminite"></span>
+        <span id="remainsecond"></span>
+       </label>	
+     </span>
+     
+     
+  	 <div style="margin-left:5.6%;margin-top:2%;width:93%;margin-bottom:1px;"><hr size="1" color="#F0F0F0"/></div> 
+     	<div style="margin-top:2%" id="testlist">
+
+           
+
+        </div>
+        <div><input type="button" value="提交答案" class="sub1" onclick="subtest()"></div>
+       </form>  
+      </div>
+
+      <!--在线实践操作-->
+     <div class="oper" id="opertor" style="display:none;">
+		 <iframe src="__ROOT__/code/index.html" width="100%" height="100%" frameborder="0" scrolling="no">
+
+		 </iframe>
+      </div>
+
+  <!--教师介绍-->
+      <div class="teacher1" id="teacher1" style="display:none;">   
+     <div class="teacher4"><span>教师信息</div>
+    <!-- <span style="margin-left: 20%;display:inline-flex;margin-top:31px;color:#000000;font-size:14px;">（单选题&nbsp;&nbsp;2分/题）</span>-->
+  	 <div style="margin-left:5.6%;margin-top:7%;width:93%;margin-bottom:1px;"><hr size="1" color="#F0F0F0"/></div> 
+     	<div style="margin-top:2%;margin-left:5%">
+     		<div class="teach">{$course[0]['teacher_info']}</div>
+     	<div style="margin-top:3%">教学成果</div>
+      <div style="margin-left:.7%;margin-top:1.5%;width:97%;margin-bottom:1px;"><hr size="1" color="#F0F0F0"/></div> 
+      <div class="teach">
+		  {$course[0]['teacher_res']}
+      </div>
+      </div>
+      
+</div>
+        <!--课程列表代码-->
+     <div class="courselist" id="courselist2" style="display:none;">   
+     <div class="course4">课程学习</div>
+  	 <div style="margin-left:5.6%;margin-top:6.4%;width:93%;margin-bottom:1px;"><hr size="1" color="#F0F0F0"/></div>
+  
+     	<div style="margin-top:4%">
+			{$courselist}
+     </div>
+</div>
+ <!--选择改变章节-->
+      <script>
+      	function showThat(obj){
+            var ops=$("#text").children();
+            $.ajax({
+                type:"post",
+                url:"/user/courses/detail",
+                async:"true",
+                dataType:"json",
+                data:{
+                    id:obj.value
+                },
+                success:function(data){
+                    var str="";
+                    for (var i=0;i<data.length;i++)
+					{
+					    str += "<option value='"+data[i].chapter_detail_link +"'>"+data[0].chapters_detail_title+"</option>";
+					}
+					document.getElementById("text").innerHTML=str;
+                    audio1(data[0].chapter_detail_link );
+
+                }
+            });
+            }
+            function playvideo(obj) {
+                audio1(obj.value);
+            }
+      </script>
+   <!--视频播放界面-->
+     <div class="right" style="display: none;" id="audio">
+     	<div class="capter">
+     	<span><a href="#" style="color: #0C0C0C;">课程学习</a></span>
+     	<span class="arg">></span>
+     	<select onchange="showThat(this)" id="ss">
+			{$selectlist}
+     	</select>
+     	<span class="arg">></span>
+     	<select id="text" onchange="playvideo(this)">
+
+     	</select>
+     <span class="question"><a onclick="audio2()">返回</a></span>
+     	</div>
+     <div class="list333">	
+     	
+     <div class="list334">
+	<div  class="right11" id="list36">
+		<video   width="100%" id="classvideo" controls="controls" height="600px;">
+		<source id="v1" src="">
+		</video>
+	</div>
+	</div>
+	 
+	<div class="list335">
+	   <div class="onlinee">
+       <div class="online1" id="online1" onclick="online1()">在线聊天</div>
+	   <div class="onlineuser" id="onlineuser" onclick="onlineuser()">在线用户</div>
+		</div>
+	<div id="take1" style="margin-top: 10px">
+		<table width="100%" style="height: 600px">
+			<tr>
+				<td >
+					<div id="talklist" style="width:100%;height:550px;overflow: auto">
+					</div>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<div class="list336">
+						<!-- <div>字体颜色</div>-->
+						<div><input type="color" style="width:55px;height:25px;" id="fcolor"></div>
+						<div style="display: flex;flex-direction: row;">
+							<input type="text" class="inputt" id="say">
+							<img src="__STATIC__/course/img/sub.png" height="35px">
+						</div>
+						<!-- <div><button class="buttonn">发送</button></div> 		 	-->
+					</div>
+				</td>
+			</tr>
+		</table>
+
+	 </div>
+	
+	<div id="take2" style="display: none;width:100%;height:550px;overflow: auto">
+	</div>
+
+	
+	</div>
+
+		<script>
+            var user_id;
+            var group_id={$course[0]['course_id']};
+            var img_url;
+            var od=false;
+            var ws;
+
+            $(document).ready(function( ){
+                $.ajax({
+                    type: "post",
+                    url: "/user/personal/userinfo",
+                    async: "true",
+                    dataType: "json",
+                    success: function (data) {
+                        if (data.linecode==402)
+                        {
+                            od=false;
+                            getsocket(false);
+                            $("#say").val("请登陆后发言!");
+                            $("#say").attr('disabled',true);
+                        }
+                        else
+                        {
+                            od=true;
+                            user_id=data.user_id;
+                            img_url=data.headimg;
+                            getsocket(true);
+                        }
+                    }
+                });
+            })
+			//获取链接
+            function getsocket(ist) {
+                ws=new WebSocket("ws://112.74.59.221:7979");
+                ws.onerror=function (e) {
+                    console.log(e);
+                }
+                ws.onopen=function () {
+                    var bt;
+                    if(ist)
+					{
+                        bt='{"type":2,"user_id": "'+user_id+'", "group_id":'+group_id+',"headimg":"'+img_url+'", "msg": "上线了"}';
+					}
+					else
+					{
+                        bt='{"type":2,"user_id": "GuestUser", "group_id":'+group_id+',"headimg":"static/images/userimg/default.jpg", "msg": "访客用户"}';
+					}
+                    ws.send(bt);
+                    var t2 = window.setInterval("heart()",18000);//加入心跳链接，定时向服务器发送数据
+                }
+                ws.onmessage=function (event) {
+                    var str=event.data;
+                    var dat=JSON.parse(str);
+                    if (dat.type==1)
+                    {
+                        $("#talklist").append('<p>'+dat.msg+'</p>');
+                    }else if(dat.type==2)//加入user队列
+                    {
+                        var listdata=dat.data;
+                        document.getElementById("take2").innerHTML="";
+                        for (var i=0;i<listdata.length;i++)
+                        {
+                            $("#take2").append('<div class="take11"><img src="/'+listdata[i].head_img+'" class="img-circle" width="27px">   <font color="red"> '+listdata[i].user_id+'</font>      地址:'+(listdata[i].IP).substring(0,6)+'****    <br>登录时间:<font color="#5f9ea0">'+listdata[i].onlinetime+'</font></div>');
+                        }
+                    }
+                    else if(dat.type==3)
+                    {
+                        $("#talklist").append('<div class="take11"><img src="/'+dat.headimg+'" class="img-circle" width="27px">    '+dat.user_id+'：'+dat.msg+'   </div>  <div>   '+dat.ctime+'</div>');
+                        var cc=document.getElementById('talklist');
+                        cc.scrollTop = cc.scrollHeight;
+                    }
+
+                }
+
+            }
+
+            function ss() {
+                var bt='{"type":3,"user_id": "'+user_id+'", "group_id":'+group_id+', "headimg": "'+img_url+'", "msg": "<font color=\''+$("#fcolor").val()+'\'>'+$("#say").val()+'</font>"}';
+                $("#say").val('');
+                ws.send(bt);
+            }
+            function heart() {
+                var bt='{"type":4,"user_id": "'+user_id+'", "group_id":'+group_id+', "headimg": "'+img_url+'", "msg": "心跳数据"}';
+                ws.send(bt);
+            }
+            document.onkeyup = function (e) {
+                var code = e.charCode || e.keyCode;
+                if (code == 13 && od) {
+                    ss();
+                }
+            }
+		</script>
+	
+	
+	</div>
+	
+ </div>
+<script language="javascript"> 
+function countChar(textareaName,spanName) 
+{ 
+document.getElementById(spanName).innerHTML = 300 - document.getElementById(textareaName).value.length; 
+} 
+</script> 
+
+ <div class="courselist" style="display: none;" id="disscuss">
+  	 <div class="bottom2" >评论区</div>
+  	 <div style="border:solid 0px #CCCCCC;margin-left:5.5%;margin-top:6%;width:75%;margin-bottom:1px;"><hr size="1" color="#F0F0F0"/></div>
+     <div class="hr">
+  	
+  	<div id="list">
+  		
+        <textarea  name="status" rows="6" cols="40" onfocus="this.value='';this.onfocus=null;" onkeydown='countChar("subcomment","counter");' 
+        onkeyup='countChar("subcomment","counter");'   style="width:700px;height:100px;margin-left:-16%;resize: none;" id="subcomment">吐槽、鼓励、表扬、想说啥就说啥.......</textarea>       
+        <button class="btn " onclick="subcomment()" style="outline:auto;">发表评论</button>
+        <!--<span id="counter">300</span><span>&nbsp;/300</span>-->
+                    
+  
+		<div id="comments" style="display: flex;flex-direction:column;">
+			<!-- 开始 -->
+
+		</div>
+        </div>
+    </div>
+  	<div style="padding-top:60%;text-align:center;width:800px;height:50px;margin-left: 100px" >
+
+
+  		<!--start -->
+						<div class="dede_pages ">
+							<ul class="pagelist" style="list-style-type:none;">
+								<b id="ssd">
+
+								</b>
+								<li><select name='sldd' style='width:42px' onchange='comm(this.options[this.selectedIndex].value)' id="selectlist">
+
+								</select></li>
+								<li><span class="pageinfo">共 <strong id="pages"></strong>页<strong id="nums"></strong>条</span></li>
+							</ul>
+						</div>
+						<!--end-->
+  	</div>
+ </div>  
+
+
+       	<div class="middle1" id="middle2">
+       		<div class="incourse">
+       			<span>亲爱的{if condition="($user_name == null)"}游客
+				{else /} {$user_name}
+				{/if}</span>
+       			<span>欢迎你学习课程《{$course[0]['course_name']}》，进入学习吧<a href="#" onclick="audio1()"><button class="button1"> 进入学习</button></a></span>
+       	   </div>   
+
+       	   <div class="summary">
+       	   	<span>课程简介</span>
+       	   	<hr size="1" width="98%" style="margin-top:1.5%;margin-left:.1%">      	   	
+       	   </div>  
+       	   <div class="content1">
+				{$course[0]['synopsis']}
+       	   </div>
+ 
+       </div>
+       	
+       	
+       	
+       	
+       	
+       	
+       	
+       	
+       	
+       	
+   <!--评论区-->
+		<script>
+            var commentstr;
+            function commentload() {
+                $.ajax({
+                    type: "post",
+                    url: "/user/comments/comments",
+                    async: true,
+                    dataType: "json",
+                    data: {
+                        course_id:{$course[0]['course_id']}
+                    },
+                    success: function (data) {
+                        commentstr=new Array();
+                        for(var i=0;i<data.length;i++)
+                        {
+                            commentstr[i]='		<div class="content" style="margin-top:6%;margin-left:25%"> <div class="comment-list"> <div class="comment-box clearfix" user="self"> <img class="myhead" src="__STATIC__/../'+data[i].headimg+'" alt=""/> <div class="comment-content" > <p class="comment-text"><span class="user">'+data[i].userid+'：</span>'+data[i].comment+'</p> <p class="comment-time">'+data[i].commenttime+' <a href="javascript:;" class="comment-praise" total="1" my="0" style="display: inline-block" onclick="praise('+data[i].comment_id+')">'+data[i].praise+' 👍</a> </p> </div> </div> </div> </div>';
+                        }
+                        document.getElementById("comments").innerHTML="";
+                        document.getElementById("ssd").innerHTML="";
+                        document.getElementById("selectlist").innerHTML="";
+                        document.getElementById("pages").innerHTML="";
+                        document.getElementById("nums").innerHTML="";
+                        for(var f=0;f<4 && f< data.length;f++)
+                        {
+
+                            $("#comments").append(commentstr[f]);
+                        }
+                        var g;
+                        for(g=1;g<=(commentstr.length/4)+1;g++)
+                        {
+                            $("#ssd").append('<li><button onclick="comm('+g+')">'+g+'</button></li>');
+                            $("#selectlist").append('<option value="'+g+'">'+g+'</option>');
+                        }
+                        $("#pages").append(parseInt((commentstr.length/4)+1));
+                        $("#nums").append(commentstr.length);
+                    }
+                });
+            }
+            commentload();
+            function comm(s)
+            {
+                document.getElementById("comments").innerHTML="";
+                var f=(s-1)*4;
+                for(;f<4*s;f++)
+                {
+
+                    $("#comments").append(commentstr[f]);
+                }
+            }
+            function subcomment()
+            {
+                $.ajax({
+                    type: "post",
+                    url: "/user/comments/subcomment",
+                    async: true,
+                    dataType: "json",
+                    data: {
+                        course_id:{$course[0]['course_id']},
+                        comment:$("#subcomment").val()
+
+                    },
+                    success: function (data) {
+                        if (data.linecode==200)
+                        {
+                            commentload();
+                        }
+                        else
+                        {
+                            alert("请登陆后评论哦！");
+                        }
+
+                    }
+                });
+            }
+            function praise(ids)
+            {
+                $.ajax({
+                    type: "post",
+                    url: "/user/comments/praise",
+                    async: true,
+                    dataType: "json",
+                    data: {
+                        comment_id:ids
+                    },
+                    success: function (data) {
+                        if (data.linecode==200)
+                        {
+                            //location.reload();
+                            commentload();
+                        }
+                        else
+                        {
+                            alert("请登陆后点赞哦！"+data);
+                        }
+
+                    }
+                });
+            }
+		</script>
+    
+
+
+   <div class="login3" id="lg6">	  
+   <form method="post">
+   	<div class="login5">
+   	    <p class="label2">欢迎注册</p>
+		<label style="font-size:14px;margin-left: 65px;color:#324B4E">用户名:</label><input type="text" id="reguserid" placeholder="请输入用户名...." size="35" style="height:30px;width:180px;focus:border-color: #67B168;color:gray"> <br><br>
+		<label style="font-size:14px;margin-left: 65px;color:#324B4E">昵  &nbsp; 称:	</label><input type="text" id="regusername" placeholder="专属你的个性昵称..." size="35" style="height:30px;width:180px;color:gray"> <br><br>
+		<label style="font-size:14px;margin-left: 65px;color:#324B4E">密   &nbsp;码:	</label><input type="password" id="pwd1" placeholder="请输入密码...." size="35" style="height:30px;width:180px;color:gray"> <br><br>
+		<label style="font-size:14px;margin-left: 65px;color:#324B4E">确认密码:	</label><input type="password" id="pwd2" placeholder="再次输入密码...." size="30" style="height:30px;width:180px;color:gray"> <br><br>
+		<label style="font-size:14px;margin-left: 65px;color:#324B4E">邮   &nbsp;箱:	</label><input type="text"  id="mail" placeholder="邮箱...." size="35" style="height:30px;width:180px;color:gray"> <br><br>
+		<label style="font-size:14px;margin-left: 45px;color:#324B4E"> &nbsp; &nbsp; &nbsp;&nbsp;验证码:</label>
+		<input type="text" id="code" style="height:30px;width:90px;color:gray">
+		<img src="__ROOT__/user/valicode/imgcode" width="70px" height="32px" onclick="registimagecode()"  id="img2"style="vertical-align: middle;">
+		<span style="font-size:13px;"><a href="#" onclick="registimagecode()"> 换一换</a></span>
+        <br><br>
+       
+		<input type="button" value="注册" id="regbtn" style="height:30px;width:110px;margin-left:120px;font-size:14px;" onclick="regist()">
+		<div style="margin-left:94%;background-color:#F5FBFE;width:20px;float:left;margin-top:-109%;height:38px;opacity:.4;padding-left:3px;" class="close1">
+    	    <a id='close1' href="#" onclick="closeregin()">X</a>
+    	    </div>
+		</div>
+   </form>
+ </div>	
+
+<div  class="login1" id="lg5">
+    	<form method="post"  >
+    	<div class="login4">
+    		
+    		<p class="label1">登录账号</p>
+    		<label style="font-size:14px;margin-left: 40px;color:#324B4E;">用户名:</label><input type="text" id="username" placeholder="请输入用户名...." size="33" style="height:30px;width:180px;color:gray"> <br><br>
+    		<label style="font-size:14px;margin-left: 40px;color:#324B4E">密   &nbsp;码:	</label><input type="password" id="pwd" placeholder="请输入密码...." size="26" style="height:30px;width:180px;color:gray"> <br><br>
+			<label style="font-size:14px;margin-left: 40px;color:#324B4E" > 验证码:</label>
+			<input type="text" id="sure" style="vertical-align:middle;height:30px;width:80px;color:gray">
+			<img src="__ROOT__/user/valicode/imgcode" width="70" height="30" id="img1" style="vertical-align:middle;" onclick="loginimagecode()"/>
+			<span style="font-size:13px;"><a href="#" onclick="loginimagecode()"> 换一换</a></span>
+			<br><br>                  
+			<input type="button" value="登录" id="btn" style="height:30px;width:120px;margin-left:60px;font-size:14px;" onclick="login()">&nbsp;&nbsp;&nbsp;&nbsp;<span style="font-size:14px"><a href="#">忘记密码</a></span>
+			<div style="margin-left:93%;background-color:#F5FBFE;width:20px;float:left;margin-top:-75%;height:38px;opacity:.4;padding-left:3px;" class="close1">
+    	    <a id='close' href="#" onclick="closelogin()">X</a>
+    	    </div>
+			</div>   	
+  	</div>
+    	</form>
+    </div>
+ 
+ <div class="course11" id="course1">
+ 	<div class="course21">
+ 		<div style="margin-left:95%;width:20px;float:left;height:38px;padding-left:3px;color:#D2D2D2;" class="close11">
+    	    <a id='close' href="#" onclick="closewrite()">X</a>
+    	 </div>
+	 <div class="write">撰写《单片机原理与应用》的课程评价</div>	
+ 	  	<div class="write8" id="divone1">
+ 	  <dd>
+ 	  	<dt style="font-size:15px;">我们建议您从下面的角度写评价:</dt>
+ 	  	<ul style="font-size:14px;color:#707070">
+ 	  	<li>描述您对于课程所涵盖知识量的评价;</li>
+ 	  	<li style="margin-top:1.2%">告诉我们您对课程趣味性的体会;</li>
+ 	  	<li style="margin-top:1.2%">评价老师在授课过程中的参与度;</li>
+ 	  	<li style="margin-top:1.2%">对于课程设计您是否有更好的建议;</li>
+ 	  	</ul>
+ 	  	<dt style="font-size:15px;">您的评价不能:</dt>
+ 	  	<ul style="font-size:14px;color:#707070">
+ 	  	<li style="margin-top:1.2%">包含辱骂，威胁或人身攻击的词语;</li>
+ 	  	<li style="margin-top:1.2%">包含与课程和自身学习经历毫不相干的内容;</li>
+ 	  	</ul>
+ 	  	<span style="font-size:14px;margin-left:3%;color:#707070">真诚的希望您能将最真实的学习体验和感受分享给大家，帮助更多热爱学习的同学。</span>
+ 	  </dd> 		
+ 	</div>	
+ 	<div class="write1" id="w1"><span style="color:red">*</span>总评</div>
+ 	<div class="write2" id="w2">
+ 		<ul class="cleanfloat" id="cl"> 
+      <li class="lib1"  id="cl1" title="1">&#9733;</li>&nbsp; &nbsp;
+       <li class="lib1" id="cl2" title="2">&#9733;</li>&nbsp; &nbsp;
+       <li class="lib1" id="cl3" title="3">&#9733;</li> &nbsp; &nbsp;
+       <li class="lib1" id="cl4" title="4">&#9733;</li>&nbsp; &nbsp;
+       <li class="lib1" id="cl5" title="5">&#9733;</li>&nbsp; &nbsp;
+   </ul> 
+ 	</div>
+ 	<div class="write3" id="w3"><span style="color:red">*</span>评价内容<span style="margin-left:65%;font-size:13px;color:#D2D2D2">至少输入10个字</span></div>
+ 	<div class="write4" id="w4">
+ 		<textarea  class="write5"  onfocus="this.value='';this.onfocus=null;" id="subdata">可以从课程组织、授课方式的角度进行评价，或者分享本门课给你带来了什么收获</textarea>
+ 	</div>
+ 	<div class="write6" id="w5"><a href="#" style="color: white;" onclick="subdata()">提&nbsp;交</a></div>
+ 	<div class="write7" id="w6"><a href="#" style="color:#333333;text-decoration: underline;" onclick="return click_a('divone1')">评价内容注意事项!</a></div>
+ 	</div>
+
+ </div>	
+ 
+ </div>
+<!--五角星评价-->
+        <script>
+			var star=0;
+    $(function () { 
+        $("ul li").hover(function(){ 
+            $(this).addClass('hs'); 
+            $(this).prevAll().addClass('hs'); 
+        },function(){ 
+            $(this).removeClass('hs'); 
+            $(this).prevAll().removeClass('hs'); 
+        }) 
+          
+        $("ul li").click(function () { 
+            $(this).addClass('cs'); 
+            $(this).prevAll().addClass('cs'); 
+            $(this).nextAll().removeClass('cs');
+            star=$(this).attr('title');
+        })
+    })
+			//提交教学评价
+			function subdata() {
+                $.ajax({
+                    type: "post",
+                    url: "/teacher/evaluation/subevaluation",
+                    async: true,
+                    dataType: "json",
+                    data: {
+                        course_id:{$course[0]['course_id']},
+						msg:$("#subdata").val(),
+						star:star
+                    },
+                    success: function (data) {
+						alert(data.msg);
+                        closewrite();
+                    }
+                });
+            }
+</script>
+
+	</body>
+</html>

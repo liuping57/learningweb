@@ -1,0 +1,113 @@
+{include file="index/header" /}
+<ol class="breadcrumb">
+    <li><a href="__ROOT__/admin">首页</a></li>
+    <li><a href="#">用户管理</a></li>
+    <li class="active">欢迎</li>
+</ol>
+
+<div>
+    <table class="table">
+        <tr>
+            <td>#</td>
+            <td>用户名</td>
+            <td>sex</td>
+            <td>email</td>
+            <td>头像</td>
+            <td>权限</td>
+            <td>最后登录时间</td>
+            <td>操作</td>
+        </tr>
+        {volist name="info" id="vo"}
+        <tr>
+            <td>1</td>
+            <td>{$vo.user_id}</td>
+            <td><img src="{if condition='$vo.sex==1'}__STATIC__/img/he.png
+                {else /}__STATIC__/img/she.png
+                {/if}" width="25px" width="25px" class="img-rounded"></td>
+            <td>{$vo.email}</td>
+            <td><img src="__STATIC__/../{$vo.headimg}" alt="..." class="img-circle" width="50px" height="50px"></td>
+            <td><select class="form-control" onchange="changemod('{$vo.user_id}',this.value)">
+                <option value="3" {if condition='$vo.chmod >=3'} selected
+                        {/if}>管理员</option>
+                <option value="2" {if condition='$vo.chmod ==2'} selected
+                        {/if}>教师用户</option>
+                <option value="1" {if condition='$vo.chmod ==1'} selected
+                        {/if}>普通用户</option>
+                <option value="0"{if condition='$vo.chmod ==0'} selected
+                        {/if}>访客用户</option>
+            </select></td>
+            <td>{$vo.login_time}</td>
+            <td><button type="button" class="btn btn-danger" onclick="deleteuser('{$vo.user_id}')">删除    <span class="glyphicon glyphicon-trash" aria-hidden="true"></span></button></td>
+        </tr>
+        {/volist}
+        <tr>
+            <td colspan="8">
+                {$info->render()}
+            </td>
+        </tr>
+
+    </table>
+    <script>
+        function deleteuser(user_id) {
+            alert(user_id);
+            $.ajax({
+                type:"post",
+                url:"/admin/user/deluser",
+                async:"true",
+                dataType:"json",
+                data:{
+                    user_id:user_id
+                },
+                success:function(data){
+                    if(data.linecode==200)
+                    {
+                        alert(data.msg);
+                        window.location.reload();
+                    }
+                    else
+                    {
+                        alert(data.msg);
+                    }
+                }
+            });
+        }
+        function changemod(user_id,chmod) {
+            $.ajax({
+                type:"post",
+                url:"/admin/user/changeusermod",
+                async:"true",
+                dataType:"json",
+                data:{
+                    user_id:user_id,
+                    user_mod:chmod
+                },
+                success:function(data){
+                    if(data.linecode==200)
+                    {
+                        alert(data.msg);
+                        window.location.reload();
+                    }
+                    else
+                    {
+                        alert(data.msg);
+                    }
+                }
+            });
+        }
+    </script>
+</div>
+
+
+{include file="index/footer" /}
+
+
+
+
+
+
+
+
+
+
+
+

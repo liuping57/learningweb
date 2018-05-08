@@ -1,0 +1,42 @@
+{include file="index/header" /}
+<ol class="breadcrumb">
+    <li><a href="__ROOT__/admin">首页</a></li>
+    <li><a href="#">资源管理</a></li>
+    <li class="active">编辑资源</li>
+</ol>
+<form action="__ROOT__/admin/index/save" method="post">
+    <div class="table-responsive" >
+        <table class="table" >
+            <tr class="info">
+                <td>资源名称</td>
+                <td>资源类型</td>
+                <td>资源简介</td>
+                <td>关联课程</td>
+                <td>备注信息</td>
+                <td>下载地址</td>
+            </tr>
+            <tr>
+                {volist name='user' id='user'}
+                <td><input type="text" name="name" class="form-control" placeholder="资源名称" id="name" value="{$user.name}"></td>
+                <td><select class="form-control" name="type" selected="{$user.type|mb_substr=0,50,'utf-8'| }">
+                    <option>音频</option>
+                    <option>视频</option>
+                    <option>文档</option>
+                    <option>压缩文件</option>
+                </select></td>
+                <td><input type="text" name="title" class="form-control" placeholder="资源简介" id="title" value="{$user.title|mb_substr=0,20,'utf-8' }"></td>
+                <td><input type="text" name="courseName" class="form-control" placeholder="关联课程" id="courseName" value="{$user.courseName}"></td>
+                <td><textarea class="form-control" rows="3" id="content" name="content" >{$user.content}</textarea></td>
+                <td><input type="text" name="downloadAddress" class="form-control" placeholder="下载地址" id="downloadAddress" value="{$user.downloadAddress}"></td>
+
+            </tr>
+            {/volist}
+            <tr>
+                <td colspan="7" align="right">
+                    <button type="submit" class="btn btn-info" >保存</button>
+                </td>
+            </tr>
+        </table>
+    </div>
+</form>
+{include file="index/footer" /}

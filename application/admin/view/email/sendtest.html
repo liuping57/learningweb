@@ -1,0 +1,81 @@
+{include file="index/header" /}
+<ol class="breadcrumb">
+    <li><a href="__ROOT__/admin">首页</a></li>
+    <li><a href="#">邮件中心</a></li>
+    <li class="active">发送普通邮件</li>
+</ol>
+<form action="" method="post">
+<div class="row">
+    <div class="col-md-1">收件人：</div>
+    <div class="col-md-8"><input type="text" class="form-control" placeholder="收件人" list="pt1" id="emailadd">
+        <datalist id="pt1">
+
+        </datalist>
+        <p/></div>
+    <div class="col-md-3"></div>
+</div>
+    <div class="row">
+        <div class="col-md-1">标题</div>
+        <div class="col-md-8"><input type="text" class="form-control" placeholder="标题" id="title"><p/></div>
+        <div class="col-md-3"></div>
+    </div>
+<div class="row">
+    <div class="col-md-1">内容</div>
+    <div class="col-md-8"><div id="test"></div><p/></div>
+    <div class="col-md-3"></div>
+</div>
+<div class="row">
+    <div class="col-md-1"></div>
+    <div class="col-md-8 text-right"><button type="button" class="btn btn-primary" onclick="sendmail()">发送</button></div>
+    <div class="col-md-3"></div>
+</div>
+</form>
+
+
+<script src="https://unpkg.com/wangeditor@3.1.1/release/wangEditor.min.js"></script>
+<script>
+    var E = window.wangEditor
+    var editor2 = new E('#test')
+    editor2.create()
+    $(document).ready(function(){
+        $('#emailadd').bind('input propertychange keyup', function() {
+            $.ajax({
+                type: "post",
+                url: "__ROOT__/api/getuser/user",
+                async: "true",
+                dataType: "json",
+                data:{
+                    str:$("#emailadd").val()
+                },
+                success: function (data) {
+                    var dds="";
+                    for(var i=0;i < 6 && i<data.length;i++)
+                    {
+                        dds +='<option value="'+data[i].email+'">'+data[i].user_id+'</option>';
+                    }
+                    document.getElementById("pt1").innerHTML=dds;
+                }
+            });
+        });
+        })
+    function sendmail() {
+        $.ajax({
+            type: "post",
+            url: "__ROOT__/api/sendmail/sendtest",
+            async: "true",
+            dataType: "json",
+            data:{
+                email:$("#emailadd").val(),
+                title:$("#title").val(),
+                con:editor2.txt.html()
+            },
+            success: function (data) {
+                alert(data.msg);
+            }
+        });
+    }
+</script>
+
+
+
+{include file="index/footer" /}

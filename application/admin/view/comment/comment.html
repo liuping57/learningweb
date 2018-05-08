@@ -1,0 +1,57 @@
+{include file="index/header" /}
+<ol class="breadcrumb">
+    <li><a href="__ROOT__/admin">首页</a></li>
+    <li><a href="#">评论管理</a></li>
+    <li class="active">编辑评论</li>
+</ol>
+<h1 class="text-center">评论管理</h1>
+<table class="table">
+    <tr>
+        <td>#</td>
+        <td>用户ID</td>
+        <td>课程名</td>
+        <td>留言时间</td>
+        <td>内容</td>
+        <td>获得的点赞</td>
+        <td>操作</td>
+
+    </tr>
+    {volist name='comment' id='com'}
+    <tr>
+        <td>1</td>
+        <td>{$com.user_id}</td>
+        <td>{$course_name}</td>
+        <td>{$com.comment_date}</td>
+        <td>{$com.comment}</td>
+        <td>{$com.praise}</td>
+        <td><button type="button" class="btn btn-danger" onclick="delcomment({$com.comment_id})">删除   <span class="glyphicon glyphicon-trash" aria-hidden="true"></span></button></td>
+    </tr>
+    {/volist}
+    <tr>
+        <td><button type="button" class="btn btn-success" onclick="window.location.href='__ROOT__/admin/course/courselist'"><span class="glyphicon glyphicon-arrow-left" aria-hidden="true"></span>   返回课程列表</button></td>
+        <td colspan="6">
+            {$page}
+        </td>
+    </tr>
+</table>
+<script>
+    function delcomment(comment_id) {
+        $.ajax({
+            type:"post",
+            url:"/api/addcourse/delcomment",
+            async:"true",
+            dataType:"json",
+            data:{
+                comment_id:comment_id
+            },
+            success:function(data){
+                if(data.linecode==200)
+                {
+                    alert(data.msg);
+                    window.location.reload();
+                }
+            }
+        });
+    }
+</script>
+{include file="index/footer" /}

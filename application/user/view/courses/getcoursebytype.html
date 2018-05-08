@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>课程分类</title>
+
+  <link rel="stylesheet" href="__STATIC__/course/css/reset.css">
+  <link rel="stylesheet" href="__STATIC__/course/css/index.css">
+       <style type="text/css">
+       	 *{
+	        	margin:0px;
+	        	padding: 0px;
+	        	list-style: none;
+        		font-family: "微软雅黑";
+        		color: #000000;
+        		text-decoration: none;
+        	    }
+		.one{
+				margin-left: 40%;
+				width:50%;
+				height: 100px;
+				padding-top: 40px;
+				
+				}
+		.one a:hover{
+            	color: gray;
+            }
+			.five{
+
+				width: 100%;
+				height: 120px;
+				background:#222222;
+				}
+			.yqlj{
+							text-align: center;
+							margin-top: 120px;
+						}
+					.yqlj a{
+							color:#000000;
+						}
+
+       </style>
+</head>
+<body>
+  <header class="header">
+      <div style="margin-left:100px;margin-bottom: -130px">
+          <img src="/static/logo/logo3.png" width="100px" height="100px" onclick="window.location.href='/'">
+      </div>
+    		<div style="background-color:#ffffff; width: 100%; height:100px;margin-top: 10px" >
+			<div class="one" >
+	            <div class="nav-item " style="float: left;margin-left: 50px;">
+	                 <a href="/"​>首页</a>
+	            </div>
+	            <div class="nav-item " style="float: left;margin-left: 50px;">
+	                 <a href="#"​>课程分类</a>
+	            </div>
+	            <div class="nav-item " style="float: left;margin-left: 50px;">
+	                 <a href="/index/#01"​>精品课程</a>
+	            </div>
+	            <div class="# " style="float: left;margin-left: 50px;">
+	                <a href="/index/#02"​>推荐课程</a>
+	            </div>
+	            <div class="nav-item " style="float: left;margin-left: 50px;">
+	                <a href="/index/#03"​>优课展示</a>
+	            </div>
+
+
+        	</div>
+		</div>
+  </header>
+  <div class="main">
+    <div class="main-inner body-width">
+
+      <div class="main-cont main-recommend">
+        <div class="main-cont__title">
+          <h3>课程分类</h3>
+          <p class="list">
+            <em>分类：</em>
+            <a href="/user/courses/getCoursebyType/type/理科">理科</a>
+            <span>|</span>
+            <a href="/user/courses/getCoursebyType/type/工科">工科</a>
+            <span>|</span>
+            <a href="/user/courses/getCoursebyType/type/经济学">经济学</a>
+            <span>|</span>
+            <a href="/user/courses/getCoursebyType/type/人文学">人文学</a>
+            <span>|</span>
+            <a href="/user/courses/getCoursebyType/type/医学">医学</a>
+            <span>|</span>
+            <a href="/user/courses/getCoursebyType/type/法学">法学</a>
+            <span>|</span>
+            <a href="/user/courses/getCoursebyType/设计建筑">建筑设计</a>
+          </p>
+        </div>
+        <ul class="main-cont__list clearfix">
+          {volist name='list' id='list'}
+          <li class="item">
+            <a href="/user/getclass/course/?id={$list.course_id}" class="pic" ><img src="__STATIC__/../{$list.img_url}" alt="#" height="190" width="220"></a>
+            <div class="info">
+              <a href="/user/getclass/course/?id={$list.course_id}" class="title">{$list.course_name}</a>
+              <span>{$list.learncount}人正在学习</span>
+            </div>
+          </li>
+          {/volist}
+        </ul>
+      </div>
+    </div>
+  </div>
+  <footer>
+  </footer>
+
+</body>
+</html>

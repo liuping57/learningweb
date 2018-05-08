@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		<link rel="stylesheet" href="http://apps.bdimg.com/libs/bootstrap/3.3.0/css/bootstrap.min.css">  
+        <script src="http://apps.bdimg.com/libs/jquery/2.1.1/jquery.min.js"></script>
+        <script src="http://apps.bdimg.com/libs/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+       <style type="text/css">
+       	 *{
+	        	margin:0px;
+	        	padding: 0px;
+	        	list-style: none;
+        		font-family: "微软雅黑";
+        		color: #000000;
+
+        	    }
+		.one{
+				margin-left: 40%;
+				width:50%;
+				height: 100px;
+				padding-top: 40px;
+				
+				}
+		.one a{
+				text-decoration: none;
+				font-size: 16px;
+		}
+				
+		.one a:hover{
+            	color: gray;
+            }
+        .aa{
+        	width: 800px;
+        	height: 300px;
+        	margin: auto;
+        }
+        .aa td a{
+        	text-decoration: none;
+        }
+        a{
+        	color:black;
+        }
+       </style>
+	</head>
+	<body>
+		<div style="background-color:#000000; width: 100%;">
+			<div class="pull-left">
+                <a href="/"></a><img src="/static/logo/logo3.png" width="100px" height="100px"></div>
+            </div>
+			<div class="one" >
+	            <div class="nav-item " style="float: left;margin-left: 50px;">
+	                 <a href="../index"​>首页</a>
+	            </div>
+            <div class="nav-item " style="float: left;margin-left: 50px;">
+                <a href="/index/#00"​>课程分类</a>
+            </div>
+            <div class="nav-item " style="float: left;margin-left: 50px;">
+                <a href="/index/#01"​>精品课程</a>
+            </div>
+            <div class="nav-item " style="float: left;margin-left: 50px;">
+                <a href="/index/#02"​>推荐课程</a>
+            </div>
+            <div class="nav-item " style="float: left;margin-left: 50px;">
+                <a href="/index/#03"​>优课展示</a>
+            </div>
+				<div class="nav-item " style="float: left;margin-left: 50px;display: none" id="admingoto">
+					<a href="../admin"​>管理员入口</a>
+				</div>
+	            <div class="nav-item " style="float: left;margin-left: 50px;">
+	                <a href="#"​ onclick="logout()">退出登陆</a>
+	            </div>
+        	</div>
+		</div>
+		<form>
+			<div class="aa">
+		<center>
+				<div class="aa" width="60%" border="0" style="margin-top: 5%">			
+				<table class="table table-hover">
+					<caption><h2>学习进度</h2></caption>
+	             	<tr>
+	             		<th>序号</th>
+	             		<th>课程名称</th>
+	             		<th>学习进度</th>	             		
+	             	</tr>
+	             	<tr>
+	             		<td>1</td>
+	             		<td>计算机网络</td>
+	             		<td>
+	             			<div class="progress">
+  							 	<div class="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 60%;"> 60%</div>
+							</div>
+	             		</td>
+	             	</tr>
+	             	<tr>
+	             		<td>2</td>
+	             		<td>微机原理</td>
+	             		<td>
+	             			<div class="progress">
+  							 	<div class="progress-bar" role="progressbar" aria-valuenow="45" aria-valuemin="0" aria-valuemax="100" style="width: 45%;"> 45%</div>
+							</div>
+	             		</td>
+	             	</tr>
+	             	<tr>
+	             		<td>3</td>
+	             		<td>英语</td>
+	             		<td>
+	             			<div class="progress">
+  							 	<div class="progress-bar" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100" style="width: 80%;"> 80%</div>
+							</div>
+	             		</td>
+	             	</tr>
+	             	<tr>
+	             		<td>4</td>
+	             		<td>java</td>
+	             		<td>
+	             			<div class="progress">
+  							 	<div class="progress-bar" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" style="width: 100%;"> 100%</div>
+							</div>
+	             		</td>
+	             	</tr>
+	             	<tr>
+	             		<td>...</td>
+	             		<td>...</td>
+	             		<td>...</td>
+
+	             	</tr>					
+			</table>
+			</div>
+		</center>
+			</div>
+			
+		</form>
+		
+	</body>
+</html>
+
+
+

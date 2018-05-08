@@ -1,0 +1,1364 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title>网络教学资源网</title>
+       <!-- <link href="http://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">-->
+        <link href="css/font-awesome.min.css" rel="stylesheet" type="text/css"/>
+        <link href="css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+        <link href="css/animate.min.css" rel="stylesheet" type="text/css" />
+        <link href="css/global.css" rel="stylesheet" type="text/css" />
+        <link href="css/lib.css" rel="stylesheet" type="text/css" />
+        <link href="css/style.css" rel="stylesheet" type="text/css" />
+        <link href="css/p11.css" rel="stylesheet" type="text/css">
+        <link href="css/form.css" rel="stylesheet" type="text/css" media="all" />
+        <link href="http://code.jquery.com/ui/1.10.4/themes/ui-darkness/jquery-ui.css" />
+        <script src="js/jquery-1.9.1.min.js"></script>
+        <script type="text/javascript" src="http://code.jquery.com/ui/1.10.4/jquery-ui.js" ></script>
+        <script src="js/global.js"></script>
+        <script src="js/cn.js"></script>
+        <script src="js/checkform.js"></script>    
+        <script src="js/wow.js"></script>
+        <script src="js/imagesloaded.min.js"></script>  
+        <script src="js/countup.js"></script>
+        <script src="js/bootstrap.min.js"></script>    
+        <script src="js/website.js"></script>
+        <script>
+            jQuery(window).scrollTop(0);
+            jQuery('html,body').scrollTop(0);
+            new WOW().init({
+                mobile: false
+            });
+
+            $(function() {
+                setTimeout(function() {
+                    $('#body').show();
+                },
+                500);
+            })
+        </script>
+      
+     <style>
+     	body{height: 100%;
+     	    margin:0;
+     	    }
+     	
+     	.login1{
+				width:1900px;
+				height:1000px;
+				display: none;
+				position:absolute;
+				top:85px;
+			    margin-left:-55%;	
+			    
+				transition: opacity 1s; 
+				background-color: azure;
+			    background-color:rgba(0,0,0,0.65);	      
+				color: white;
+				    	
+              }
+			.login1 input:focus{
+			   
+			    border-color: #03a9f4;  
+			    box-shadow: 0 0 15px #24B727;  
+			}
+			.login3 input:focus{
+			   
+			    border-color: #03a9f4;  
+			    box-shadow: 0 0 15px #24B727;  
+			}
+			.login3{
+				width:1900px;
+				height:1000px;
+				display: none;
+				position:absolute;
+				top:85px;
+			    margin-left:-65%;	
+			    
+				transition: opacity 1s; 
+				background-color: azure;
+			    background-color:rgba(0,0,0,0.65);	      
+				color: white;
+				    	
+}
+            .login4{
+            	background-color: whitesmoke;
+            	width:350px;
+            	height: 300px;          	
+            	margin-left: -60%;
+            	margin-top:20px;  
+            	border-radius:10%;
+                padding-top:2%;
+            }
+            .login5{
+            	background-color: whitesmoke;
+            	width:400px;
+            	height: 450px;
+            	margin-left:-60%;
+            	margin-top:20px; 
+            	border-radius:10%;           
+	            }
+        input, button {
+            border: none;
+            outline: none;
+        }
+
+
+        button {
+        	padding-left:20px;
+        	margin-top:.5%;
+            height: 42px;
+            width: 42px;
+            cursor: pointer;
+            position: absolute;
+        }
+
+      /*搜索框5*/
+      
+       .bar5 {display: flex;
+       flex-direction:row;
+       	margin-left:79%;           
+             height:50px;
+             width:25%;
+              }
+   
+       
+        .bar5 input, .bar5 button {
+            background: transparent;
+        }
+        .bar5 input {
+            border: 1.4px solid #F9F0DA;
+        }
+        .bar5 button {
+        	font-size: 19px;
+            top: 0;
+            right: 0;
+        }
+        .bar5 button:before {
+            content: "\f002";
+            font-family: FontAwesome;
+            
+            color: #D4D4D4;
+        }
+        .bar5 input:focus {
+            border-color:#D4D4D4;
+            font-size:14px;
+         
+        }
+       
+    .lg{
+    	float:left;
+    	margin-left:900px;
+    	margin-top:-45px;
+    	overflow:hidden;
+        width:45px;
+        height:45px;
+        border-radius:50%;
+    	
+    }
+
+       .lgd{
+        float:left;
+        margin-left:950px;
+        margin-top:-45px;
+        overflow:hidden;
+        size: +2;
+    }
+    form{position: relative;
+            width: 300px;
+            margin: 0 auto;
+    	
+    }
+   .search-form{position: relative;
+            width: 300px;
+            margin: 0 auto;}
+	.search-box{position:absolute;top:150px;left: 200px; }
+	.suggest{
+	 width:299px;
+	 background-color:#fff;
+	 display:none;
+	 float:left;
+	 margin-left:82%;
+	 margin-top:-2.4%;
+	 font-size:16px;
+	 display: flex;
+     flex-direction:column;	
+	 }
+	.suggest ul{list-style:none;margin:0;padding:0}
+	.suggest ul li {padding:3px;line-height:25px;font-size: 13px;color: #777;cursor: pointer;}
+	.suggest ul li:hover{background-color:#F5F5F5;text-decoration: none;}
+	a:hover {text-decoration: none;}    
+    .close1{
+	    -webkit-transition:border linear .2s,-webkit-box-shadow linear .5s; 
+		border-color:rgba(141,39,142,.75); 
+		-webkit-box-shadow:0 0 18px rgba(111,1,32,3); 
+    	border-radius:20%;
+    	font-size:24px;    	
+    }
+   .footer1{
+   	padding-left: 1%;
+   	padding-right:1%;
+   	display:flex;
+   	flex-direction: row;
+   	width: 100%;
+   	height: 350px;
+   	margin-top:-32%;
+   	margin-bottom: -32%;  
+   }
+   .input1{
+   height:37px;
+   width:104px;
+   margin-left:80px;
+   font-size:15px;
+   padding-top:-10%;
+   }
+   .input1:hover{
+   	background:#D0D0D0;
+   	font-size:16px;
+   }
+   .input2{
+   	height:37px;
+   	width:104px;
+   	margin-left: 130px;
+   	font-size:14px;
+   	margin-top: 3%;
+   	padding-bottom: 10%;
+   }
+     .input2:hover{
+   	background:#D0D0D0;
+   	font-size:16px;
+   }
+   .logout1{
+   	display: flex;
+   	flex-direction: row;
+   	width:200px;
+   	height:50px;
+   	margin-left:88%;
+   	margin-top:-4.5%;
+   
+   }
+     </style>
+
+     
+   <script>
+    /*
+    *页面初始化请求
+    */
+    //判断登陆状态显示
+	var udl="";
+    $(document).ready(
+        function(){
+            $.ajax({
+                type:"post",
+                url:"../index.php?s=/user/personal/userinfo",
+                async:"true",
+                dataType:"json",
+                success:function(data){
+                    if(data.linecode==402)
+                    {
+                        $("#lg3").css("display","none");
+                        $("#lg4").css("display","none");
+                         $("#lg2").css("display","inline");
+                        $("#lg1").css("display","inline");
+                        $
+                    }
+                    else
+                    {   $("#search-suggest").css({"margin-left":"54.7%","margin-top":"-.5%"});
+                        $("#lg3").css({"display":"inline","margin-left":"6%","margin-top":"1%"});
+                        $("#lg4").css({"display":"flex","flex-direction":"row","margin-left":"15%","margin-top":"4%"});
+                        $("#lg2").css("display","none");
+                        $("#lg1").css("display","none");
+                        $("#nav1").css({"width":"40%","margin-left":"-30%","display":"flex","flex-direction":"row"}); 
+                        $("#ser1").css("margin-left","62%");
+                        $("#ser").css({"margin-left":"530px","margin-top":"-140px"});  
+                     
+                        $("#headimg").attr('src',"../"+data.headimg);    
+                        $("#usernamehead").text(data.user_id);
+						if (data.chmod>=2)
+                        {
+                            udl="/teacher";
+                        }
+                        else
+                        {
+                            udl="/personal";
+                        }
+                    }
+                }
+            });
+        }
+        )
+function gotocenter() {
+    window.location.href=udl;
+}
+        //加载banner轮播图
+        $(document).ready(function(){
+            $.ajax({
+                type: "post",
+                url: "../index.php?s=/user/index/banner",
+                async: "true",
+                dataType: "json",
+                success: function (data) {
+                $("#bannerimg1").attr('src',"../"+data[0].img_url);
+                $("#bannerimg2").attr('src',"../"+data[1].img_url);
+                $("#bannerimg3").attr('src',"../"+data[2].img_url);
+                $("#bannerlink1").attr('href','../user/getclass/course/?id='+data[0].course_id);
+                $("#bannerlink2").attr('href','../user/getclass/course/?id='+data[1].course_id);
+                $("#bannerlink3").attr('href','../user/getclass/course/?id='+data[2].course_id);
+
+             }
+            });
+        })
+
+        //加载精品课程
+        $(document).ready(function(){
+            $.ajax({
+                type: "post",
+                url: "../index.php?s=/user/index/excellent",
+                async: "true",
+                dataType: "json",
+                success: function (data) {
+                $('#cimg1').attr('src',"../"+data[0].image);
+                $('#chref1').attr('href','../user/getclass/course/?id='+data[0].id);
+                $('#cname1').text(data[0].class_name);
+
+                $('#cimg2').attr('src',"../"+data[1].image);
+                $('#chref2').attr('href','../user/getclass/course/?id='+data[1].id);
+                $('#cname2').text(data[1].class_name);
+
+                $('#cimg3').attr('src',"../"+data[2].image);
+                $('#chref3').attr('href','../user/getclass/course/?id='+data[2].id);
+                $('#cname3').text(data[2].class_name);
+
+                $('#cimg4').attr('src',"../"+data[3].image);
+                $('#chref4').attr('href','../user/getclass/course/?id='+data[3].id);
+                $('#cname4').text(data[3].class_name);
+
+                $('#cimg5').attr('src',"../"+data[4].image);
+                $('#chref5').attr('href','../user/getclass/course/?id='+data[4].id);
+                $('#cname5').text(data[4].class_name);
+
+                $('#cimg6').attr('src',"../"+data[5].image);
+                $('#chref6').attr('href','../user/getclass/course/?id='+data[5].id);
+                $('#cname6').text(data[5].class_name);
+
+             }
+            });
+
+             //推荐课程生成
+                
+            $.ajax({
+                type: "post",
+                url: "../index.php?s=/user/index/recommend",
+                async: "true",
+                dataType: "json",
+                success: function (data) {
+                    var str="";
+                    for(var i=0;i<data.length;i++)
+                    {
+                        $("#thref"+i).attr('href','../user/getclass/course/?id='+data[i].id);
+                        $("#timg"+i).attr('src',"../"+data[i].image);
+                    }
+             }
+            });
+
+                //趣味课堂推荐
+            $.ajax({
+                type: "post",
+                url: "../index.php?s=/user/index/interest",
+                async: "true",
+                dataType: "json",
+                success: function (data) {
+                    for(var i=0;i<data.length;i++)
+                    {
+                        
+                        $("#shref"+i).attr('href','../user/getclass/course/?id='+data[i].id);
+                        $("#shref"+i).text(data[i].class_name);
+                        $("#synopsis"+i).text((data[i].synopsis).substr(0,20));
+                        $("#simg"+i).css('background-image','url('+"../"+data[i].image+')');
+                    }
+             }
+            });
+        })
+
+        //优质课程
+        
+        $.ajax({
+                type: "post",
+                url: "../index.php?s=user/index/elaborate",
+                async: "true",
+                dataType: "json",
+                success: function (data) {
+                    for(var i=0;i<data.length;i++)
+                    {
+                        $("#ycourse"+i).text("课程名："+data[i].class_name);
+                        $("#yauthor"+i).text("课程作者："+data[i].author);
+                        $("#yimg"+i).attr('src',"../"+data[i].image);
+                        $("#yihref"+i).attr('href','../user/getclass/course/?id='+data[i].id);
+                        $("#yhref"+i).attr('href','../user/getclass/course/?id='+data[i].id);
+                    }
+             }
+            });
+        //搜索框代码
+        $(document).ready(function(){
+            $('#search_input').bind('input propertychange keyup', function() {
+                
+                $.ajax({
+                type: "post",
+                url: "../index.php?s=/user/courses/findclass",
+                async: "true",
+                dataType: "json",
+                data:{
+                    course_name:$("#search_input").val()
+                },
+                success: function (data) {
+                  var dds="";
+                  for(var i=0;i < 6 && i<data.length;i++)
+                  {
+                    dds +="<li><a href='../user/getclass/course/?id="+data[i].course_id+"'>"+data[i].course_name+"</a></li>";
+                  }
+                  document.getElementById("search-result").innerHTML=dds;
+
+                        
+                    }
+                });
+            });
+
+
+        })
+
+
+    //注销操作。。
+    $(document).ready(function() {
+ $("#logout").click(function () {
+     $.ajax({
+         type: "post",
+         url: "../index.php?s=/user/login/logout",
+         async: "true",
+         dataType: "json",
+         success: function (data) {
+              alert(data.msg);
+              window.location.href="index.html";
+             }
+
+     });
+ })
+})
+
+   	  //登陆ajax请求实例
+  	$(document).ready(function() {
+ $("#btn").click(function () {
+     $.ajax({
+         type: "post",
+         url: "../index.php?s=/user/login/login",
+         async: "true",
+         dataType: "json",
+         data: {
+             username: $("#username").val(),
+             userpwd: $("#pwd").val(), 
+             valicode: $("#sure").val()
+
+         },
+         success: function (data) {
+              if(data.linecode==201){
+              	window.location.href="index.html";
+              	                	
+              }
+              else{
+                if(data.linecode==407)
+                {
+                    alert("验证码错误");
+                    loginimagecode();
+                }
+                else if(data.linecode==401)
+                {
+                    alert("账号或者密码错误");
+                }
+                else
+                {
+                    alert(data.msg);
+                }
+              	
+              }
+             }
+
+     });
+ })
+})
+    //弹出登录框
+	function login2(){
+	   var oscore = document.getElementsByClassName("login1")[0];
+       oscore.style.display = 'block';
+       setTimeout(function () {
+       oscore.style.opacity = 2;
+  }, 500); }
+        
+        //弹出注册框
+      function register(){
+	   var oscore = document.getElementsByClassName("login3")[0];
+       oscore.style.display = 'block';
+       setTimeout(function () {
+       oscore.style.opacity = 2; 
+  }, 500);} 
+    //请求验证码
+	 function registimagecode(){
+    var oimg = document.getElementById('img2');
+	  oimg.setAttribute('src','../index.php?s=/user/valicode/imgcode&a='+Math.random());}  
+            //请求验证码
+         function loginimagecode(){
+    var oimg = document.getElementById('img1');
+      oimg.setAttribute('src','../index.php?s=/user/valicode/imgcode&a='+Math.random());}   
+
+      //注册ajax实例
+ 	$(document).ready(function() {
+ $("#regbtn").click(function () {
+     $.ajax({
+         type: "post",
+         url: "../index.php?s=/user/register/regist",
+         async: "true",
+         dataType: "json",
+         data: {
+             user_id:$("#reguserid").val(),
+             user_name: $("#regusername").val(),
+             pwd1: $("#pwd1").val(),
+             pwd2: $("#pwd2").val(),
+             email: $("#mail").val(),
+             valicode: $("#code").val()
+
+         },
+         success: function (data) {
+
+                    if(data.linecode==203)
+                    {
+                        alert("注册成功！");
+                        window.location.href="index.html";
+                    }
+                    else
+                    {
+                        alert(data.msg);
+                    }
+         }
+     });
+ })
+})
+   </script>
+ <script>
+			$('#search_input').bind('keyup',function(){
+					$('#search-suggest').show().css({
+					top:$('#search-form').offset().top+$('#search-form').height()+30,
+					left:$('#search-form').offset().left+$('#search-form').Left(),
+					position:'absolute'
+				});
+			});
+			$(document).bind('click',function(){
+				$('#search-suggest').hide();
+			});		
+			
+			function closelogin(){
+            	$('#lg5').css('display','none');           	
+            }
+		     function closeregin(){
+            	$('#lg6').css('display','none');           	
+            }
+			</script> 
+   
+   
+   </head>
+       <body>      	
+        <header class="trans border-box">
+            <div class="wrap clean relative" style="float: left;margin-left: 20px;"> 
+                <div id="logo" class="fl relative trans" style="width:170px;height:80px;overflow: hidden;">
+                    <a href="index.html"​ class="relative trans">
+                        <img src="../static/logo/logo3.png" alt="" class="max-w100 max-h100 trans" width="100px" height="150px">
+                    </a>
+                </div>
+                <nav class="absolute fz0 trans border-box stopP " style="margin-left:-24%;" id="nav1">
+                    <div class="bd over clean" style="float: left;margin-left:-60px;">
+                        <div class="title clean show992">
+                            <a href="#"​ class="btn-close trans middle fr" onClick="ActionMenu('Close');">
+                            </a>
+                        </div>                      
+                        <div class="nav-item fl text-center trans" style="float: left;margin-left: 22px;">
+                            <a href="index.html"​ class='on trans'>首页</a>
+                        </div>
+                        <div class="nav-item fl text-center trans" style="float: left;margin-left: 10px;">
+                            <a href="#00"​>课程分类</a>
+                        </div>
+                        <div class="nav-item fl text-center trans" style="float: left;margin-left: 10px;">
+                            <a href="#01"​>精品课程</a>
+                        </div>
+                        <div class="nav-item fl text-center trans" style="float: left;margin-left: 10px;">
+                            <a href="#02"​>推荐课程</a>
+                        </div>
+                        <div class="nav-item fl text-center trans" style="float: left;margin-left: 10px;">
+                            <a href="#03"​>优课展示</a>
+                        </div>
+                          <div class="nav-item fl text-center trans" style="float: left;margin-left: 10px;">
+                            <a href="../index/index/show"​>资源中心</a>
+                        </div>
+                        <div class="nav-item fl text-center trans" id="lg1">
+                            <a  href="#" onclick="login2()">登录</a>
+                        </div>
+                        
+                        <div class="nav-item fl text-center trans" id="lg2" style="margin-left:-1%;">
+                            <a href="#"​ onclick="register()">注册</a>  
+                        </div> 
+                     
+        <div  class="login1" id="lg5">     		
+    	<form method="post" action="contact-post.html" >   		
+    	<div class="login4">          	    
+    	   <center><label style="font-size:21px;text-align:center;margin-top:10px;background-color:#007F06;color: white;width:400px;height:40px;border-radius:10%;">登录账号</label></center>	
+    	    
+    		<label style="font-size:14px;margin-left: 70px;">用户名:</label><input type="text" id="username" placeholder="请输入用户名...." size="33" style="height:30px;width:180px;"> <br>
+    		<label style="font-size:14px;margin-left: 70px;">密   &nbsp;码:	</label><input type="password" id="pwd" placeholder="请输入密码...." size="26" style="height:30px;width:180px"> <br>
+			<label style="font-size:14px;margin-left: 70px;" > 验证码:</label>
+			<input type="text" id="sure" style="vertical-align:middle;height:30px;width:80px">
+			<img src="../index.php?s=/user/valicode/imgcode" width="70" height="30" id="img1" style="vertical-align:middle;" onclick="loginimagecode()" >
+			<span style="font-size:13px;"><a href="#" onclick="loginimagecode()"> 换一换</a></span> <br/>         
+			<input type="button" value="登录" id="btn" class="input1">&nbsp;&nbsp;&nbsp;&nbsp;<span style="font-size:14px"><a href="#">忘记密码</a></span>
+			</div>
+    	     <div style="margin-left:50%;background-color:#F5FBFE;width:20px;float:left;margin-top:-94.2%;height:38px;opacity:.4;padding-left:3px;padding-top:-4%;" class="close1">
+    	    <a id='close' href="#" onclick="closelogin()">X</a>
+    	    </div>
+    	</form>
+    </div>               
+   <div class="login3" id="lg6">	  
+   <form method="post" action="contact-post.html">
+   	<div class="login5">
+   	    <center><label style="font-size:21px;text-align:center;margin-top:10px;background-color:#007F06;color: white;width:400px;height:40px;border-radius:10%;">欢迎注册</label></center>
+		<label style="font-size:14px;margin-left: 70px;">用户名:</label><input type="text" id="reguserid" placeholder="请输入用户名...." size="35" style="height:30px;width:180px;focus:border-color: #67B168;"> <br>
+		<label style="font-size:14px;margin-left: 70px;">昵  &nbsp; 称:	</label><input type="text" id="regusername" placeholder="专属你的个性昵称..." size="35" style="height:30px;width:180px;"> <br>
+		<label style="font-size:14px;margin-left: 70px;">密   &nbsp;码:	</label><input type="password" id="pwd1" placeholder="请输入密码...." size="35" style="height:30px;width:180px;"> <br>
+		<label style="font-size:14px;margin-left: 70px;">确认密码:	</label><input type="password" id="pwd2" placeholder="再次输入密码...." size="30" style="height:30px;width:180px;"> <br>
+		<label style="font-size:14px;margin-left: 70px;">邮   &nbsp;箱:	</label><input type="text"  id="mail" placeholder="邮箱...." size="35" style="height:30px;width:180px;"> <br>
+		<label style="font-size:14px;margin-left: 45px;"> &nbsp; &nbsp; &nbsp;&nbsp;验证码:</label>
+		<input type="text" id="code" style="height:30px;width:90px">
+		<img src="../index.php?s=/user/valicode/imgcode" width="70px" height="32px" onclick="registimagecode()" id="img2"style="vertical-align: middle;">
+		<span style="font-size:13px;"><a href="#" onclick="registimagecode()"> 换一换</a></span> 
+		<input type="button" value="注册" id="regbtn" class="input2"> 
+	      <div style="margin-left:94.5%;background-color:#ECECEC;width:20px;float:left;margin-top:-111%;height:38px;opacity:.6;padding-left:3px;" class="close1">
+    	    <a id='close' href="#" onclick="closeregin()">X</a>
+    	    </div>
+		</div>
+   </form>
+ </div>	
+		 		
+             </nav>
+             <div class="search bar5" id="ser1">
+             <form class="search-form"   id="search-form">
+            <input type="text" placeholder="请输入您要搜索的内容..." class="search-text" name="q" id="search_input" autocomplete="off" style="width: 100%;height: 42px;padding-left: 10px;">
+            <button type="submit"></button>
+        </form>
+        </div>
+       <div class="suggest" id="search-suggest">
+				<ul id="search-result">
+				</ul> 
+		</div>
+		<script>
+			$('#search_input').bind('keyup',function(){
+					$('#search-suggest').show().css({
+					top:$('#search-form').offset().top+$('#search-form').height()+30,
+					left:$('#search-form').offset().left+$('#search-form').Left(),
+					position:'absolute'
+				});
+			});
+			$(document).bind('click',function(){
+				$('#search-suggest').hide();
+			});		
+			
+			function closelogin(){
+            	$('#lg5').css('display','none');           	
+            }
+		     function closeregin(){
+            	$('#lg6').css('display','none');           	
+            }
+			</script> 
+   
+		
+		
+		
+		<div class="logout1">
+		 <div class="lg" id="lg3" style="display: none;margin-left: -5%;">
+                      	<a href="#" onClick="gotocenter()"><img src="" style="width: 100%;height: 100%" id="headimg"> &nbsp;</a>                       	
+                      </div>
+                      <div class="lgd" id="lg4" style="display:none;padding-top:4%">
+                       <a href="#" id="usernamehead" onClick="gotocenter()"></a>&nbsp;&nbsp;&nbsp;&nbsp;
+                        <a href="#" id="logout">注销</a>
+                      </div>		
+        </div>
+      </div>       
+                    <div class="menu-button fr stopP show992 trans" >
+                    <a href="#"​ class="fa fa-align-justify trans" rel="nofollow" onclick="ActionMenu();" style="padding-left:32px;"> </a>                 
+               </div>
+   </header>
+        <div id="header-blank">
+        </div>
+        <div id="body" class="trans" >
+            <div id="banner" class="relative hide992">
+                <div class="bd over">
+                    <div class="bar relative fz0 nowrap">                      
+                        <div class="item relative inline-block text-center fz0 over item-1">
+                            <img src="" alt="wwwww" class="max-w100" width="1370px" height="572px" id="bannerimg1">
+                            <a class="absolute" href="#" id="bannerlink1">
+                            </a>
+                        </div>
+                        <div class="item relative inline-block text-center fz0 over item-1">
+                            <img src="" alt="sssssss" class="max-w100" width="1370px" height="572px" id="bannerimg2">
+                            <a class="absolute" href="#" id="bannerlink2">
+                            </a>
+                        </div>
+                        <div class="item relative inline-block text-center fz0 over item-1">
+                            <img src="" alt="ddddd" class="max-w100" width="1370px" height="572px" id="bannerimg3">
+                            <a class="absolute" href="#" id="bannerlink3">
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="small-banner" class="relative show992" >
+                <div class="bd over" >
+                    <div class="bar relative fz0 nowrap" >
+                    </div>
+                </div>
+            </div>
+            <div class="blank25">
+            </div>
+   
+            <div id="products" class="index">
+                <div class="index-title text-center wow fadeInUp" style="font-size:19px;"><a name="00">&nbsp;</a>课程分类</div>
+                <div class="index-brief text-center wow fadeInUp">
+                 
+                </div>
+                <div class="category-list text-center fz0 hide992 wow fadeInUp">
+                    <a href="/user/courses/getCoursebyType/type/理科"​ class="item inline-block trans" cid="6"
+                    rel="nofollow">理科</a>
+                    <a href="/user/courses/getCoursebyType/type/工科"​ class="item inline-block trans" cid="6"
+                    rel="nofollow">
+                        工科
+                    </a>
+                    <a href="/user/courses/getCoursebyType/type/经济学"​ class="item inline-block trans" cid="6"
+                    rel="nofollow">
+                       经济学
+                    </a>
+                    <a href="/user/courses/getCoursebyType/type/人文学"​ class="item inline-block trans" cid="6"
+                    rel="nofollow">
+                        人文学
+                    </a>
+                    <a href="/user/courses/getCoursebyType/type/法学"​ class="item inline-block trans" cid="6"
+                    rel="nofollow">
+                       法学
+                    </a>
+                    <a href="/user/courses/getCoursebyType/type/医学"​ class="item inline-block trans"
+                    cid="6" rel="nofollow">
+                     医学
+                    </a>
+                    <a href="/user/courses/getCoursebyType/设计建筑" class="item inline-block trans" cid="6"
+                    rel="nofollow" id="建筑设计">
+                        设计建筑
+                    </a>
+                </div>
+                <div class="category-list text-center show992 wow fadeInUp">
+                    <div class="btn-group">
+                        <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown"
+                        aria-haspopup="true" aria-expanded="false" style="width:100px;">
+                            全部分类
+                            <span class="caret">
+                            </span>
+                        </button>
+        <ul class="dropdown-menu">
+            <li>
+                <a href="#"​ cid="6" rel="nofollow">理科</a>
+            </li>
+            <li>
+                <a href="#"​ cid="6" rel="nofollow">文科</a>
+            </li>
+            <li>
+                <a href="#"​ cid="6" rel="nofollow">经济学</a>
+            </li>
+            <li>
+                <a href="#"​ cid="6" rel="nofollow">人文学</a>
+            </li>
+            <li>
+                <a href="#"​ cid="6" rel="nofollow">工程造价</a>
+            </li>
+            <li>
+                <a href="#"​ cid="6" rel="nofollow">心理学</a>
+            </li>
+            <li>
+                <a href="#"​ cid="6" rel="nofollow">建筑学</a>
+            </li>
+        </ul>
+    </div>
+                </div>
+ <div class="index-title text-center wow fadeInUp" style="font-size:19px;margin-bottom:30px;"><a name="01">&nbsp</a>精品课程</div>
+<div class="products-bg trans">
+    <div class="wrap">
+       <div id="products-box" class="over">
+	   <div class="products-list relative fz0 trans">
+	   <div class="item inline-block absolute wow fadeInUp" cid="0" status="on">
+	    <div class="main trans">
+		    <div class="cover scale relative">
+            <img src="picture/notebook.png"  class="trans scale-img max-w100">
+            <div class="img absolute text-center fz0">
+                <img src=""  class="trans scale-img" height="170px" id="cimg1">
+            </div>
+            <div class="opt absolute trans hide768">
+                <div class="button-bg border-box clean">
+                    <a href="#"​ class="button fl trans text-center" rel="nofollow">预览</a>
+                      <a href="#"​ class="links fr trans" id="chref1"><i></i>详细</a>
+               </div>
+            </div>
+        </div>
+            <div class="info clean">
+                <div class="left fl">
+                <div class="name" style="text-align: center;" id="cname1"></div>
+                <div class="category">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="mask trans">
+                </div>
+                <div class="opt-msg trans over">
+                    <a href="#"​ class="block trans text-center" rel="nofollow"> 预览</a>
+                    <a href="#"​ class="block trans text-center"><i>  </i>详细</a>        
+                </div>
+            </div>
+
+
+            <div class="item inline-block absolute wow fadeInUp" cid="0" status="on">
+                <div class="main trans">
+                    <div class="cover scale relative">
+                        <img src="picture/notebook.png" alt="" class="trans scale-img max-w100">
+                        <div class="img absolute text-center fz0">
+                            <img src="" alt="" class="trans scale-img" id="cimg2">
+                        </div>
+                        <div class="opt absolute trans hide768">
+                            <div class="button-bg border-box clean">
+                                <a href="#"​ class="button fl trans text-center" rel="nofollow">预览  </a>
+                                <a href="#"​ class="links fr trans" id="chref2"><i> </i>详细</a>                           
+                            </div>
+                        </div>
+                    </div>
+                    <div class="info clean">
+                        <div class="left fl">
+                            <div class="name" id="cname2">
+                             
+                            </div>
+                            <div class="category">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mask trans">
+                </div>
+                <div class="opt-msg trans over">
+                  <a href="#"​ class="block trans text-center" rel="nofollow"> 预览</a>
+                   <a href="#"​ class="block trans text-center"><i>  </i>详细</a>    
+                </div>
+            </div>
+
+
+            <div class="item inline-block absolute wow fadeInUp" cid="0" status="on">
+                <div class="main trans">
+                    <div class="cover scale relative">
+                        <img src="picture/notebook.png" alt="" class="trans scale-img max-w100">
+                        <div class="img absolute text-center fz0">
+                            <img src="" alt="" class="trans scale-img" id="cimg3">
+                        </div>
+                        <div class="opt absolute trans hide768">
+                            <div class="button-bg border-box clean">
+                                <a href="#"​ class="button fl trans text-center" rel="nofollow">预览  </a>
+                                <a href="#"​ class="links fr trans" id="chref3"><i> </i>详细</a>        
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="info clean">
+                        <div class="left fl">
+                            <div class="name" id="cname3">
+                                
+                            </div>
+                            <div class="category">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="mask trans">
+                </div>
+                <div class="opt-msg trans over">
+                    <a href="#"​ class="block trans text-center" rel="nofollow"> 预览</a>
+                    <a href="#"​ class="block trans text-center"><i>  </i>详细</a>    
+                </div>
+            </div>
+
+            <div class="item inline-block absolute wow fadeInUp" cid="0" status="on">
+                <div class="main trans">
+                    <div class="cover scale relative">
+                        <img src="picture/notebook.png" alt="" class="trans scale-img max-w100">
+                        <div class="img absolute text-center fz0">
+                            <img src="" alt="" class="trans scale-img" id="cimg4">
+                        </div>
+                        <div class="opt absolute trans hide768">
+                            <div class="button-bg border-box clean">
+                                 <a href="#"​ class="button fl trans text-center" rel="nofollow">预览  </a>
+                                <a href="#"​ class="links fr trans" id="chref4"><i> </i>详细</a>        
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="info clean">
+                        <div class="left fl">
+                            <div class="name" id="cname4">
+                           
+                            </div>
+                            <div class="category">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="mask trans">
+                </div>
+                <div class="opt-msg trans over">
+                    <a href="#"​ class="block trans text-center" rel="nofollow"> 预览</a>
+                    <a href="#"​ class="block trans text-center"><i>  </i>详细</a>    
+                </div>
+            </div>
+
+
+            <div class="item inline-block absolute wow fadeInUp" cid="0" status="on">
+                <div class="main trans">
+                    <div class="cover scale relative">
+                        <img src="picture/notebook.png" alt="" class="trans scale-img max-w100">
+                        <div class="img absolute text-center fz0">
+                            <img src="" alt="" class="trans scale-img" id="cimg5">
+                        </div>
+                        <div class="opt absolute trans hide768">
+                            <div class="button-bg border-box clean">
+                                <a href="#"​ class="button fl trans text-center" rel="nofollow">预览  </a>
+                                <a href="#"​ class="links fr trans" id="chref5"><i> </i>详细</a>        
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="info clean">
+                        <div class="left fl">
+                            <div class="name" id="cname5">
+                             
+                            </div>
+                            <div class="category">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="mask trans">
+                </div>
+                <div class="opt-msg trans over">
+                    <a href="#"​ class="block trans text-center" rel="nofollow"> 预览</a>
+                    <a href="#"​ class="block trans text-center"><i>  </i>详细</a>    
+                </div>
+            </div>
+
+
+            <div class="item inline-block absolute wow fadeInUp" cid="0" status="on">
+                <div class="main trans">
+                    <div class="cover scale relative">
+                        <img src="picture/notebook.png" alt="" class="trans scale-img max-w100">
+                        <div class="img absolute text-center fz0">
+                            <img src="" alt="" class="trans scale-img" id="cimg6">
+                        </div>
+                        <div class="opt absolute trans hide768">
+                            <div class="button-bg border-box clean">
+                                <a href="#"​ class="button fl trans text-center" rel="nofollow">预览  </a>
+                                <a href="#"​ class="links fr trans" id="chref6"><i> </i>详细</a>        
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="info clean">
+                        <div class="left fl">
+                            <div class="name" id="cname6">
+                               
+                            </div>
+                            <div class="category">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="mask trans">
+                </div>
+                <div class="opt-msg trans over">
+                   <a href="#"​ class="block trans text-center" rel="nofollow"> 预览</a>
+                    <a href="#"​ class="block trans text-center"><i>  </i>详细</a>    
+                </div>
+            </div>
+        </div>
+
+
+<div class="box-button text-center fz0 wow fadeInUp">
+    <a href="#"​ class="more-list inline-block trans">
+        <i class="trans middle relative">
+        </i>
+    </a>
+     </div>
+	</div>
+  </div>
+</div>
+</div>
+    <div class="blank15">
+    </div>
+    <div class="blank15">
+    </div>
+    <div class="index-cooperation wrap">
+        <div class="index-title text-center wow fadeInUp" style="font-size:19px;"><a name="02">&nbsp</a>推荐课程</div>
+        <div class="index-brief text-center wow fadeInUp">
+                  学习是一种态度
+                </div>
+<div class="blank20">
+</div>
+<div class="cooperation-box s5 relative hide768 wow fadeInUp" >
+<div class="bd over" >
+    <div class="bar trans relative fz0 nowrap" id="t1">
+
+    <!-- jquery动态添加 -->
+            <div class='item inline-block border-box trans'>
+        <a class='text-center block border-box trans fz0 grayscale' rel='nofollow' id="thref0">
+            <img src=''  class='max-w100 max-h100 middle grayscale-img trans' id="timg0">
+            <span class='middle-span'>
+                
+            </span>
+        </a>
+    </div>
+    <div class='item inline-block border-box trans'>
+        <a class='text-center block border-box trans fz0 grayscale' rel='nofollow' id="thref1">
+            <img src=''  class='max-w100 max-h100 middle grayscale-img trans' id="timg1">
+            <span class='middle-span'>
+                
+            </span>
+        </a>
+    </div>
+    <div class='item inline-block border-box trans'>
+        <a class='text-center block border-box trans fz0 grayscale' rel='nofollow' id="thref2">
+            <img src=''  class='max-w100 max-h100 middle grayscale-img trans' id="timg2">
+            <span class='middle-span'>
+                
+            </span>
+        </a>
+    </div>
+    <div class='item inline-block border-box trans'>
+        <a class='text-center block border-box trans fz0 grayscale' rel='nofollow' id="thref3">
+            <img src=''  class='max-w100 max-h100 middle grayscale-img trans' id="timg3">
+            <span class='middle-span'>
+                
+            </span>
+        </a>
+    </div>
+        <div class='item inline-block border-box trans'>
+        <a class='text-center block border-box trans fz0 grayscale' rel='nofollow' id="thref4">
+            <img src=''  class='max-w100 max-h100 middle grayscale-img trans' id="timg4">
+            <span class='middle-span'>
+                
+            </span>
+        </a>
+    </div>
+        <div class='item inline-block border-box trans'>
+        <a class='text-center block border-box trans fz0 grayscale' rel='nofollow' id="thref5">
+            <img src=''  class='max-w100 max-h100 middle grayscale-img trans' id="timg5">
+            <span class='middle-span'>
+                
+            </span>
+        </a>
+    </div>
+        <div class='item inline-block border-box trans'>
+        <a class='text-center block border-box trans fz0 grayscale' rel='nofollow' id="thref6">
+            <img src=''  class='max-w100 max-h100 middle grayscale-img trans' id="timg6">
+            <span class='middle-span'>
+                
+            </span>
+        </a>
+    </div>
+        <div class='item inline-block border-box trans'>
+        <a class='text-center block border-box trans fz0 grayscale' rel='nofollow' id="thref7">
+            <img src=''  class='max-w100 max-h100 middle grayscale-img trans' id="timg7">
+            <span class='middle-span'>
+                
+            </span>
+        </a>
+    </div>
+        <div class='item inline-block border-box trans'>
+        <a class='text-center block border-box trans fz0 grayscale' rel='nofollow' id="thref8">
+            <img src=''  class='max-w100 max-h100 middle grayscale-img trans' id="timg8">
+            <span class='middle-span'>
+                
+            </span>
+        </a>
+    </div>
+        <div class='item inline-block border-box trans'>
+        <a class='text-center block border-box trans fz0 grayscale' rel='nofollow' id="thref9">
+            <img src=''  class='max-w100 max-h100 middle grayscale-img trans' id="timg9">
+            <span class='middle-span'>
+                
+            </span>
+        </a>
+    </div>
+
+
+    </div>
+</div>
+<div class="hd text-center fz0">
+</div>
+</div>
+                
+    <div class="cooperation-box s3 relative show768 wow fadeInUp">
+        <div class="bd over">
+            <div class="bar trans relative fz0 nowrap">
+                <div class="item inline-block border-box trans">
+                    <a class="text-center block border-box trans fz0"  rel="nofollow">
+                        <img src="picture/1-1f92z944060-l.jpg"  class="max-w100 max-h100 middle">
+                        <span class="middle-span">
+                        </span>
+                    </a>
+                </div>
+                <div class="item inline-block border-box trans">
+                    <a class="text-center block border-box trans fz0"  rel="nofollow">
+                        <img src="picture/1-1f92z943130-l.jpg"  class="max-w100 max-h100 middle">
+                        <span class="middle-span">
+                        </span>
+                    </a>
+                </div>
+                <div class="item inline-block border-box trans">
+                    <a class="text-center block border-box trans fz0"  rel="nofollow">
+                        <img src="picture/1-1f92z942530-l.jpg"  class="max-w100 max-h100 middle">
+                        <span class="middle-span">
+                        </span>
+                    </a>
+                </div>
+                <div class="item inline-block border-box trans">
+                    <a class="text-center block border-box trans fz0"  rel="nofollow">
+                        <img src="picture/1-1f92z942410-l.jpg"  class="max-w100 max-h100 middle">
+                        <span class="middle-span">
+                        </span>
+                    </a>
+                </div>
+                <div class="item inline-block border-box trans">
+                    <a class="text-center block border-box trans fz0"  rel="nofollow">
+                        <img src="picture/1-1f92z942280-l.jpg"  class="max-w100 max-h100 middle">
+                        <span class="middle-span">
+                        </span>
+                    </a>
+                </div>
+                <div class="item inline-block border-box trans">
+                    <a class="text-center block border-box trans fz0" rel="nofollow">
+                        <img src="picture/1-1f92z942160-l.jpg"  class="max-w100 max-h100 middle">
+                        <span class="middle-span">
+                        </span>
+                    </a>
+                </div>
+                <div class="item inline-block border-box trans">
+                    <a class="text-center block border-box trans fz0"  rel="nofollow">
+                        <img src="picture/1-1f92z942010-l.jpg"  class="max-w100 max-h100 middle">
+                        <span class="middle-span">
+                        </span>
+                    </a>
+                </div>
+                <div class="item inline-block border-box trans">
+                    <a class="text-center block border-box trans fz0"  rel="nofollow">
+                        <img src="picture/1-1f92z941470-l.jpg"  class="max-w100 max-h100 middle">
+                        <span class="middle-span">
+                        </span>
+                    </a>
+                </div>
+                <div class="item inline-block border-box trans">
+                    <a class="text-center block border-box trans fz0"  rel="nofollow">
+                        <img src="picture/1-1f92z941330-l.jpg"  class="max-w100 max-h100 middle">
+                        <span class="middle-span">
+                        </span>
+                    </a>
+                </div>
+                <div class="item inline-block border-box trans">
+                    <a class="text-center block border-box trans fz0"  rel="nofollow">
+                        <img src="picture/1-1f92z941160-l.jpg"  class="max-w100 max-h100 middle">
+                        <span class="middle-span">
+                        </span>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="hd text-center fz0">
+        </div>
+    </div>
+</div>
+
+<div style="margin-top:40%" >
+      <!--<div style="margin-left:47%;margin-top:-197px;width:100px;height:40px;padding-top:10px;float:left;font-size:18px;">
+               优课展示
+      </div>-->
+         <div class="index-title text-center wow fadeInUp" style="float:left;margin-left:47%;margin-top:-8%;" id="five">
+           <span style="font-size:19px;"><a name="03">&nbsp;</a>优课展示</span>
+        </div>
+       <div style="margin-left:40%;margin-top:-4%;width:300px;height:30px;padding-top:10px;float:left;font-size:15px;margin-bottom:-12%;" class="index-brief text-center wow fadeInUp">
+     桃李满天下，感谢老师的辛苦付出
+      </div> 
+      <div class="footer1">
+        <div style="float:left;margin-left:1%;width:42%;height:100%;border: 1px solid #E9E9E9;" >
+      	<a href="" id="yihref0"><img src="" width="100%" height="165px" id="yimg0"><br><br><br><br></a>
+      	<a href="" id="yhref0"><span id="ycourse0"></span></a><br><br>
+      	<img src="images/5star.png">
+      	<span>5</span>&nbsp<span>星</span><br><br>
+      	<span id="yauthor0"></span>     	
+      </div>
+        <div style="float:left;margin-left:3%;width:42%;height:100%;border: 1px solid #E9E9E9;" >
+      	<a href="" id="yihref1"><img src="" width="100%" height="165px" id="yimg1"></a><br><br><br><br>
+      	<a href="" id="yhref1"><span id="ycourse1"></span></a><br><br>
+        <img src="images/5star.png">
+        <span>5</span>&nbsp<span>星</span><br><br>
+      	<span id="yauthor1"></span>     	
+      </div>
+        <div style="float:left;margin-left:3%;width:42%;height:100%;border: 1px solid #E9E9E9;" >
+      	<a href="" id="yihref2"><img src="" width="100%" height="165px" id="yimg2"></a><br><br><br><br>
+      	<a href="" id="yhref2"><span id="ycourse2"></span></a><br><br>
+        <img src="images/4star.png">
+        <span>4</span>&nbsp<span>星</span><br><br>
+      	<span id="yauthor2"></span>     	
+      </div>
+      
+        <div style="float:left;margin-left:3%;width:42%;height:100%;border: 1px solid #E9E9E9;" >
+      	<a href="" id="yihref3"><img src="" width="100%" height="165px" id="yimg3"></a><br><br><br><br>
+      	<a href="" id="yhref3"><span id="ycourse3"></span></a><br><br>
+        <img src="images/3star.png">
+        <span>3</span>&nbsp<span>星</span><br><br>
+      	<span id="yauthor3"></span>     	
+      </div>
+     </div> 
+      </div>
+            <footer style="margin-top:35%">
+                <div class="wrap clean" >
+                    <div class="left fl" >                       
+                    </div>
+                    <div class="follow fr fz0">
+                        <div class="title relative text-center wow fadeInUp">
+                            <span class="relative">
+                                关注
+                            </span>
+                        </div>
+                        <div class="text-center">
+                            <div class="item text-center inline-block wow fadeInUp">
+                                <a href="#"​
+                                class="ico block trans qq" rel="nofollow">
+                                    <i class="fa fa-qq middle trans">
+                                    </i>
+                                </a>
+                                QQ
+                            </div>
+                            <div class="item text-center inline-block wow fadeInUp relative">
+                                <a href="#"​ class="ico block trans wechat" rel="nofollow">
+                                    <i class="fa fa-weixin middle trans">
+                                    </i>
+                                </a>
+                                微信
+                                <div class="qrcode absolute trans">
+                                    <img src="picture/we.png" alt="" width="200" />
+                                </div>
+                            </div>
+                            <div class="item text-center inline-block wow fadeInUp">
+                                <a href="#"​ class="ico block trans sina" rel="nofollow"
+                                target="_blank">
+                                    <i class="fa fa-weibo middle trans">
+                                    </i>
+                                </a>
+                                微博
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="blank20">
+                </div>
+                <div class="blank15">
+                </div>
+                <div class="bottom">
+                    <div class="wrap clean">
+                        <div class="links fl">
+                            友情链接 :
+                            <a href='http://www.suse.edu.cn/' target='_blank'>
+                                四川理工学院
+                            </a>
+                        </div>
+                        <div class="copyright fr" style="margin-left:-30px;">
+                            Copyright &copy; 2018-2019 追梦人团队 版权所有 
+                        </div>
+                    </div>
+                </div>
+            </footer>
+            <div id="follow">               
+                <div id="openOnline" class="item relative hide992" row="2">
+                    <a href="#"​ class="ico blue block absolute" title="在线咨询" onClick="OptOnline(1);OptQrcode(0);OptHot(0);"
+                    rel="nofollow">
+                        <span class="middle fa fa-qq fa-2x">
+                        </span>
+                    </a>
+                    <div id="online">
+                        <div class="top clean">
+                            在线咨询
+                            <a href="#"​ class="fr fa fa-times" title="隐藏咨询" onClick="OptOnline(0);"
+                            rel="nofollow">
+                            </a>
+                        </div>
+                        <div class="qq-list">
+                            <a href="#"​ class="list block trans"
+                            title="咨询TA" target="_blank" rel="nofollow" d="2498989222">
+                                <span class="fa fa-qq trans">
+                                </span>
+                                追梦团队
+                            </a>
+                            <a href="#"​ class="list block trans"
+                            title="咨询TA" target="_blank" rel="nofollow" d="88889999">
+                                <span class="fa fa-qq trans">
+                                </span>
+                                追梦团队
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="item relative show992 trans">
+                    <a href="#"​ class="ico blue block trans phone" rel="nofollow">
+                    </a>
+                </div>
+                <div class="item relative trans">
+                    <a href="#"​ class="ico red block trans sina" title="关注微博"
+                    target="_blank" rel="nofollow">
+                        <span class="middle fa fa-weibo fa-2x">
+                        </span>
+                    </a>
+                </div>
+                <div id="openQrcode" class="item relative trans">
+                    <a href="#"​ class="ico green block trans wechat" title="关注微信"
+                    onclick="OptQrcode();OptOnline(0)" rel="nofollow">
+                        <span class="middle fa fa-weixin fa-2x">
+                        </span>
+                    </a>
+                    <div id="wechat-qrcode">
+                        <img src="picture/we.png" alt="" width="200" />
+                    </div>
+                </div>
+                <div class="item relative">
+                    <a href="#"​ class="ico block trans totop show totop" title="回到顶部"
+                    onclick="toTop();" rel="nofollow">
+                        <span class="middle fa fa-angle-up fa-2x">
+                        </span>
+                    </a>
+                </div>
+            </div>
+        </div>      
+        </div>
+        
+    </body>
+    
+
+</html>

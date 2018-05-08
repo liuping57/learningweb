@@ -1,0 +1,98 @@
+{include file="header" /}
+<div align="center"><h2>我的课程</h2></div>
+<table class="table" style="margin-top: 40px">
+    <tr>
+        <td colspan="11">
+            <div align="right">
+                <form class="form-inline">
+                    <div class="form-group">
+                        <label class="sr-only" for="exampleInputAmount"></label>
+                        <div class="input-group" >
+                            <input type="text" class="form-control" id="exampleInputAmount" placeholder="search...">
+                        </div>
+                    </div>
+                    <button type="submit" class="btn btn-primary">搜索</button>
+                </form>
+            </div>
+        </td>
+    </tr>
+    <tr>
+        <th>#</th>
+        <th>标题</th>
+        <th>浏览次数</th>
+        <th>难度</th>
+        <th>学时数</th>
+        <th>封面</th>
+        <th>作者</th>
+        <th>创建时间</th>
+        <th>上传用户</th>
+        <th>
+            操作
+        </th>
+    </tr>
+    {volist name='pagelist' id='user'}
+    <tr>
+        <td>{$user.course_id}</td>
+        <td>{$user.course_name}</td>
+        <td>{$user.browser}</td>
+        <td>
+            <div class="progress" >
+                <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: {$user.difficulty }%">
+                    {$user.difficulty }
+                </div>
+            </div>
+        </td>
+        <td>{$user.class_hours}</td>
+        <td><img src="__STATIC__/../{$user.img_url }" alt="xxx" class="img-thumbnail" width="100px" height="70px"></td>
+        <td>{$user.belong_author }</td>
+        <td>{$user.CreateTime}</td>
+        <td>{$user.user_id }</td>
+        <td>
+            <button type="button" class="btn btn-success" onclick="window.location.href='__ROOT__/teacher/res/add?course_name={$user.course_name}'">添加附件   <span class="glyphicon glyphicon-tags" aria-hidden="true"></span></button>
+            <a href="__ROOT__/teacher/course/courseedit?id={$user.course_id}" class="btn btn-warning">编辑    <span class="glyphicon glyphicon-edit" aria-hidden="true"></span></a>
+            <button type="button" class="btn btn-danger" onclick="delcourse({$user.course_id})">删除    <span class="glyphicon glyphicon-trash" aria-hidden="true"></span></button>
+        </td>
+
+    </tr>
+    {/volist}
+    <tr>
+        <td colspan="11" align="left">
+            {$pagelist->render()}
+        </td>
+    </tr>
+</table>
+<script>
+    function delcourse(course_id) {
+        var con;
+        con=confirm("即将删除此课程的所有信息！\n你确定删除此课程吗？"); //在页面上弹出对话框
+        if(con==true)
+        {
+            $.ajax({
+                type:"post",
+                url:"/api/addcourse/delcourse",
+                async:"true",
+                dataType:"json",
+                data:{
+                    course_id:course_id,
+                },
+                success:function(data){
+                    if(data.linecode==200)
+                    {
+                        alert(data.msg);
+                        window.location.reload();
+                    }
+                    else
+                    {
+                        alert(data.msg);
+                    }
+                }
+            });
+        }
+        else
+        {
+            alert("操作已取消。。。");
+        }
+    }
+</script>
+
+{include file="footer" /}

@@ -1,0 +1,410 @@
+{include file="header" /}
+<div align="center"><h2>编辑课程</h2></div>
+
+<!-- Modal修改封面图像 -->
+<div class="modal fade bs-example-modal-lg" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog  modal-lg" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" id="myModalLabel">上传封面</h4>
+            </div>
+            <div class="modal-body">
+                <article class="htmleaf-container">
+                <div id="clipArea"></div>
+                <div id="view"></div>
+                </article>
+                <input type="file" id="file" class="btn btn-default">
+            </div>
+            <div class="modal-footer">
+                <button id="clipBtn" class="btn btn-default">截取</button>
+                <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+                <button type="button" class="btn btn-primary" onclick="saveimg({$data[0]['course_id']})">保存</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- 添加章节弹出层 -->
+<div class="modal fade" id="model3" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h3 class="modal-title" id="myModalLabe">添加章节</h3>
+            </div>
+            <div class="modal-body">
+                <input type="text" class="form-control" id="chaptersid" placeholder="章节标题"><br><br>
+                <input type="number" class="form-control" id="chaptersrank" placeholder="章节排序">
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+                <button type="button" class="btn btn-primary" id="savechapter">保存</button>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- 添加小节弹出层 -->
+<div class="modal fade" id="myModa2" tabindex="-1" role="dialog" aria-labelledby="myModalLabe2">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" id="myModalLabe2">添加章节小结</h4>
+            </div>
+            <div class="modal-body">
+                <div class="form-group">
+                    <label for="exampleInputName2">小结标题</label>
+                    <input type="text" class="form-control" id="dtitle" placeholder="标题哦">
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputName2">链接地址</label>
+                    <input type="url" class="form-control" id="durl" placeholder="url">
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputName2">排序</label>
+                    <input type="number" class="form-control" id="drank" placeholder="rank">
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+                <button type="button" class="btn btn-primary" id="savedetial">保存</button>
+            </div>
+        </div>
+    </div>
+</div>
+<!--课程编辑页面-->
+<div id="class1" style="display: block">
+<table class="table">
+    <tr>
+        <td>标题</td>
+        <td>学时数</td>
+        <td>难度</td>
+        <td>课程讲师</td>
+        <td>课程封面</td>
+        <td>课程类型</td>
+        <td>课程简介</td>
+        <td>#</td>
+    </tr>
+    <tr >
+        <td><input type="text" class="form-control" placeholder="title" value="{$data[0]['course_name']}" id="title"></td>
+        <td style="padding-left: 3%"><input type="number" class="form-control" placeholder="Hours" style="width: 80px" value="{$data[0]['class_hours']}" id="hours"></td>
+        <td style="padding-left: 3%"><input type="number" class="form-control" placeholder="difficulty" style="width: 80px" value="{$data[0]['difficulty']}" id="diff"></td>
+        <td style="padding-left: 3%"><input type="text" class="form-control" placeholder="teacher" style="width: 150px" value="{$data[0]['belong_author']}" id="author"></td>
+        <td><img src="__STATIC__/../{$data[0]['img_url']}" alt="xxx" class="img-thumbnail" data-toggle="modal" width="250px" height="180px" data-target="#myModal" ></td>
+        <td>
+            <select class="form-control" id="type">
+                {volist name="types" id="ss"}
+                <option value="{$ss.type_id}" {$ss.type_id==$data[0]['type_id'] ? 'selected' : ''}>{$ss.type_name}</option>
+                {/volist}
+            </select>
+        </td>
+        <td>
+            <textarea class="form-control" rows="8" id="simple">{$data[0]['synopsis']}</textarea>
+        </td>
+        <td></td>
+    </tr>
+    <tr>
+        <td colspan="8">
+            <div align="left">
+                <form action="__ROOT__/admin/test/testlist" class="pull-left" method="post">
+                    <input type="text" value="{$data[0]['course_id']}" hidden="hidden" name="course_id">
+                    <input type="text" value="{$data[0]['course_name']}" hidden="hidden" name="course_name">
+                    <button type="submit" class="btn btn-info"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span>    试题添加</button>
+                </form>
+
+                <button type="button" class="btn btn-primary" onclick="saveclass({$data[0]['course_id']})" style="margin-left: 4px"><span class="glyphicon glyphicon-inbox" aria-hidden="true"></span>    保存当前修改</button>
+                <!-- Indicates a successful or positive action -->
+                <button type="button" class="btn btn-success" onclick="viewchapters()"><span class="glyphicon glyphicon-edit" aria-hidden="true"></span>    编辑章节</button>
+
+                <button type="button" class="btn btn-default" onclick="window.location.href='__ROOT__/teacher/course/courselist'"><span class="glyphicon glyphicon-share-alt" aria-hidden="true"></span>    返回课程列表</button>
+
+            </div>
+
+        </td>
+    </tr>
+</table>
+</div>
+<!--章节编辑页面-->
+<div id="class2" style="display: none">
+    <h1 class="text-center">课程章节</h1>
+    <table class="table table-striped" id="ttd3">
+
+    </table>
+</div>
+<!--小节编辑页面-->
+<div id="class3" style="display: none">
+    <h1 class="text-center">课程小节</h1>
+    <table class="table table-striped" id="adddetail">
+
+    </table>
+</div>
+<script src="__STATIC__/photocut/js/iscroll-zoom.js"></script>
+<script src="__STATIC__/photocut/js/hammer.js"></script>
+<script src="__STATIC__/photocut/js/jquery.photoClip.js"></script>
+<script>
+    //document.addEventListener('touchmove', function (e) { e.preventDefault(); }, false);
+    var img;
+    var course_id={$data[0]['course_id']};
+    var cah_id;
+    $("#clipArea").photoClip({
+        width: 450,
+        height: 250,
+        file: "#file",
+        view: "#view",
+        ok: "#clipBtn",
+        loadStart: function() {
+            console.log("照片读取中");
+        },
+        loadComplete: function() {
+            console.log("照片读取完成");
+        },
+        clipFinish: function(dataURL) {
+            console.log(dataURL);
+            img=dataURL;
+        }
+    });
+    function saveimg(course_id) {
+        $.ajax({
+            type:"post",
+            url:"/user/upload/upclassimg",
+            async:"true",
+            dataType:"json",
+            data:{
+                files:img,
+                course_id:course_id
+            },
+            success:function(data){
+                //alert(data.msg);
+                $('#myModal').modal('hide');
+                window.location.reload();
+            }
+        });
+    }
+    function saveclass(coursedd) {
+        $.ajax({
+            type:"post",
+            url:"/api/addcourse/saveclass",
+            async:"true",
+            dataType:"json",
+            data:{
+                course_name:$("#title").val(),
+                course_hours:$("#hours").val(),
+                difficulty:$("#diff").val(),
+                author:$("#author").val(),
+                course_type:$("#type").val(),
+                course_info:$("#simple").val(),
+                course_id:coursedd
+            },
+            success:function(data){
+                alert(data.msg);
+                window.location.reload();
+            }
+        });
+    }
+    function viewclass() {
+        $("#class1").css('display','block');
+        $("#class2").css('display','none');
+        $('#class3').css('display','none');
+    }
+    //************************************************************************
+    //章节js
+    //显示章节页面
+    function viewchapters() {
+        $("#class1").css('display','none');
+        $("#class2").css('display','block');
+        $('#class3').css('display','none');
+        getchapters();
+    }
+    //获取章节列表
+    function getchapters() {
+        $.ajax({
+            type: "post",
+            url: "/user/courses/getChapters",
+            async: "true",
+            dataType: "json",
+            data: {
+                course_id: course_id
+            },
+            success: function (data) {
+                var pss = ' <tr> <td>#</td><td>章节标题</td> <td>排序</td> <td><button type="button" class="btn btn-success" onclick="viewclass()"><span class="glyphicon glyphicon-arrow-left" aria-hidden="true"></span>    返回</button>    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#model3">添加章节</button></td> </tr>';
+                for (var i = 0; i < data.length; i++) {
+                    pss += '<tr><td>'+(i+1)+'</td><td><input type="text" class="form-control" placeholder="title" value="'+data[i].chapters_title+'" id="chatitle'+data[i].chapters_id+'"></td> <td><input type="number" class="form-control" placeholder="rank" value="'+data[i].rank+'" id="charank'+data[i].chapters_id+'"></td> <td> <button type="button" class="btn btn-warning" onclick="editchapters('+data[i].chapters_id+')"><span class="glyphicon glyphicon-edit" aria-hidden="true"></span>    修改</button>        <button type="button" class="btn btn-success" onclick="adddetail('+data[i].chapters_id+')">添加小结</button> <button type="button" class="btn btn-danger" onclick="delchapters('+data[i].chapters_id+')">删除</button> </td> </tr>';
+                }
+                document.getElementById("ttd3").innerHTML = pss;
+            }
+        });
+    }
+    //添加新章节
+    $("#savechapter").click(function () {
+        $.ajax({
+            type:"post",
+            url:"/api/addcourse/addchapters",
+            async:"true",
+            dataType:"json",
+            data:{
+                chapters_name:$("#chaptersid").val(),
+                chapters_rank:$("#chaptersrank").val(),
+                course_id:course_id
+            },
+            success:function(data){
+                if(data.linecode==200)
+                {
+                    getchapters();
+                    $('#model3').modal('hide');
+                }
+            }
+        });
+    });
+    //删除章节
+    function delchapters(chapters_id) {
+        $.ajax({
+            type:"post",
+            url:"/api/addcourse/delchapters",
+            async:"true",
+            dataType:"json",
+            data:{
+                chapters_id:chapters_id,
+            },
+            success:function(data){
+                if(data.linecode==200)
+                {
+                    getchapters();
+                    alert(data.msg);
+                }
+            }
+        });
+    }
+    //修改章节。。。4-8
+    function editchapters(num_id) {
+        $.ajax({
+            type:"post",
+            url:"/api/addcourse/updatechapters",
+            async:"true",
+            dataType:"json",
+            data:{
+                id:num_id,
+                chapters_name:$("#chatitle"+num_id).val(),
+                chapters_rank:$("#charank"+num_id).val(),
+                course_id:course_id
+            },
+            success:function(data){
+                if(data.linecode==200)
+                {
+                    getchapters();
+                    alert(data.msg);
+                }
+            }
+        });
+
+    }
+
+
+    //**************************************************************************
+    //小结js
+    //加载小结
+    function adddetail(ccd)  //加载第三个页面添加小结
+    {
+        cah_id=ccd;
+        $("#class1").css('display','none');
+        $("#class2").css('display','none');
+        $('#class3').css('display','block');
+        loaddetail();
+    }
+    //加载小节列表
+    function loaddetail()
+    {
+        $.ajax({
+            type: "post",
+            url: "/user/courses/detail",
+            async: "true",
+            dataType: "json",
+            data: {
+                id: cah_id
+            },
+            success: function (data) {
+                var pss = '<tr><td>#</td><td>标题</td><td>视频地址</td><td>排序</td><td><button type="button" class="btn btn-success" onclick="viewchapters()"><span class="glyphicon glyphicon-arrow-left" aria-hidden="true"></span>      返回章节列表</button>        <button type="button" class="btn btn-info" data-toggle="modal" data-target="#myModa2"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span>添加小节</button></td></tr>';
+                for (var i = 0; i < data.length; i++) {
+                    pss += '<tr><td>'+(i+1)+'</td><td><input type="text" class="form-control" placeholder="title" value="'+data[i].chapters_detail_title+'" id="detitle'+data[i].chapters_detail_id+'"></td><td><input type="text" class="form-control" placeholder="title" value="'+data[i].chapter_detail_link+'" id="deurl'+data[i].chapters_detail_id+'"></td><td><input type="text" class="form-control" placeholder="title" value="'+data[i].rank+'" id="derank'+data[i].chapters_detail_id+'"></td><td><button type="button" class="btn btn-warning" onclick="editdetail('+data[i].chapters_detail_id+')"><span class="glyphicon glyphicon-edit" aria-hidden="true"></span>    修改</button>        <button type="button" class="btn btn-danger" onclick="deldetail('+data[i].chapters_detail_id+')"><span class="glyphicon glyphicon-trash" aria-hidden="true">   </span>删除</button></td></tr>';
+                }
+                document.getElementById("adddetail").innerHTML = pss;
+            }
+        });
+    }
+    //添加章节小结
+    $("#savedetial").click(function (){
+        $.ajax({
+            type:"post",
+            url:"/api/addcourse/adddetail",
+            async:"true",
+            dataType:"json",
+            data:{
+                title:$("#dtitle").val(),
+                url:$("#durl").val(),
+                rank:$("#drank").val(),
+                chapters_id:cah_id
+            },
+            success:function(data){
+                if(data.linecode==200)
+                {
+                    loaddetail();
+                    $('#myModa2').modal('hide');
+                }
+                else
+                {
+                    alert(data.msg);
+                }
+            }
+        });
+    });
+    //删除小节
+    function deldetail(id)
+    {
+        $.ajax({
+            type:"post",
+            url:"/api/addcourse/deldetail",
+            async:"true",
+            dataType:"json",
+            data:{
+                id:id
+            },
+            success:function(data){
+                if(data.linecode==200)
+                {
+                    loaddetail();
+                    alert(data.msg);
+                }
+            }
+        });
+    }
+
+    //修改小节。。。4-8
+    function editdetail(num_id) {
+        $.ajax({
+            type:"post",
+            url:"/api/addcourse/updatedetail",
+            async:"true",
+            dataType:"json",
+            data:{
+                id:num_id,
+                title:$("#detitle"+num_id).val(),
+                rank:$("#derank"+num_id).val(),
+                url:$("#deurl"+num_id).val(),
+                chapters_id:cah_id
+            },
+            success:function(data){
+                if(data.linecode==200)
+                {
+                    loaddetail();
+                    alert(data.msg);
+                }
+                else
+                {
+                    alert(data.msg);
+                }
+            }
+        });
+
+    }
+</script>
+{include file="footer" /}

@@ -1,0 +1,157 @@
+{include file="index/header" /}
+<ol class="breadcrumb">
+    <li><a href="__ROOT__/admin">首页</a></li>
+    <li><a href="#">试题库</a></li>
+    <li class="active">添加试题</li>
+</ol>
+<!-- Modal -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" id="myModalLabel">添加试题</h4>
+            </div>
+            <div class="modal-body">
+                    <div class="form-group">
+                        <label for="pt1">选择题标题</label>
+                        <input type="text" class="form-control" placeholder="标题" id="pt1">
+                    </div>
+                <div class="form-group">
+                    <label for="pt1">选项A</label>
+                    <input type="text" class="form-control" placeholder="选项A" id="pt2">
+                </div>
+                <div class="form-group">
+                    <label for="pt1">选项B</label>
+                    <input type="text" class="form-control" placeholder="选项B" id="pt3">
+                </div>
+                <div class="form-group">
+                    <label for="pt1">选项C</label>
+                    <input type="text" class="form-control" placeholder="选项C" id="pt4">
+                </div>
+                <div class="form-group">
+                    <label for="pt1">选项D</label>
+                    <input type="text" class="form-control" placeholder="选项D" id="pt5">
+                </div>
+                <div class="form-group">
+                    <label for="pt1">答案</label>
+                    <select class="form-control" id="pt6">
+                        <option value="1">A</option>
+                        <option value="2">B</option>
+                        <option value="3">C</option>
+                        <option value="4">D</option>
+                    </select>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+                <button type="button" class="btn btn-primary" onclick="addTest()">保存</button>
+            </div>
+        </div>
+    </div>
+</div>
+<div align="center"><h2>{$course_name}</h2></div>
+<table class="table">
+
+    <tr>
+        <td>#</td>
+        <td>标题</td>
+        <td>A</td>
+        <td>B</td>
+        <td>C</td>
+        <td>D</td>
+        <td>答案</td>
+        <td><button type="button" class="btn btn-success" data-toggle="modal" data-target="#myModal">添加</button></td>
+    </tr>
+    {volist name='data' id='vo'}
+    <tr>
+        <td>{$vo.id}</td>
+        <td><input type="text" class="form-control" placeholder="标题" value="{$vo.title}" id="title{$tik}"></td>
+        <td><input type="text" class="form-control" placeholder="a" value="{$vo.a}" id="a{$tik}"></td>
+        <td><input type="text" class="form-control" placeholder="b" value="{$vo.b}" id="b{$tik}"></td>
+        <td><input type="text" class="form-control" placeholder="c" value="{$vo.c}" id="c{$tik}"></td>
+        <td><input type="text" class="form-control" placeholder="d" value="{$vo.d}" id="d{$tik}"></td>
+        <td>
+            <select class="form-control" id="result{$tik}">
+                <option value="1" {if condition="$vo.result == 1"} selected
+                        {/if}>A</option>
+                <option value="2" {if condition="$vo.result == 2"} selected
+                        {/if}>B</option>
+                <option value="3" {if condition="$vo.result == 3"} selected
+                        {/if}>C</option>
+                <option value="4" {if condition="$vo.result == 4"} selected
+                        {/if}>D</option>
+            </select>
+        </td>
+        <td>
+            <button type="button" class="btn btn-warning" onclick="edittest({$tik},{$vo.id})">修改</button>
+
+            <button type="button" class="btn btn-danger" onclick="deltest({$tik++},{$vo.id})">删除</button>
+        </td>
+    </tr>
+    {/volist}
+</table>
+{$data->render()}
+<script>
+    function addTest() {
+        $.ajax({
+            type:"post",
+            url:"/admin/test/add",
+            async:"true",
+            dataType:"json",
+            data:{
+                title:$("#pt1").val(),
+                a:$("#pt2").val(),
+                b:$("#pt3").val(),
+                c:$("#pt4").val(),
+                d:$("#pt5").val(),
+                result:$("#pt6").val()
+            },
+            success:function(data){
+                //alert(data.msg);
+                $('#myModal').modal('hide');
+                window.location.reload();
+                alert(data.msg);
+            }
+        });
+    }
+    function edittest(id,tid) {
+        $.ajax({
+            type:"post",
+            url:"/admin/test/edittest",
+            async:"true",
+            dataType:"json",
+            data:{
+                title:$("#title"+id).val(),
+                a:$("#a"+id).val(),
+                b:$("#b"+id).val(),
+                c:$("#c"+id).val(),
+                d:$("#d"+id).val(),
+                result:$("#result"+id).val(),
+                tid:tid
+            },
+            success:function(data){
+                //alert(data.msg);
+                window.location.reload();
+                alert(data.msg);
+            }
+        });
+    }
+    function deltest(id,tid) {
+        $.ajax({
+            type:"post",
+            url:"/admin/test/deltest",
+            async:"true",
+            dataType:"json",
+            data:{
+                tid:tid
+            },
+            success:function(data){
+                //alert(data.msg);
+                window.location.reload();
+                alert(data.msg);
+            }
+        });
+    }
+</script>
+{include file="index/footer" /}

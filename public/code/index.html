@@ -1,0 +1,203 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html;charset=utf-8"> 
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<!-- 最新版本的 Bootstrap 核心 CSS 文件 -->
+<link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+<script src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>
+<script src="js/mycode.js"></script>
+<link rel="stylesheet" href="dist/ladda-themeless.min.css">
+<script src="dist/spin.min.js"></script>
+<script src="dist/ladda.min.js"></script>
+<style type="text/css">
+	.header{
+		margin: auto;
+		margin-top: 100px;
+	}
+  @media screen and (max-width: 600px) { 
+  .body{
+    margin: auto;
+    width: 100%;
+    border:1px solid #fff;
+  }
+} 
+@media screen and (min-width: 601px) { 
+    .body{
+    margin: auto;
+    width: 70%;
+    border:1px solid #fff;
+  }
+}
+
+</style>
+</head>
+<body>
+<div align="center">
+	<h1 class=".h1">在线代码测试</h1>
+</div>
+<div class="body">
+	<table  class="table" border="0">
+		<tr>
+			<td>
+
+				<select class="form-control pull-left" style="width: 100px" id="select1">
+						<option value="1"> C</option>
+						<option value="2">C++</option>
+						<option value="3">JAVA</option>
+						<option value="4">Python</option>
+						<option value="5">Go</option>
+				</select>
+				<button class="btn btn-success pull-left" style="margin-left: 22px;" onclick="realsecode()">清空</button>
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<textarea id="codes" class="form-control" rows="12" cols="100" style="font-size:17px">
+				</textarea>
+			</td>
+		</tr>
+		<tr>
+			
+			<td align="right">
+<button class="btn btn-primary ladda-button" data-style="expand-right" id="subcode"><span class="ladda-label">提交代码</span></button> 
+      </td>
+		</tr>
+		<tr>
+			<td class="text-warning" align="left"><h4 class="pull-left">输出结果:</h4>
+				<div class="text-danger pull-left" style="margin:10px;" id="oput">
+          <xmp id="output">
+          </xmp>
+					
+				</div>
+		</td>
+		</tr>
+	</table>
+</div>
+
+<script type="text/javascript">
+ // Ladda.bind( 'div:not(.progress-demo) button', { timeout: 2000 } );
+
+$(document).ready(function() {
+  var loading = Ladda.create( document.querySelector( '#subcode' ) );
+ $("#subcode").click(function () {
+    loading.start();
+     $.ajax({
+         type: "post",
+         url: "code.class.php",
+         async: "true",
+         timeout:15000,
+         dataType: "json",
+         data: {
+         	sub:'ww',
+         	codetype:$("#select1").val(),
+         	code:$("#codes").val()
+         },
+         success: function (data) {
+         	$("#output").text("");
+          var str="";
+         	for(var i=0;i<data.length;i++)
+         	{
+         		//$("#output").append(data[i]);
+            str += data[i]+'\n';
+         	}
+          document.getElementById('output').innerHTML=str;
+          loading.stop();
+         },
+        complete : function(XMLHttpRequest,status){ //请求完成后最终执行参数
+　　　　if(status=='timeout'){//超时,status还有success,error等值的情况
+　　　　　  alert("代码运行超时\n请检查是否存在死循环！\n程序最多只能存活15秒！");
+            loading.stop();
+　　　　}
+　　}
+     });
+ })
+})
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script type="text/javascript">
+HTMLTextAreaElement.prototype.getCaretPosition = function () {
+//return the caret position of the textarea
+ return this.selectionStart;
+};
+HTMLTextAreaElement.prototype.setCaretPosition = function (position) {
+//change the caret position of the textarea
+ this.selectionStart = position;
+ this.selectionEnd = position;
+ this.focus();
+};
+HTMLTextAreaElement.prototype.hasSelection = function () {
+//if the textarea has selection then return true
+ if (this.selectionStart == this.selectionEnd) {
+  return false;
+ } else {
+  return true;
+ }
+};
+HTMLTextAreaElement.prototype.getSelectedText = function () {
+//return the selection text
+ return this.value.substring(this.selectionStart, this.selectionEnd);
+};
+HTMLTextAreaElement.prototype.setSelection = function (start, end) {
+//change the selection area of the textarea
+ this.selectionStart = start;
+ this.selectionEnd = end;
+ this.focus();
+};
+var textarea = document.getElementsByTagName('textarea')[0];  
+textarea.onkeydown = function(event) {
+ //support tab on textarea
+ if (event.keyCode == 9) { //tab was pressed
+  var newCaretPosition;
+  newCaretPosition = textarea.getCaretPosition() + "        ".length;
+  textarea.value = textarea.value.substring(0, textarea.getCaretPosition()) + "        " + textarea.value.substring(textarea.getCaretPosition(), textarea.value.length);
+  textarea.setCaretPosition(newCaretPosition);
+  return false;
+ }
+ if(event.keyCode == 8){
+ //backspace
+  if (textarea.value.substring(textarea.getCaretPosition() - 4, textarea.getCaretPosition()) == "        ") {
+  //it's a tab space
+   var newCaretPosition;
+   newCaretPosition = textarea.getCaretPosition() - 3;
+   textarea.value = textarea.value.substring(0, textarea.getCaretPosition() - 3) + textarea.value.substring(textarea.getCaretPosition(), textarea.value.length);
+   textarea.setCaretPosition(newCaretPosition);
+  }
+ }
+ if(event.keyCode == 37){ //left arrow
+  var newCaretPosition;
+  if (textarea.value.substring(textarea.getCaretPosition() - 4, textarea.getCaretPosition()) == "        ") {
+  //it's a tab space
+   newCaretPosition = textarea.getCaretPosition() - 3;
+   textarea.setCaretPosition(newCaretPosition);
+  } 
+ }
+ if(event.keyCode == 39){
+ //right arrow
+  var newCaretPosition;
+  if (textarea.value.substring(textarea.getCaretPosition() + 4, textarea.getCaretPosition()) == "        ") {
+  //it's a tab space
+   newCaretPosition = textarea.getCaretPosition() + 3;
+   textarea.setCaretPosition(newCaretPosition);
+  }
+ } 
+}
+$("#codes").val('#include <stdio.h>\nint main()\n{\n        printf("HelloWorld!");\n}');
+	</script>
+</body>
+</html>

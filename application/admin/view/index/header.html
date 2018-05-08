@@ -1,0 +1,245 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>教学资源中心</title>
+	
+  <link rel="stylesheet" href="http://apps.bdimg.com/libs/bootstrap/3.3.0/css/bootstrap.min.css">  
+  <script src="http://apps.bdimg.com/libs/jquery/2.1.1/jquery.min.js"></script>
+  <script src="http://apps.bdimg.com/libs/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" type="text/css" href="__STATIC_/photocut/css/default.css">
+	 {css href="__CSS__/shop.css" /}
+  <style>
+    .table th, .table td {
+      text-align: center;
+      vertical-align: middle!important;
+    }
+     #clipArea {
+       margin: 20px;
+       height: 300px;
+     }
+    #view {
+      margin: 0 auto;
+      width: 200px;
+      height: 111px;
+    }
+  </style>
+</head>
+<body>
+     
+    
+    <nav class="navbar navbar-inverse " style=" border-radius: 0px;margin-bottom: 10px;">
+  <div class="container-fluid">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="__ROOT__/admin">资源管理后台</a>
+    </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav">
+        <li class="active"><a href="__ROOT__/admin/index/add">发布资源 <span class="sr-only">(current)</span></a></li>
+        <li><a href="__ROOT__/admin/index/show">资源管理</a></li>
+      </ul>
+      <form class="navbar-form navbar-left">
+        <div class="form-group">
+          <input type="text" class="form-control" placeholder="输入产品名称">
+        </div>
+        <button type="submit" class="btn btn-default">搜索课程</button>
+      </form>
+      <ul class="nav navbar-nav navbar-right">
+        <li> <a href="__ROOT__/index" target="_blank">预览首页</a>
+ </li>
+        <li> 管理员您好！
+</li>
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">退出 <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li><a href="#">退出并返回</a></li>
+          </ul>
+        </li>
+      </ul>
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav>
+<!-- 这个是全局容器 -->
+<div class="container-fluid">
+ <!-- 以下是左右两侧 -->
+
+<div class="row">
+  <!-- 左侧 -->
+  <div class="col-xs-12 col-sm-4 col-md-3 col-lg-2">
+    <div class="list-group">
+      <a href="__ROOT__/admin" class="list-group-item  ">
+        管理首页
+      </a>
+      <a href="#" class="list-group-item">网站基本信息</a>
+      <a href="#" class="list-group-item">网站动态</a>
+    </div>
+    <!-- 折叠开始 -->
+    <div class="panel-group" id="accordion">
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          <h4 class="panel-title">
+            <a data-toggle="collapse" data-parent="#accordion"
+               href="#collapseOne">
+              课程管理
+            </a>
+          </h4>
+        </div>
+        <div id="collapseOne" class="panel-collapse collapse">
+          <div class="panel-body">
+            <a href="__ROOT__/admin/course/add" class="list-group-item">添加课程</a>
+          </div>
+          <div class="panel-body">
+            <a href="__ROOT__/admin/course/courselist" class="list-group-item">课程列表</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- 折叠开始 -->
+    <div class="panel-group" id="eamnsss">
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          <h4 class="panel-title">
+            <a data-toggle="collapse" data-parent="#accordion"
+               href="#collapsetqq">
+              主页课程管理
+            </a>
+          </h4>
+        </div>
+        <div id="collapsetqq" class="panel-collapse collapse">
+          <div class="panel-body">
+            <a href="__ROOT__/admin/defaultpage/banner" class="list-group-item">轮播图</a>
+          </div>
+          <div class="panel-body">
+            <a href="__ROOT__/admin/defaultpage/excellent" class="list-group-item">精品课程</a>
+          </div>
+          <div class="panel-body">
+            <a href="__ROOT__/admin/defaultpage/recommend" class="list-group-item">推荐课程</a>
+          </div>
+          <div class="panel-body">
+            <a href="__ROOT__/admin/defaultpage/elaborate" class="list-group-item">优课展示</a>
+          </div>
+        </div>
+      </div>
+
+
+    </div>
+    <!-- 折叠结束 -->
+
+    <!-- 折叠开始 -->
+    <div class="panel-group" id="useradmin">
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          <h4 class="panel-title">
+            <a data-toggle="collapse" data-parent="#accordion"
+               href="#collapsethree">
+              用户管理
+            </a>
+          </h4>
+        </div>
+        <div id="collapsethree" class="panel-collapse collapse">
+          <div class="panel-body">
+            <a href="__ROOT__/admin/user/userlist" class="list-group-item">用户列表</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 折叠开始 -->
+    <div class="panel-group" id="sourcead">
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          <h4 class="panel-title">
+            <a data-toggle="collapse" data-parent="#accordion"
+               href="#collapsetwo">
+              资源管理
+            </a>
+          </h4>
+        </div>
+        <div id="collapsetwo" class="panel-collapse collapse">
+          <div class="panel-body">
+            <a href="__ROOT__/admin/index/add">添加资源</a>
+          </div>
+          <div class="panel-body">
+            <a href="__ROOT__/admin/index/show">资源列表</a>
+          </div>
+        </div>
+      </div>
+
+
+    </div>
+    <!-- 折叠结束 -->
+    <!-- 折叠结束 -->
+    <!-- 折叠开始 -->
+    <div class="panel-group" id="ysinfo">
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          <h4 class="panel-title">
+            <a data-toggle="collapse" data-parent="#accordion"
+               href="#collapsefour">
+              系统信息
+            </a>
+          </h4>
+        </div>
+        <div id="collapsefour" class="panel-collapse collapse">
+          <div class="panel-body">
+            常用功能
+          </div>
+          <div class="panel-body">
+            常用功能
+          </div>
+          <div class="panel-body">
+            常用功能
+          </div>
+          <div class="panel-body">
+            常用功能
+          </div>
+        </div>
+      </div>
+
+
+    </div>
+    <!-- 折叠结束 -->
+    <!-- 折叠开始 -->
+    <div class="panel-group" id="eamnjs">
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          <h4 class="panel-title">
+            <a data-toggle="collapse" data-parent="#accordion"
+               href="#collapsefive">
+              邮箱管理
+            </a>
+          </h4>
+        </div>
+        <div id="collapsefive" class="panel-collapse collapse">
+          <div class="panel-body">
+            <a href="__ROOT__/admin/email/editmailinfo" class="list-group-item">修改信箱</a>
+          </div>
+          <div class="panel-body">
+            <a href="__ROOT__/admin/email/sendtest" class="list-group-item">发送邮件</a>
+          </div>
+          <div class="panel-body">
+            <a href="__ROOT__/admin/email/sendmessage" class="list-group-item">发送系统推送</a>
+          </div>
+          <div class="panel-body">
+            <a href="__ROOT__/admin/email/editmodel" class="list-group-item">编辑模板</a>
+          </div>
+        </div>
+      </div>
+
+
+    </div>
+    <!-- 折叠结束 -->
+</div>
+<!-- 右侧 -->
+  <div class="col-xs-12 col-sm-8 col-md-9 col-lg-10">

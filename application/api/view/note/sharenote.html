@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <link rel="stylesheet" href="http://apps.bdimg.com/libs/bootstrap/3.3.0/css/bootstrap.min.css">
+    <script src="http://apps.bdimg.com/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script src="http://apps.bdimg.com/libs/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+    <script src="https://cdn.bootcss.com/jquery.qrcode/1.0/jquery.qrcode.min.js"></script>
+    <style type="text/css">
+        *{
+            margin:0px;
+            padding: 0px;
+            list-style: none;
+            font-family: "微软雅黑";
+            color: #000000;
+
+        }
+        .one{
+            margin-left: 40%;
+            width:50%;
+            height: 100px;
+            padding-top: 40px;
+
+        }
+        .one a{
+            text-decoration: none;
+            font-size: 16px;
+        }
+        .one a:hover{
+            color: gray;
+        }
+        .aa{
+            width: 800px;
+            height: 300px;
+            margin: auto;
+        }
+        .aa td a{
+            text-decoration: none;
+        }
+        a{
+            color:black;
+        }
+    </style>
+</head>
+<body>
+<div style="background-color:#EEEEEE; width: 100%;">
+            <div class="pull-left">
+                <img src="/static/logo/logo3.png" width="110px" height="100px" onclick="window.location.href='/'">
+            </div>
+    <div class="one" >
+        <div class="nav-item " style="float: left;margin-left: 50px;">
+            <a href="/index"​>首页</a>
+        </div>
+        <div class="nav-item " style="float: left;margin-left: 50px;">
+            <a href="/"​>课程分类</a>
+        </div>
+        <div class="nav-item " style="float: left;margin-left: 50px;">
+            <a href="/"​>精品课程</a>
+        </div>
+        <div class="nav-item " style="float: left;margin-left: 50px;">
+            <a href="/"​>推荐课程</a>
+        </div>
+        <div class="nav-item " style="float: left;margin-left: 50px;">
+            <a href="/"​>趣味课堂</a>
+        </div>
+    </div>
+</div>
+<div class="page-header">
+    <table class="table" border="0">
+        <tr>
+            <td align="right" width="50%">
+                <h2 style="padding-right: 4%">作者：{$note[0]['user_id']}------《{$note[0]['course_name']}》</h2>
+            </td>
+            <td ><br>
+                <!-- Large modal -->
+                <button type="button" class="btn btn-primary" data-toggle="modal" data-target=".bs-example-modal-lg">创建二维码分享    <span class="glyphicon glyphicon-qrcode" aria-hidden="true"></span></button>
+
+                <div class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
+                    <div class="modal-dialog modal-lg" role="document">
+                        <div class="modal-content" align="center">
+                            <h3>课堂笔记分享</h3>
+                            <br>
+                            <div id="qrcode"></div>
+                            <div class="input-group" style="width: 60%;padding-bottom: 50px;padding-top: 50px;">
+                                <span class="input-group-addon" id="sizing-addon2">URL</span>
+                                <input type="text" class="form-control" placeholder="url" aria-describedby="sizing-addon2" id="urls">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </td>
+        </tr>
+    </table>
+
+</div>
+<div style="width: 100%;background-color: #d4d4d4;" class="text-center">
+    <div style="width: 80%;margin-left: 20%;" class="text-left">
+        <p style="padding-top: 5%;">{$note[0]['note']}</p>
+        <br><br>
+    </div>
+</div>
+<script>
+    jQuery(function(){
+        jQuery('#qrcode').qrcode(window.location.href);
+    })
+    $("#urls").val(window.location.href);
+</script>
+<script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"1","bdSize":"24"},"slide":{"type":"slide","bdImg":"0","bdPos":"right","bdTop":"238.5"},"image":{"viewList":["qzone","tsina","tqq","renren","weixin","sqq","h163","youdao","mshare","fbook","copy","print"],"viewText":"分享到：","viewSize":"16"}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script>
+</body>
+</html>

@@ -1,0 +1,68 @@
+<?php
+// +----------------------------------------------------------------------
+// | ThinkPHP [ WE CAN DO IT JUST THINK ]
+// +----------------------------------------------------------------------
+// | Copyright (c) 2006~2016 http://thinkphp.cn All rights reserved.
+// +----------------------------------------------------------------------
+// | Licensed ( http://www.apache.org/licenses/LICENSE-2.0 )
+// +----------------------------------------------------------------------
+// | Author: liu21st <liu21st@gmail.com>
+// +----------------------------------------------------------------------
+
+use think\Route;
+
+//登陆接口POST*********接口参数validata/LoginValidata.php
+Route::post('login','user/Login/login');
+
+//注销接口POST请求*********接口参数   无
+Route::post('logout','user/Login/logout');
+
+//发送测试邮件POST*********接口参数   无
+Route::post('testsend','user/Login/send');
+
+//用户注册请求POST*********接口参数validata/RegisterVali.php
+Route::post('register','user/Register/regist');
+
+//图像验证码接口********返回图片
+Route::get('imagecode','user/Valicode/imgcode');
+
+//邮箱验证接口POST*************接口参数validata/ValiRegisterEmail.php
+Route::get('emailvali','user/Register/valiuser');
+//模糊查询课程
+Route::rule('findcourse','user/Courses/findclass');
+//获取用户信息
+Route::rule('userinfo','user/Personal/userinfo');
+//轮播图接口
+Route::rule('banner','user/Index/banner');
+//精品课程
+Route::rule('index/excellent','user/Index/excellent');
+//推荐课程
+Route::rule('index/recommend','user/Index/recommend');
+//趣味课堂
+Route::rule('index/interest','user/Index/interest');
+//优课展示
+Route::rule('index/ielaborate','user/Index/elaborate');
+
+Route::post('class/chapters','user/Courses/getChapters');
+
+Route::post('class/detail','user/Courses/detail');
+
+Route::post('class/class','user/Courses/course');
+
+Route::rule('user/comments','user/Comments/comments');
+
+Route::post('user/praise','user/Comments/praise');
+//提交评论接口
+Route::post('user/subcomment','user/Comments/subcomment');
+//上传头像
+Route::post('user/uploadimg','user/Upload/headimg');
+//统计课程浏览
+Route::post('class/browser','user/Courses/browser');
+//更新用户信息
+Route::post('user/updateinfo','user/Personal/UpdateUserInfo');
+
+Route::post('user/updatepwd','user/Personal/updateuserpwd');
+
+Route::get('res','user/ResourceCenter/show');
+
+

@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		<link rel="stylesheet" href="http://apps.bdimg.com/libs/bootstrap/3.3.0/css/bootstrap.min.css">  
+        <script src="http://apps.bdimg.com/libs/jquery/2.1.1/jquery.min.js"></script>
+        <script src="http://apps.bdimg.com/libs/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+       <style type="text/css">
+       	 *{
+	        	margin:0px;
+	        	padding: 0px;
+	        	list-style: none;
+        		font-family: "微软雅黑";
+        		color: #000000;
+
+        	    }
+		.one{
+				margin-left: 40%;
+				width:50%;
+				height: 100px;
+				padding-top: 40px;
+				
+				}
+		.one a{
+				text-decoration: none;
+				font-size: 16px;
+		}
+		.one a:hover{
+            	color: gray;
+            }
+        .aa{
+        	width: 800px;
+        	height: 300px;
+        	margin: auto;
+        }
+        .aa td a{
+        	text-decoration: none;
+        }
+        a{
+        	color:black;
+        }
+       </style>
+	</head>
+	<body>
+		<div style="background-color:#EEEEEE; width: 100%;">
+            <div class="pull-left">
+                <img src="/static/logo/logo3.png" width="110px" height="100px" onclick="window.location.href='/'">
+            </div>
+			<div class="one" >
+	            <div class="nav-item " style="float: left;margin-left: 50px;">
+	                 <a href="/"​>首页</a>
+	            </div>
+                <div class="nav-item " style="float: left;margin-left: 50px;">
+                    <a href="/index/#00"​>课程分类</a>
+                </div>
+                <div class="nav-item " style="float: left;margin-left: 50px;">
+                    <a href="/index/#01"​>精品课程</a>
+                </div>
+                <div class="nav-item " style="float: left;margin-left: 50px;">
+                    <a href="/index/#02"​>推荐课程</a>
+                </div>
+                <div class="nav-item " style="float: left;margin-left: 50px;">
+                    <a href="/index/#03"​>优课展示</a>
+                </div>
+				<div class="nav-item " style="float: left;margin-left: 50px; id="admingoto">
+					<a href="/personal"​>返回个人中心</a>
+				</div>
+        	</div>
+		</div>
+		<form>
+			<div class="aa">
+				<table class="table table-hover" id="classlist">
+		    	<h3 align="center">查看已收藏课程</h3>
+             	<tr>
+             		<th>#</th>
+             		<th>课程名称</th>
+             		<th>教师</th>
+             		<th>课程难度</th>
+             		<th>课程学时</th>
+             		<th>操作</th>
+             	</tr>
+
+           </table>
+			</div>
+			
+		</form>
+		<script type="text/javascript">
+            function loadcourse() {
+            $.ajax({
+            type: "post",
+            url: "/api/classinfo/info",
+            async: "true",
+            dataType: "json",
+            data:{
+            },
+            success: function (data) {
+                for(var i=0;i<data.length;i++)
+                {
+                    $("#classlist").append('<tr><td>'+(i+1)+'</td><td>'+data[i].course_name+'</td><td>'+data[i].belong_author+'</td><td>'+data[i].difficulty+'</td><td>'+data[i].class_hours+'</td><td><button type="button" class="btn btn-warning" onclick="restudy(\''+data[i].user_id+'\','+data[i].course_id+',\''+data[i].course_name+'\')">申请退出学习</button></td></tr>');
+                }
+                    }   
+                 });
+                  }  
+                  loadcourse(); 
+                  function restudy(user_id,course_id,course_name)
+                  {
+                         $.ajax({
+                         type: "post",
+                         url: "/api/study/resetstudy",
+                          async: "true",
+                         dataType: "json",
+                         data:{
+                            user_id:user_id,
+                            course_id:course_id,
+                            course_name:course_name
+                            },
+                            success: function (data) {
+                                alert(data.msg);
+                         }   
+                    });
+                  }   
+        </script>
+	</body>
+</html>
+
+
+

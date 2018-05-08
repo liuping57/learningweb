@@ -1,0 +1,909 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+ <head> 
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" /> 
+  <title></title> 
+    <!-- Buttons 库的核心文件 -->
+  <link rel="stylesheet" href="css/buttons.css">
+  <link rel="stylesheet" type="text/css" href="http://www.ijquery.cn/css/css.css" media="all" />
+  <link href="styles/css.css" type="text/css" rel="stylesheet" /> 
+  <link rel="stylesheet" href="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="http://cdn.static.runoob.com/libs/jquery/2.1.1/jquery.min.js"></script>
+  <script src="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+ <style>
+
+ 	
+
+  	.login1{
+				width:1800px;
+				height:572px;			
+				position:absolute;
+				top:75px;
+				left:-20px;
+		        display:none;
+				transition: opacity 1s; 
+				background-color: azure;
+			    background-color:rgba(0,0,0,0.65);	      
+				color: white;
+              }
+			.login1 input:focus{
+			   
+			    border-color: #03a9f4;  
+			    box-shadow: 0 0 15px #24B727;  
+			}
+			.login3 input:focus{
+			   
+			    border-color: #03a9f4;  
+			    box-shadow: 0 0 15px #24B727;  
+			}
+			.login3{
+				width:1800px;
+				height:572px;
+				display: none;
+				position:absolute;
+				top:75px;
+				left:-20px;				
+				transition: opacity 1s; 
+				background-color: azure;
+			    background-color:rgba(0,0,0,0.65); 
+				color: white;
+}
+  	
+		  	 .login4{
+		            	background-color: whitesmoke;
+		            	width:350px;
+		            	height: 300px;
+		            	margin-left: 40%;
+		            	margin-top:20px;      
+		            	border-radius:10%;   
+		            		
+		            }
+            .login5{
+            	background-color: whitesmoke;
+            	width:400px;
+            	height: 440px;
+            	margin-left: 40%;
+            	margin-top:20px; 
+            	border-radius:10%;
+            	padding: 0 auto;
+            }
+  	
+		  	.meun{
+		  		float:left;
+		  		margin-top:-10px;
+		  		margin-left:30px;
+		  		font-size:15px;
+		  		
+		  	}
+		  	.meun1{
+		        margin-top:20px;
+		  		float:left;
+		  		margin-left:450px;
+		  	    
+		  	}
+		  	.menu2{
+		  	    float:left;
+		  	    margin-left:-450px;
+		  	    margin-top:-30px;
+		  		
+		  	}
+		  	.menu3{
+		    float:left;
+		    margin-left:370px;
+		    margin-top:-15px;
+			
+		}
+		  	.menu4{
+		    float:left;
+		    margin-left:430px;
+		    margin-top:-15px;
+			
+		}
+		    .menu4{
+		    float:left;
+		    margin-left:400px;
+		    margin-top:-10px;
+			
+		}
+		
+		  	.audio{
+		  		float:left;
+		        margin-top: 2px;
+		  		margin-left:270px;
+		  		width:1020px;
+		  		height: 530px;		  			
+		  	}
+		 	.bottom{
+		  	  float:left; 
+		  	  margin-top:20px;
+		  	  margin-left:10px; 	
+		  	  width: 1328px;
+		      height:210px;  
+		      background-color: #373C40;
+		      color:white;
+              		  	   	
+		  	} 	
+		  	/*.aa:hover{ 
+			-webkit-transition:border linear .2s,-webkit-box-shadow linear .5s; 
+			border-color:rgba(141,39,142,.75); 
+			-webkit-box-shadow:0 0 18px rgba(111,1,32,3); 
+		}  */
+		 
+		   .bottom1{
+		    float: left;		 
+		    margin-left:6px;  
+		   	padding-left:240px;
+		   	margin-top:73px;  
+		   	width: 1297px;
+		   	height:930px;  		   
+		   	background-color: white;
+		   }
+		  .bottom2{
+		  	float: left;
+		    margin-left:-170px;
+		  	font-size: 15px;
+		    margin-top:9px;   
+		  }
+		  	.bottom3{
+		  	float: left;
+		    margin-left:570px;
+		  	font-size: 15px;
+		    margin-top:-110px;   
+		  }
+		  	.hr{
+		  	float: left;
+		    margin-left:-230px;
+		    width:800px;
+		    margin-top:10px;
+		    font-size:14px;
+		    height:820px;
+		    background-color: white;
+		    -webkit-transition:border linear .2s,-webkit-box-shadow linear .5s; 
+			border-color:rgba(10,10,112,.25); 
+			-webkit-box-shadow:0 0 18px rgba(11,1,12,3); 
+		    }
+		
+		  	.right{
+		  	float:left;
+		  	margin-left:270px;
+		  	margin-top:9px;
+		  	width:1050px;
+		    height: 530px;
+		  	}
+
+		  .load{
+		  	float:left;
+		  	font-size:15px;	  
+		  	margin-left:903px;
+		  	margin-top:-250px;		  	
+		  	width:37s0px;
+		  	height:80px;
+		  	background-color:white;				
+
+		  }		    
+		    .right1{
+		  	font-size:15px;
+		  	text-align:left; 
+		  	margin-left:660px;
+		  	margin-top:20px;		  	
+		  	width:380px;
+		  	height:560px;
+		  	background-color:white;	
+			line-height:1.5;
+			border:solid 1px #EFEFEF;
+			 -webkit-transition:border linear .2s,-webkit-box-shadow linear .5s; 
+			border-color:rgba(10,10,112,.25); 
+			-webkit-box-shadow:0 0 18px rgba(11,1,12,3); 
+		  }
+        .banner{
+        	float:left;
+        	margin-left:400px;
+        	
+        }     
+        li { list-style: none}
+        a { color: #333;text-decoration: none; }
+        a:hover {font-size:15px;text-decoration: none;}
+       
+        .clearfix:after { content:"."; display:block; height:0; clear:both; visibility:hidden}
+        .clearfix { *height:4%;}
+        #list { margin: 0 auto; text-align: left; width: 540px;}
+        .box { border-top: 1px solid #eee; position: relative;  width: 540px; padding: 20px 0}
+        .box:hover .close { display: block;}
+        .close { display: none; top:0px; right: 0px; width: 28px; height: 28px; border: 1px solid #eee; position: absolute; background: #f2f4f7; line-height: 27px; text-align: center;}
+        .close:hover { background: #c8d2e2; text-decoration: none;}
+        .head { float: left; width: 50px; height: 50px; margin-right: 10px;}
+        .content { float: left; width: 440px;}
+        .main { margin-bottom: 10px;}
+        .txt { margin-bottom: 10px;}
+        .user { color: #369; }
+        .pic { margin-right: 5px; width: 200px; border: 1px solid #eee;}
+        .info { height: 20px; line-height: 19px; font-size: 12px; margin: 0 0 10px 0;}
+        .info .time { color: #ccc; float: left; height: 20px; padding-left: 20px; background: url("images/bg1.jpg") no-repeat left top;}
+        .info .praise { color: #369; float: right; height: 20px; padding-left: 18px; background: url("images/bg2.jpg") no-repeat left top;}
+        .info .praise:hover { text-decoration: none; background: url("images/bg3.jpg") no-repeat left top;}
+        .praises-total { margin: 0 0 10px 0; height: 20px; background: url("images/praise.png") no-repeat 5px 5px rgb(247, 247, 247); padding: 5px 0 5px 25px; line-height: 19px;}
+        .comment-box { padding: 10px 0; border-top: 1px solid #eee;}
+        .comment-box:hover { background: rgb(247, 247, 247);}
+        .comment-box .myhead { float: left; width: 30px; height: 30px; margin-right: 10px;}
+        .comment-box .comment-content { float: left; width: 400px; }
+        .comment-box .comment-content .comment-time { color: #ccc; margin-top: 3px; line-height: 16px; position: relative;}
+        .comment-box .comment-content .comment-praise { display: none; color: #369; padding-left: 17px; height: 20px; background: url("images/praise.png") no-repeat;  position: absolute; bottom: 0px; right: 44px;}
+        .comment-box .comment-content .comment-operate { display: none; color: #369; height: 20px;  position: absolute; bottom: 0px; right: 10px;}
+        .comment-box .comment-content:hover .comment-praise { display: inline-block;}
+        .comment-box .comment-content:hover .comment-operate { display: inline-block;}
+        .text-box .comment { border: 1px solid #D0E9C6; display: block; height: 45px; width: 428px; padding: 5px; resize: none; color: #ccc}
+        .text-box .comment1 { border: 1px solid #eee; display: block; height: 50px; width: 428px; padding: 5px; resize: none; color: #ccc}
+        .text-box .btn { font-size: 12px; font-weight: bold; display: none; float: right; width: 65px; height: 25px;  color:#324B4E; background: aliceblue;margin-top:4px;padding-top:3px;margin-right:-70px;}
+        .text-box .btn-off { border: 1px solid #ccc; color: #ccc; background: #F7F7F7;}
+        .text-box .word{ display: none; float: right; margin: 6px 10px 0 0; color: #666;}
+        .text-box-on .comment{ height: 49px; color: black;}
+        .text-box-on .btn{ display: inline;}
+        .text-box-on .word{ display: inline;}
+    	.dede_pages{ text-align:center;}
+		.dede_pages ul{float:left;padding:12px 0px 12px 16px;}
+		.dede_pages ul li{float:left;font-family:Tahoma;line-height:17px;margin-right:6px;border:1px solid #E9E9E9;}
+		.dede_pages ul li button{float:left;padding:2px 4px 2px;color:#555;display:block;}
+		.dede_pages ul li button:hover{color:#690;text-decoration:none;padding:2px 4px 2px;}
+		.dede_pages ul li.thisclass,.dede_pages ul li.thisclass button,.pagebox ul li.thisclass a:hover{background-color:#F8F8F8;padding:2px 4px 2px;font-weight:bold;}
+		.dede_pages .pageinfo{line-height:21px;padding:12px 10px 12px 16px;color:#999;}
+		.dede_pages .pageinfo strong{color:#555;font-weight:normal;margin:0px 2px;} 
+		.close1{
+	    -webkit-transition:border linear .2s,-webkit-box-shadow linear .5s; 
+		border-color:rgba(141,39,142,.75); 
+		-webkit-box-shadow:0 0 18px rgba(111,1,32,3); 
+    	border-radius:20%;
+    	font-size:24px;
+    	
+    }
+		
+		
+
+  </style> 
+   <script type="text/javascript" src="js/demo.js"></script>
+   <script>
+       /*
+    *页面初始化请求
+    */
+    //判断登陆状态显示
+    $(document).ready(
+        function(){
+            $.ajax({
+                type:"post",
+                url:"../index.php?s=/user/personal/userinfo",
+                async:"true",
+                dataType:"json",
+                success:function(data){
+                    if(data.linecode==402)
+                    {
+                        $("#log3").css("display","none");
+                        $("#log4").css("display","none");
+                        $("#log5").css("display","none");
+                         $("#log2").css("display","inline");
+                        $("#log1").css("display","inline");
+                        
+                    }
+                    else
+                    {
+                    	$("#log3").css("display","inline");
+                        $("#log4").css("display","inline");
+                        $("#log5").css("display","inline");
+                         $("#log2").css("display","none");
+                        $("#log1").css("display","none");
+                        $("#headimg").attr('src',"../"+data.headimg);    
+                        $("#usernamehead").text(data.user_id);
+                    }
+                }
+            });
+        }
+        )	
+
+        //统计访客数
+        	    $.ajax({
+		         type: "post",
+		         url: "/user/courses/browser",
+		         async: true,
+		         dataType: "json",
+		         data: {
+		             course_id:getParam("id") 
+		         },
+		         success: function (data) {
+		         		alert(data.msg);
+		        }
+		        }); 
+
+//获取GET请求参数
+function getParam(paramName){
+  paramValue ="";
+  isFound =false;
+  if (this.location.search.indexOf("?") ==0&&this.location.search.indexOf("=")>1){
+    arrSource = unescape(this.location.search).substring(1,this.location.search.length).split("&");
+    i =0;
+    while (i < arrSource.length &&!isFound){
+      if (arrSource[i].indexOf("=") >0){
+        if (arrSource[i].split("=")[0].toLowerCase()==paramName.toLowerCase()){
+          paramValue = arrSource[i].split("=")[1];
+          isFound =true;
+        }
+      }
+    i++;
+    }
+  }
+  return paramValue;
+}
+    //注销操作。。
+    $(document).ready(function() {
+ $("#logout").click(function () {
+     $.ajax({
+         type: "post",
+         url: "../index.php?s=/user/login/logout",
+         async: "true",
+         dataType: "json",
+         success: function (data) {
+              alert(data.msg);
+               window.location.reload();
+             }
+
+     });
+ })
+})
+       //注册ajax实例
+ 	$(document).ready(function() {
+ $("#regbtn").click(function () {
+     $.ajax({
+         type: "post",
+         url: "../index.php?s=/user/register/regist",
+         async: "true",
+         dataType: "json",
+         data: {
+             user_id:$("#reguserid").val(),
+             user_name: $("#regusername").val(),
+             pwd1: $("#pwd1").val(),
+             pwd2: $("#pwd2").val(),
+             email: $("#mail").val(),
+             valicode: $("#code").val()
+
+         },
+         success: function (data) {
+
+                    if(data.linecode==203)
+                    {
+                        alert("注册成功！");
+                        window.location.reload();
+                    }
+                    else
+                    {
+                        alert(data.msg);
+                    }
+         }
+     });
+ })
+})
+
+
+   	  //登陆ajax请求实例
+  	$(document).ready(function() {
+ $("#btn").click(function () {
+     $.ajax({
+         type: "post",
+         url: "../index.php?s=/user/login/login",
+         async: "true",
+         dataType: "json",
+         data: {
+             username: $("#username").val(),
+             userpwd: $("#pwd").val(), 
+             valicode: $("#sure").val()
+
+         },
+         success: function (data) {
+              if(data.linecode==201){
+              	window.location.reload();
+              	                	
+              }
+              else{
+                if(data.linecode==407)
+                {
+                    alert("验证码错误");
+                    loginimagecode();
+                }
+                else if(data.linecode==401)
+                {
+                    alert("账号或者密码错误");
+                }
+                else
+                {
+                    alert(data.msg);
+                }
+              	
+              }
+             }
+
+     });
+ })
+})
+
+  	    //请求验证码
+	 function registimagecode(){
+    var oimg = document.getElementById('img2');
+	  oimg.setAttribute('src','../index.php?s=/user/valicode/imgcode/'+Math.random());}  
+            //请求验证码
+         function loginimagecode(){
+    var oimg = document.getElementById('img1');
+      oimg.setAttribute('src','../index.php?s=/user/valicode/imgcode/'+Math.random());}
+
+
+
+
+	function login2(){
+	   var oscore = document.getElementsByClassName("login1")[0];
+       oscore.style.display = 'block';
+       setTimeout(function () {
+       oscore.style.opacity = 1;
+  }, 500); }
+  
+      function register(){
+	   var oscore = document.getElementsByClassName("login3")[0];
+       oscore.style.display = 'block';
+       setTimeout(function () {
+       oscore.style.opacity = 1;
+  }, 500);} 
+    
+   
+var str="";
+var arr=new Array();
+var defaultvideo="";
+  // 生成课程列表
+     $.ajax({
+         type: "post",
+         url: "../index.php?s=/user/courses/getChapters",
+         async: false,
+         dataType: "json",
+         data: {
+             course_id:getParam("id") 
+         },
+         success: function (data) {
+         	for(var i=0;i<data.length;i++)
+         	{
+
+         		str +="<li><a href='#' class='ztb_con_text' onclick='clickli(this);' style='text-decoration:none;'>"+data[i].chapters_title+"</a> <ul class='ztb_content_02'>";
+		        $.ajax({
+		         type: "post",
+		         url: "../index.php?s=/user/courses/detail",
+		         async: false,
+		         dataType: "json",
+		         data: {
+		             id:data[i].chapters_id 
+		         },
+		         success: function (dass) {
+		         		
+		         	for(var j=0;j<dass.length;j++)
+		         	{
+		         		
+		         		str +="<li><a href='#' style='text-decoration:none;color:#333333' onclick='changevideo("+dass[j].
+chapters_detail_id+")'>"+dass[j].chapters_detail_title+"</a></li>";
+						arr[dass[j].chapters_detail_id]=dass[j].chapter_detail_link;
+						if (j==0 && i==0) {
+							defaultvideo=dass[j].chapter_detail_link;
+						}
+		         		
+		         	}
+		           	
+		        }
+		        });
+		        str +=" </ul> </li>";
+         	}
+         	//$("#classlist").append(str);
+         	//alert(str);
+         	//document.getElementById("classlist").innerHTML=str;
+           	
+        }
+        });
+
+     //课程封面加载
+
+     $.ajax({
+		         type: "post",
+		         url: "../index.php?s=/user/courses/course",
+		         async: true,
+		         dataType: "json",
+		         data: {
+		             course_id:getParam("id") 
+		         },
+		         success: function (data) {
+		         		
+		           	$("#class_title").text(data.course_name);
+		           	$("#class_info").text(data.synopsis);
+		           	$("#author").text(data.belong_author);
+		           	$("#class_image").attr('src',"../"+data.img_url);
+		        }
+		        });
+
+     //评论区加载
+     var commentstr;
+     function commentload() {
+				 $.ajax({
+		         type: "post",
+		         url: "../index.php?s=/user/comments/comments",
+		         async: true,
+		         dataType: "json",
+		         data: {
+		             course_id:getParam("id") 
+		         },
+		         success: function (data) {
+		         		commentstr=new Array();
+		         		for(var i=0;i<data.length;i++)
+		         		{
+		         			commentstr[i]='<div class="box clearfix"><a class="close" href="javascript:;">×</a><img class="head" src=../'+data[i].headimg+' alt=""/><div class="content"><div class="main"><p class="txt"><span class="user">'+data[i].userid+':</span>'+data[i].comment+'</p></div><div class="info clearfix"><span class="time">'+data[i].commenttime+'</span><a class="praise" href="javascript:;" onclick="praise('+data[i].comment_id+')"> '+data[i].praise+' 赞</a></div></div></div>'
+		         		}
+		         		document.getElementById("comments").innerHTML="";
+		         		document.getElementById("ssd").innerHTML="";
+		         		document.getElementById("selectlist").innerHTML="";
+		         		document.getElementById("pages").innerHTML="";
+		         		document.getElementById("nums").innerHTML="";
+		         		for(var f=0;f<5;f++)
+						{
+
+							$("#comments").append(commentstr[f]);
+						}
+						var g;
+						for(g=1;g<=(commentstr.length/5)+1;g++)
+						{
+							$("#ssd").append('<li><button onclick="comm('+g+')">'+g+'</button></li>');
+							$("#selectlist").append('<option value="'+g+'">'+g+'</option>');
+						}
+						$("#pages").append(parseInt((commentstr.length/5)+1));
+						$("#nums").append(commentstr.length);
+		        }
+		        });
+			}
+			commentload();
+		//分页代码
+
+		function comm(s)
+		{
+			document.getElementById("comments").innerHTML="";
+			var f=(s-1)*5;
+			for(;f<5*s;f++)
+			{
+
+				$("#comments").append(commentstr[f]);
+			}
+		}
+
+		//点赞代码
+		function praise(ids)
+		{
+			     $.ajax({
+		         type: "post",
+		         url: "../index.php?s=/user/comments/praise",
+		         async: true,
+		         dataType: "json",
+		         data: {
+		             comment_id:ids 
+		         },
+		         success: function (data) {
+		         		 if (data.linecode==200) 
+		         		{
+		         			//location.reload();
+		         			commentload();
+		         		}
+		         		else
+		         		{
+		         				alert("请登陆后点赞哦！"+data);
+		         		}
+
+		        }
+		        });
+		}
+
+		//评论代码
+				function subcomment()
+		{
+			     $.ajax({
+		         type: "post",
+		         url: "../index.php?s=/user/comments/subcomment",
+		         async: true,
+		         dataType: "json",
+		         data: {
+		             course_id:getParam("id"),
+		             comment:$("#subcomment").val()
+
+		         },
+		         success: function (data) {
+		         		 if (data.linecode==200) 
+		         		{
+		         			//location.reload();
+		         			commentload();
+		         		}
+		         		else
+		         		{
+		         				alert("请登陆后评论哦！");
+		         		}
+
+		        }
+		        });
+		}
+		
+			
+			
+</script>
+ 
+
+
+ </head> 
+ <body style="background-color:#efefef;text-align: center;width:100%;" onload="loadvideo()"> 	
+ <nav class="navbar navbar-default" role="navigation" style="margin-top:5px;width:85.3%;margin-left:8%">
+  <div class="container-fluid">
+    <div class="navbar-header" style="float:left;margin-left:-15px;margin-top:-1%"> 
+      <a class="navbar-brand" href="#"><img src="../index/images/logo1.jpg" width="100px" height="50px"></a>
+    </div>
+    <div class="banner"> 
+    <ul class="nav navbar-nav navbar-right" style="font-size:15px;">
+    	<li><a href="../index/index.html">首页</a></li>
+    	<li><a href="#">课程中心</a></li>
+    	<li><a href="#">推荐课程</a></li>
+    	<li><a href="#">趣味课堂</a></li>
+    	<li><a href="../index.php?s=res">资源中心</a></li>      
+        <li id="log1"><a href="#"  onclick="login2()"><span class="glyphicon glyphicon-log-in"></span>登录</a></li>
+        <li id="log2"><a href="#"  onclick="register()"><span class="glyphicon glyphicon-user"></span>注册</a></li> 
+        <li id="log3"><a href="../personal" id="usernamehead"></a></li>
+        <li id="log4"><a href="#" id="logout">注销</a></li>
+        <li id="log5"><a href="../personal"><img src="" style="width: 50px;height: 50px;margin-top: -23px;border-radius:60px;" id="headimg"></a></li>
+    </ul>
+  </div>
+</nav>
+</div>
+  <div id="img_bag" class="ztb_nav" style="margin-top:4%;margin-left:8%;height:593px;" > 
+   <a href="javascript:void(0)" onmousedown="moveTop()" style="display:block; width:30px;margin-left:40%"> <img src="images/ztb_up.png" border="0" /></a> 
+   <div id="img" class="ztb_content"> 
+    <div style="position:relative;"> 
+     <div class="online"></div> 
+     <div class="ztb_main_01"> 
+      <ul class="ztb_content_01" id="classlist"> 
+      <script type="text/javascript">
+      	document.getElementById("classlist").innerHTML=str;
+      	function changevideo(fg)
+      	{
+      		document.getElementById("v1").src=arr[fg];
+      		document.getElementById("classvideo").load();
+      		document.getElementById("classvideo").play();
+      		document.getElementById('right').style.display='';
+      	}
+      	function loadvideo()
+      	{
+      		document.getElementById("v1").src=defaultvideo;
+      		document.getElementById("classvideo").load();
+      	}
+
+  </script>
+      
+      </ul> 
+     </div> 
+    </div> 
+   </div> 
+   <a href="javascript:void(0)" onmousedown="moveBottom()" style="position:absolute; bottom:0px; right:110px"> <img src="images/ztb_down.png" border="0" /></a> 
+  </div> 
+  
+  <div class="right">
+	<div id="right" style="display:block;float:left;margin-left:6.5%;margin-top:-2%;width:1100px;height:530px;" >
+		<video   width="1050" id="classvideo" controls="controls">
+		<source id="v1" src=""> 			
+		</video>
+	</div>
+  </div>
+
+<div class="bottom1" style="float:left;margin-left:8%;margin-top:3%">
+  	<div class="bottom2">评论区</div>
+  	 <div style="border:solid 0px #CCCCCC;margin-left:-220px;margin-top:40px;width:750px;margin-bottom:1px;"><hr size="2" color="#000000"/></div>
+  <div class="hr">
+  	
+  	<div id="list">
+  		<div style="height:70px;margin-top:13px;width:600px;margin-bottom:50px;margin-left:-3px;">
+  		<div class="text-box" >
+                    <textarea class="comment" autocomplete="off" style="width:600px;height:80px;" id="subcomment">发表评论…</textarea>
+                    <button class="button button-rounded button-tiny" onclick="subcomment()">发表评论</button>
+                    <span class="word"><span class="length">0</span>/130</span>
+                </div>
+  		 </div>
+  		 <div id="comments">
+<!-- 开始 -->
+
+	</div>
+    </div>
+  	<div style="padding-top:100px;text-align:center;width:800px;height:50px;margin-left: 100px">
+
+
+  		<!--start -->
+						<div class="dede_pages ">
+							<ul class="pagelist">
+								<b id="ssd">
+
+								</b>
+								<li><select name='sldd' style='width:42px' onchange='comm(this.options[this.selectedIndex].value)' id="selectlist">
+									
+								</select></li>
+								<li><span class="pageinfo">共 <strong id="pages"></strong>页<strong id="nums"></strong>条</span></li>
+							</ul>
+						</div>
+						<!--end-->
+
+
+
+  	</div>
+  	
+  	
+  	
+  </div>
+  	<span style="float:left;margin-top:-47px;margin-left:200px;">课程介绍</span>
+  	<div class="right1">
+  		<img src="" width="380px" height="220px" style="padding-bottom:9px;" id="class_image">
+  		<br>
+  	    <span id="class_title"></span><br/><br/>
+  	    <span style="color:#CCCCCC">作者:</span><span id="author"></span><br/><br/>
+  	    
+  		<span style="color:#CCCCCC">简介:</span>&nbsp;&nbsp;&nbsp;<span id="class_info" style="font-size:15px;line-height:1.7;"></span></div>		 	
+  </div>
+  <div class="load" style="float:left;margin-left:72%">
+  	<span style="font-size: 16px">课程资源</span><br><br>
+      <span style="font-size: 14px"><a href="../index.php?s=res">课件下载</a></span>
+      &nbsp; &nbsp; &nbsp; &nbsp;
+  	  <span style="font-size: 14px"><a href="../index.php?s=res">资源下载</a></span><br>
+  </div>
+  </div> 	
+  <footer>
+                <div class="bottom" style="float:left;margin-left:8%;margin-top:-1%;width:85.6%">
+                    <div class="wrap clean">
+                    	<div style="margin-left:-70%;margin-top:20px">
+                    	<img src="../index/images/m-phone.png" width="30px" height="30px"><span style="font-size:30px;">课程中心</span><br><br>
+                    	<span style="color:#EDEDED">追梦团队，齐心为大家打造的集自主与学习为一体的课程中心</span><br>
+                    	<span style="color:#EDEDED">在这里有创新的学习体验</span>
+             	<div>
+                        <div style="margin-left:90%;margin-top:-80px">
+                            友情链接 :
+                            <a href='http://www.suse.edu.cn/' target='_blank' style="color:white;">
+                                四川理工学院
+                            </a><br>
+                            
+                            &nbsp; &nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                             <a href='http://www.suse.edu.cn/' target='_blank' style="color:white;">
+                               中国大学IMOOC
+                            </a>
+                        </div>
+                        <div  style="margin-left:4px;margin-top:100px">
+                            Copyright &copy; 2018-2019 追梦人团队 版权所有 
+                        </div>
+                        <div style="margin-left:90%;margin-top:-60px">
+                       <span>关注:&nbsp;</span><a href="#"><img src="../index/images/m-wechat.png" width="30px" height="30px"></a>
+                       &nbsp; &nbsp; &nbsp;
+                       <span><a href="#"><img src="../index/images/m-sina.png" width="30px" height="30px"></a></span>
+                        </div>     	
+    
+                    </div>
+                </div>
+            </footer>
+
+  	<div  class="login1" id="lg5">
+    	<form method="post" action="contact-post.html" >
+    	<div class="login4">
+    		<a class="close" href="javascript:;">×</a>
+    		<center><label style="font-size:21px;text-align:center;margin-top:10px;background-color:#007F06;color: white;width:400px;height:40px;padding-top:10px;border-radius:10%;">登录账号</label></center><br/><br/>
+    		<label style="font-size:14px;margin-left: 40px;color:#324B4E">用户名:</label><input type="text" id="username" placeholder="请输入用户名...." size="33" style="height:30px;width:180px;color:gray"> <br><br>
+    		<label style="font-size:14px;margin-left: 40px;color:#324B4E">密   &nbsp;码:	</label><input type="password" id="pwd" placeholder="请输入密码...." size="26" style="height:30px;width:180px;color:gray"> <br><br>
+			<label style="font-size:14px;margin-left: 40px;color:#324B4E" > 验证码:</label>
+			<input type="text" id="sure" style="vertical-align:middle;height:30px;width:80px;color:gray">
+			<img src="../index.php?s=/user/valicode/imgcode" width="70" height="30" id="img1" style="vertical-align:middle;" onclick="loginimagecode()"/>
+			<span style="font-size:13px;"><a href="#" onclick="loginimagecode()"> 换一换</a></span>
+			<br><br>                  
+			<input type="button" value="登录" id="btn" style="height:30px;width:120px;margin-left:60px;font-size:14px;">&nbsp;&nbsp;&nbsp;&nbsp;<span style="font-size:14px"><a href="#">忘记密码</a></span>
+			<div style="margin-left:93%;background-color:#F5FBFE;width:20px;float:left;margin-top:-75%;height:38px;opacity:.4;padding-left:3px;" class="close1">
+    	    <a id='close' href="#" onclick="closelogin()">X</a>
+    	    </div>
+			</div>
+    	
+  	</div>
+    	</form>
+    </div>
+        <script>
+        	function closelogin(){
+            	$('#lg5').css('display','none');           	
+            }
+		     function closeregin(){
+            	$('#lg6').css('display','none');           	
+            }
+        	
+        </script>        
+   <div class="login3" id="lg6">	  
+   <form method="post" action="contact-post.html">
+   	<div class="login5">
+   	    <center><label style="font-size:21px;text-align:center;margin-top:10px;background-color:#007F06;color: white;width:400px;height:40px;padding-top:10px;border-radius:10%">欢迎注册</label></center><br/><br/>
+		<label style="font-size:14px;margin-left: 65px;color:#324B4E">用户名:</label><input type="text" id="reguserid" placeholder="请输入用户名...." size="35" style="height:30px;width:180px;focus:border-color: #67B168;color:gray"> <br><br>
+		<label style="font-size:14px;margin-left: 65px;color:#324B4E">昵  &nbsp; 称:	</label><input type="text" id="regusername" placeholder="专属你的个性昵称..." size="35" style="height:30px;width:180px;color:gray"> <br><br>
+		<label style="font-size:14px;margin-left: 65px;color:#324B4E">密   &nbsp;码:	</label><input type="password" id="pwd1" placeholder="请输入密码...." size="35" style="height:30px;width:180px;color:gray"> <br><br>
+		<label style="font-size:14px;margin-left: 65px;color:#324B4E">确认密码:	</label><input type="password" id="pwd2" placeholder="再次输入密码...." size="30" style="height:30px;width:180px;color:gray"> <br><br>
+		<label style="font-size:14px;margin-left: 65px;color:#324B4E">邮   &nbsp;箱:	</label><input type="text"  id="mail" placeholder="邮箱...." size="35" style="height:30px;width:180px;color:gray"> <br><br>
+		<label style="font-size:14px;margin-left: 45px;color:#324B4E"> &nbsp; &nbsp; &nbsp;&nbsp;验证码:</label>
+		<input type="text" id="code" style="height:30px;width:90px;color:gray">
+		<img src="../index.php?s=/user/valicode/imgcode" width="70px" height="32px" onclick="registimagecode()"  id="img2"style="vertical-align: middle;">
+		<span style="font-size:13px;"><a href="#" onclick="registimagecode()"> 换一换</a></span>
+        <br><br>
+       
+		<input type="button" value="注册" id="regbtn" style="height:30px;width:110px;margin-left:120px;font-size:14px;" >
+		<div style="margin-left:94%;background-color:#F5FBFE;width:20px;float:left;margin-top:-104%;height:38px;opacity:.4;padding-left:3px;" class="close1">
+    	    <a id='close' href="#" onclick="closeregin()">X</a>
+    	    </div>
+		</div>
+   </form>
+ </div>	
+
+  <!--<div class="bottom">
+    <textarea  class="aa"></textarea>
+  </div>-->
+  <script type="text/javascript">
+		 $(function(){
+				$('ul.ztb_content_02 li').click(function(){
+				
+						$(this).addClass('ztb_online').siblings('li.ztb_online').removeClass('ztb_online');
+						$(this).parents('li').siblings('li').children('ul').find('li.ztb_online').removeClass('ztb_online');		
+					})	
+								})
+   </script> 
+   <script>
+   	function clickli(dom){
+				var ul = $(dom).next('ul');
+				if (ul.is(":hidden")) {
+					ul.css('display','block')
+				}else{
+					ul.css('display','none')
+				}
+				
+			}
+   
+   </script>
+  
+  <script type="text/javascript">
+	function js(obj){return document.getElementById(obj)}
+var maxHeight=js("img").getElementsByTagName("ul")[0].getElementsByTagName("li").length*105;
+//滚动图片的最大高度
+var targety = 211;
+//一次滚动距离
+var dx;
+var a=null;
+function moveTop(){
+ var le=parseInt(js("img").scrollTop);
+ if(le>211){
+ targety=parseInt(js("img").scrollTop)-211;
+ }else{
+ targety=parseInt(js("img").scrollTop)-le-1;
+ }
+ scTop();
+}
+function scTop(){
+ dx=parseInt(js("img").scrollTop)-targety;
+ js("img").scrollTop-=dx*.3;
+ clearScroll=setTimeout(scTop,50);
+ if(dx*.3<1){
+ clearTimeout(clearScroll);
+ }
+}
+function moveBottom(){
+ var le=parseInt(js("img").scrollTop)+211;
+ var maxL=maxHeight-600;
+ if(le<maxL){
+ targety=parseInt(js("img").scrollTop)+211;
+ }else{
+ targety=maxL
+ }
+ scBottom();
+}
+function scBottom(){
+ dx=targety-parseInt(js("img").scrollTop);
+ js("img").scrollTop+=dx*.3;
+ a=setTimeout(scBottom,50);
+ if(dx*.3<1){
+ clearTimeout(a)
+ }
+}
+</script> 
+
+ </body>
+</html>

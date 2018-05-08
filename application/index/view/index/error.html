@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <style>
+        .a{
+            padding-top: 350px;
+            padding-left: 450px;
+        }
+        .b{
+            padding-left: 500px;
+        }
+        .c{
+            padding-left: 550px;
+        }
+        .d{
+            padding-left: 600px;
+        }
+
+    </style>
+
+</head>
+<body background="__STATIC__/error/img/ti.jpg">
+<h4 class="a">嘿   guys</h4>
+    <p class="b">尴了个大尬</p>
+    <p class="c"><strong>您所访问的资源的不存在噢！！！</strong></p>
+    <p class="d" id="time"></p>
+
+<script src="https://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+    <script type="text/javascript">
+    var time=setInterval (showTime, 1000);
+    var second=5;
+    function showTime()
+    {
+        if(second==0)
+        {
+            history.back(-1);
+            clearInterval(time);
+        }
+        $("#time").html('<font>'+second+'s</font> 后将跳转到课程页面。');
+        second--;
+    }
+</script>
+</body>
+
+</html>

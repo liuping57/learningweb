@@ -1,0 +1,35 @@
+{include file="header" /}
+<form action="/admin/index/add">
+    <div class="table-responsive" >
+        <table class="table" >
+            <tr class="info">
+                <td>资源名称</td>
+                <td>资源类型</td>
+                <td>资源简介</td>
+                <td>关联课程</td>
+                <td>备注信息</td>
+                <td>下载地址</td>
+            </tr>
+            <tr>
+                <td><input type="text" name="name" class="form-control" placeholder="资源名称" id="name"></td>
+                <td><select class="form-control" name="type">
+                    <option>音频</option>
+                    <option>视频</option>
+                    <option>文档</option>
+                    <option>压缩文件</option>
+                </select></td>
+                <td><input type="text" name="title" class="form-control" placeholder="资源简介" id="title"></td>
+                <td><input type="text" name="courseName" class="form-control" placeholder="关联课程" id="courseName" hidden="hidden" value="{$course_name}"></td>
+                <td><textarea class="form-control" rows="3" id="content" name="content"></textarea></td>
+                <td><input type="text" name="downloadAddress" class="form-control" placeholder="下载地址" id="downloadAddress"></td>
+
+            </tr>
+            <tr>
+                <td colspan="7" align="right">
+                    <button type="submit" class="btn btn-info" >添加</button>
+                </td>
+            </tr>
+        </table>
+    </div>
+</form>
+{include file="footer" /}

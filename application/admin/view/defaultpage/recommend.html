@@ -1,0 +1,75 @@
+{include file="index/header" /}
+<ol class="breadcrumb">
+    <li><a href="__ROOT__/admin">首页</a></li>
+    <li><a href="__ROOT__/admin">主页课程管理</a></li>
+    <li class="active">推荐课程</li>
+</ol>
+<h3 class="text-center">推荐课程</h3>
+<table class="table table-striped">
+    <tr>
+        <td>#</td>
+        <td>课程ID</td>
+        <td>课程名</td>
+        <td>课程类型</td>
+        <td>排名</td>
+        <td>动作</td>
+    </tr>
+        {volist name="data" id="vo"}
+    <tr>
+        <form method="post" action="">
+            <td>{$it}</td>
+            <td><input list="test{$it}" type="text" value="{$vo.id}" id="course_id{$it}" oninput="findcurse({$it})" name="course_id">
+                <datalist id="test{$it}">
+                    <option value="1">ss</option>
+                </datalist></td>
+            <td>{$vo.class_name}</td>
+            <td>精品课程</td>
+            <td><input type="text" max="3" value="{$vo.rank}" id="rank{$it++}" name="rank"/><input type="text" hidden="hidden" name="type_id" value="{$vo.type_id}"/> </td>
+            <td><input type="submit" class="btn btn-warning" value="更新"></td>
+        </form>
+    </tr>
+    {/volist}
+    {volist name="dds" id="vo"}
+    <tr>
+        <form method="post" action="">
+            <td>{$it}</td>
+            <td><input list="test{$it}" type="text" value="" id="course_id{$it}" oninput="findcurse({$it})" name="course_id">
+                <datalist id="test{$it}">
+                    <option value="1">ss</option>
+                </datalist></td>
+            <td>xxx</td>
+            <td>精品课程</td>
+            <td><input type="text" max="3" value="" id="rank{$it++}" name="rank"/><input type="text" hidden="hidden" name="type_id" value="{$vo.type_id}"/> </td>
+            <td><input type="submit" class="btn btn-success" value="添加"></td>
+        </form>
+    </tr>
+    {/volist}
+</table>
+<script>
+    function findcurse(id) {
+        $.ajax({
+            type: "post",
+            url: "/user/courses/findclass",
+            async: "true",
+            dataType: "json",
+            data:{
+                course_name:$("#course_id"+id).val()
+            },
+            success: function (data) {
+
+                var dds="";
+                for(var i=0;i < 6 && i<data.length;i++)
+                {
+                    dds +="<option value='"+data[i].course_id+"'>"+data[i].course_name+"</option>";
+                }
+                //$("#test"+id).text(dds);
+                //alert(dds+$("#course_id"+id).val()+data.msg);
+                document.getElementById("test"+id).innerHTML=dds;
+
+
+            }
+        });
+    }
+
+</script>
+{include file="index/footer" /}

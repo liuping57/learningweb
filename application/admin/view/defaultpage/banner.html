@@ -1,0 +1,111 @@
+{include file="index/header" /}
+<ol class="breadcrumb">
+    <li><a href="__ROOT__/admin">首页</a></li>
+    <li><a href="__ROOT__/admin">主页课程管理</a></li>
+    <li class="active">轮播图课程</li>
+</ol>
+
+<div class="container-fluid">
+<h3 class="text-center">轮播图课程</h3>
+    <form method="post" action="" id="updatebanner" name="ssd">
+    <table class="table">
+        <tr>
+            <td>序号</td>
+            <td>课程ID</td>
+            <td>课程名</td>
+            <td>图片地址</td>
+            <td>排序</td>
+            <td></td>
+        </tr>
+        {volist name="data" id="vo"}
+        <tr>
+            <td>{$vo.banner_id}</td>
+            <td><input type="text" maxlength="5"  name="cid1" value="{$data[0]['course_id']}"></td>
+            <td>{$vo.course_name}</td>
+            <td><img src="__STATIC__/../{$vo.img_url}" width="200px" height="100px" type="button" data-toggle="modal" data-target="#myModa1"/>
+
+            </td>
+            <td><input type="text" maxlength="1"  name="crank1" value="{$vo.rank}"></td>
+            <td><button type="button" class="btn btn-success" onclick="sub()">保存修改</button></td>
+        </tr>
+        {/volist}
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+    </table>
+    </form>
+    <script>
+        function sub() {
+            $("#updatebanner").submit();
+            
+        }
+    </script>
+</div>
+<!-- Modal -->
+<div class="modal fade" id="myModa1" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <form method="post" action="" id="p1" enctype="multipart/form-data">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" id="myModalLabe1">上传banner大图</h4>
+            </div>
+            <div class="modal-body">
+                <input type="file" id="bannerfile1" name="images">
+                <input type="text" name="banner_id" hidden="hidden" value="1"/>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+                <button type="button" class="btn btn-primary" onclick="$('#p1').submit()">上传</button>
+            </div>
+            </form>
+        </div>
+    </div>
+</div>
+<!-- Modal -->
+<div class="modal fade" id="myModa2" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <form method="post" action="" id="p2" enctype="multipart/form-data">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" id="myModalLabe2">上传banner大图</h4>
+            </div>
+            <div class="modal-body">
+                <input type="file"  name="images">
+                <input type="text" name="banner_id" hidden="hidden" value="2"/>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+                <button type="button" class="btn btn-primary" onclick="$('#p2').submit()">上传</button>
+            </div>
+            </form>
+        </div>
+    </div>
+</div>
+<!-- Modal -->
+<div class="modal fade" id="myModa3" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <form method="post" action="" id="p3" enctype="multipart/form-data">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" id="myModalLabe3">上传banner大图</h4>
+            </div>
+            <div class="modal-body">
+                <input type="file"  name="images">
+                <input type="text" name="banner_id" hidden="hidden" value="3"/>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+                <button type="button" class="btn btn-primary" onclick="$('#p3').submit()">上传</button>
+            </div>
+            </form>
+        </div>
+    </div>
+</div>
+{include file="index/footer" /}

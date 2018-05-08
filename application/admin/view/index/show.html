@@ -1,0 +1,41 @@
+{include file="index/header" /}
+   
+<table class="table table-bordered table-hover ">
+  <thead>
+  <tr  ><th > ID</th><th > 标题</th><th > 分类</th><th> 下载次数</th><th >关联课程</th><th > 入库时间</th><td>删除</td>
+  </tr>
+  </thead>
+  <tbody>
+  {volist name='show' id='user'}
+  <tr><th> {$user.id} </th>
+    <td> <a href="{$Think.server.script_name}/index/index/view/id/{$user.id} ">{$user.title|mb_substr=0,20,'utf-8' }</a></td>
+    <td> {$user.type|mb_substr=0,50,'utf-8'| }</td><td>  {$user.downloadCount}</td>
+    <td>  {$user.courseName}</td>
+    <td>{$user.create_time}</td>
+    <td> <a href="/admin/index/update/id/{$user.id}"  id="btn" class="btn btn-primary"  >编辑</a>
+      <a href="#"  id="btn" class="btn btn-danger" data-toggle="modal" data-target="#myModal{$user.id}"  >删除 </a>  </td> </tr>
+<!-- Modal -->
+<div class="modal fade" id="myModal{$user.id}" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">提示</h4>
+      </div>
+      <div class="modal-body">
+        删除确认...{$user.title|mb_substr=0,20,'utf-8' }
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+       <!--  <button type="button" class="btn btn-primary">确定删除</button> -->
+       <a href="__ROOT__/admin/index/del/id/{$user.id}"  id="btn" class="btn btn-danger"    >确定删除 </a>
+      </div>
+    </div>
+  </div>
+  {/volist}
+</div>
+  </tbody>
+</table>
+
+{$show->render()}
+ {include file="index/footer" /}

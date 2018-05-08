@@ -1,0 +1,35 @@
+{include file="index/header" /}
+<ol class="breadcrumb">
+    <li><a href="__ROOT__/admin">首页</a></li>
+    <li><a href="#">邮件中心</a></li>
+    <li class="active">配置邮件服务</li>
+</ol>
+<div>
+    <table class="table">
+        <tr>
+            <td>SMTP地址</td>
+            <td>邮箱账号</td>
+            <td>密码</td>
+            <td>安全协议/ssl</td>
+            <td>端口号</td>
+            <td>发件人</td>
+            <td>网址</td>
+            <td></td>
+        </tr>
+        <form action="" method="post">
+        <tr>
+            <td><input name="smtpadd" type="text" class="form-control" placeholder="" value="{$mailinfo[0]['smtpADD']}" ></td>
+            <td><input name="emailadd" type="text" class="form-control" placeholder="" value="{$mailinfo[0]['emailadd']}"></td>
+            <td><input name="passwd" type="text" class="form-control" placeholder="" value="{$mailinfo[0]['passwd']}"></td>
+            <td><input name="secure" type="text" class="form-control" placeholder="" value="{$mailinfo[0]['SMTPSecure']}"></td>
+            <td><input name="port" type="number" class="form-control" placeholder="" value="{$mailinfo[0]['port']}"></td>
+            <td><input name="formname" type="text" class="form-control" placeholder="" value="{$mailinfo[0]['FormName']}"></td>
+            <td><input name="web_url" type="text" class="form-control" placeholder="" value="{$mailinfo[0]['web_url']}"></td>
+            <td><button type="submit" class="btn btn-warning">修改</button></td>
+        </tr>
+        </form>
+    </table>
+</div>
+
+
+{include file="index/footer" /}
